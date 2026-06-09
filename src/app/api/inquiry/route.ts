@@ -24,7 +24,7 @@ export async function POST(req: Request) {
 
     try {
       const supabase = createServiceClient();
-      const { error } = await supabase.from("inquiries").insert(record);
+      const { error } = await supabase.from("gbv_inquiries").insert(record);
       if (error) throw error;
     } catch (dbErr) {
       // Table may not exist yet (schema pending). Don't lose the lead from the user's POV.

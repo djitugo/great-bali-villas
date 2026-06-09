@@ -1,10 +1,11 @@
--- Great Bali Villas — initial schema
--- Run in Supabase SQL editor or via `supabase db push` / management API.
+-- Great Bali Villas — initial schema.
+-- NOTE: this Supabase project is SHARED with other apps. All tables are
+-- namespaced with the `gbv_` prefix to avoid collisions.
 
 create extension if not exists "pgcrypto";
 
--- ---------- properties ----------
-create table if not exists public.properties (
+-- ---------- gbv_properties ----------
+create table if not exists public.gbv_properties (
   id          uuid primary key default gen_random_uuid(),
   slug        text unique not null,
   kind        text not null default 'rental',
@@ -33,13 +34,13 @@ create table if not exists public.properties (
   updated_at  timestamptz default now()
 );
 
-create index if not exists properties_type_idx on public.properties (type);
-create index if not exists properties_area_idx on public.properties (area);
-create index if not exists properties_price_idx on public.properties (price);
-create index if not exists properties_bedrooms_idx on public.properties (bedrooms);
+create index if not exists gbv_properties_type_idx on public.gbv_properties (type);
+create index if not exists gbv_properties_area_idx on public.gbv_properties (area);
+create index if not exists gbv_properties_price_idx on public.gbv_properties (price);
+create index if not exists gbv_properties_bedrooms_idx on public.gbv_properties (bedrooms);
 
--- ---------- blog posts ----------
-create table if not exists public.blog_posts (
+-- ---------- gbv_blog_posts ----------
+create table if not exists public.gbv_blog_posts (
   id         uuid primary key default gen_random_uuid(),
   slug       text unique not null,
   title      text not null,
@@ -51,8 +52,8 @@ create table if not exists public.blog_posts (
   created_at timestamptz default now()
 );
 
--- ---------- inquiries (leads) ----------
-create table if not exists public.inquiries (
+-- ---------- gbv_inquiries (leads) ----------
+create table if not exists public.gbv_inquiries (
   id            uuid primary key default gen_random_uuid(),
   name          text not null,
   email         text not null,
@@ -68,20 +69,18 @@ create table if not exists public.inquiries (
 );
 
 -- ---------- RLS ----------
-alter table public.properties  enable row level security;
-alter table public.blog_posts  enable row level security;
-alter table public.inquiries   enable row level security;
+alter table public.gbv_properties enable row level security;
+alter table public.gbv_blog_posts enable row level security;
+alter table public.gbv_inquiries  enable row level security;
 
--- public read for published catalogue
-drop policy if exists "properties public read" on public.properties;
-create policy "properties public read" on public.properties
+drop policy if exists "gbv_properties public read" on public.gbv_properties;
+create policy "gbv_properties public read" on public.gbv_properties
   for select using (published = true);
 
-drop policy if exists "blog public read" on public.blog_posts;
-create policy "blog public read" on public.blog_posts
+drop policy if exists "gbv_blog public read" on public.gbv_blog_posts;
+create policy "gbv_blog public read" on public.gbv_blog_posts
   for select using (published = true);
 
--- anyone can submit a lead; only service role can read them
-drop policy if exists "inquiries public insert" on public.inquiries;
-create policy "inquiries public insert" on public.inquiries
+drop policy if exists "gbv_inquiries public insert" on public.gbv_inquiries;
+create policy "gbv_inquiries public insert" on public.gbv_inquiries
   for insert with check (true);

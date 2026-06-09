@@ -51,7 +51,7 @@ async function seedProperties() {
   }));
   let done = 0;
   for (const batch of chunk(rows, 200)) {
-    const { error } = await sb.from("properties").upsert(batch, { onConflict: "slug" });
+    const { error } = await sb.from("gbv_properties").upsert(batch, { onConflict: "slug" });
     if (error) throw error;
     done += batch.length;
     console.log(`  properties ${done}/${rows.length}`);
@@ -63,7 +63,7 @@ async function seedBlog() {
   const rows = posts.map((p) => ({
     slug: p.slug, title: p.title, excerpt: p.excerpt, date: p.date, cover: p.cover, body: p.body,
   }));
-  const { error } = await sb.from("blog_posts").upsert(rows, { onConflict: "slug" });
+  const { error } = await sb.from("gbv_blog_posts").upsert(rows, { onConflict: "slug" });
   if (error) throw error;
   console.log(`  blog ${rows.length}`);
 }
