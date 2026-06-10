@@ -25,7 +25,7 @@ export function CurrencySwitcher() {
                   setCurrency(c);
                   close();
                 }}
-                className={`flex w-full items-center justify-between gap-4 rounded-lg px-3 py-2 text-left text-sm transition-colors hover:bg-sand-100 ${
+                className={`flex w-full items-center justify-between gap-4 rounded-none px-3 py-2 text-left text-sm transition-colors hover:bg-sand-100 ${
                   currency === c ? "text-gold" : "text-ink"
                 }`}
               >

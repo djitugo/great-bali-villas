@@ -21,7 +21,7 @@ export default function ContactPage() {
     <section className="bg-sand pt-32 lg:pt-44">
       <div className="container-x pb-20 lg:pb-28">
         <Reveal>
-          <p className="mb-4 text-sm uppercase tracking-[0.22em] text-muted">Contact</p>
+          <p className="mb-4 eyebrow text-muted">Contact</p>
           <h1 className="max-w-3xl font-display text-5xl tracking-tight lg:text-7xl">
             Let&apos;s plan your stay.
           </h1>
@@ -40,9 +40,9 @@ export default function ContactPage() {
                     href={c.href}
                     target="_blank"
                     rel="noopener"
-                    className="flex items-start gap-4 rounded-2xl border border-sand-200 bg-cream p-5 transition-colors hover:border-sand-300"
+                    className="flex items-start gap-4 rounded-none border border-sand-200 bg-cream p-5 transition-colors hover:border-sand-300"
                   >
-                    <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-jungle text-cream">
+                    <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-none bg-jungle text-cream">
                       <c.icon className="h-5 w-5" />
                     </span>
                     <span>
@@ -57,7 +57,7 @@ export default function ContactPage() {
 
           <div className="lg:col-span-7">
             <Reveal delay={0.1}>
-              <div className="rounded-2xl border border-sand-200 bg-cream p-7 lg:p-9">
+              <div className="rounded-none border border-sand-200 bg-cream p-7 lg:p-9">
                 <h2 className="mb-5 font-display text-2xl">Send us a message</h2>
                 <ContactForm />
               </div>

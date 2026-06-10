@@ -116,13 +116,13 @@ export default async function PropertyPage({ params }: { params: Promise<{ slug:
           {/* sticky enquiry */}
           <div className="lg:col-span-5">
             <div className="lg:sticky lg:top-28">
-              <div className="rounded-2xl border border-sand-200 bg-cream p-6 shadow-xl shadow-ink/5">
+              <div className="rounded-none border border-sand-200 bg-cream p-6 shadow-xl shadow-ink/5">
                 <div className="mb-5 flex items-baseline justify-between">
                   <div>
                     <p className="text-sm text-muted">from</p>
                     <Price idr={p.price} period={p.period} className="font-display text-2xl text-ink" suffixClassName="text-xs" />
                   </div>
-                  <span className="rounded-full bg-sand px-3 py-1 text-xs font-medium">{p.type}</span>
+                  <span className="rounded-none bg-sand px-3 py-1 text-xs font-medium">{p.type}</span>
                 </div>
                 <InquiryForm propertyName={p.name} propertySlug={p.slug} />
                 <p className="mt-4 text-center text-xs text-muted">

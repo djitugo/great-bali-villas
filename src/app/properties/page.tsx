@@ -52,7 +52,7 @@ export default async function PropertiesPage({ searchParams }: { searchParams: S
       <section className="bg-sand pt-32 lg:pt-40">
         <div className="container-x pb-8">
           <Reveal>
-            <p className="mb-3 text-sm uppercase tracking-[0.22em] text-muted">
+            <p className="mb-3 eyebrow text-muted">
               {total} villas across Bali
             </p>
             <h1 className="max-w-3xl font-display text-5xl tracking-tight lg:text-6xl">{title}</h1>
@@ -84,7 +84,7 @@ export default async function PropertiesPage({ searchParams }: { searchParams: S
           {pages > 1 && (
             <nav className="mt-16 flex items-center justify-center gap-2">
               {page > 1 && (
-                <Link href={buildHref(page - 1)} className="rounded-full border border-sand-300 px-5 py-2.5 text-sm hover:bg-cream" scroll>
+                <Link href={buildHref(page - 1)} className="rounded-none border border-sand-300 px-5 py-2.5 text-sm hover:bg-cream" scroll>
                   ← Prev
                 </Link>
               )}
@@ -95,7 +95,7 @@ export default async function PropertiesPage({ searchParams }: { searchParams: S
                     {idx > 0 && arr[idx - 1] !== n - 1 && <span className="text-muted">…</span>}
                     <Link
                       href={buildHref(n)}
-                      className={`flex h-10 min-w-10 items-center justify-center rounded-full px-3 text-sm transition-colors ${
+                      className={`flex h-10 min-w-10 items-center justify-center rounded-none px-3 text-sm transition-colors ${
                         n === page ? "bg-ink text-cream" : "border border-sand-300 hover:bg-cream"
                       }`}
                     >
@@ -104,7 +104,7 @@ export default async function PropertiesPage({ searchParams }: { searchParams: S
                   </span>
                 ))}
               {page < pages && (
-                <Link href={buildHref(page + 1)} className="rounded-full border border-sand-300 px-5 py-2.5 text-sm hover:bg-cream">
+                <Link href={buildHref(page + 1)} className="rounded-none border border-sand-300 px-5 py-2.5 text-sm hover:bg-cream">
                   Next →
                 </Link>
               )}

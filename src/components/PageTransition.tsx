@@ -4,8 +4,9 @@ import { usePathname } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
 
 /**
- * Distinct per-navigation transition: a gold-edged sand panel wipes up to reveal
- * the new page, while content rises in. Keyed by pathname so it fires on every route change.
+ * Per-navigation transition, distinct from the first-load loader:
+ * three ink columns wipe upward in a stagger to reveal the new page,
+ * while the content rises in beneath them.
  */
 export function PageTransition({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
@@ -13,25 +14,26 @@ export function PageTransition({ children }: { children: React.ReactNode }) {
   return (
     <AnimatePresence mode="wait">
       <div key={pathname}>
-        {/* reveal panel */}
-        <motion.div
-          className="pointer-events-none fixed inset-0 z-[150] origin-bottom bg-sand"
-          initial={{ scaleY: 1 }}
-          animate={{ scaleY: 0 }}
-          transition={{ duration: 0.7, ease: [0.76, 0, 0.24, 1] }}
-        >
-          <motion.span
-            className="absolute bottom-0 left-0 h-[3px] w-full bg-gold"
-            initial={{ opacity: 1 }}
-            animate={{ opacity: 0 }}
-            transition={{ duration: 0.7 }}
-          />
-        </motion.div>
+        <div className="pointer-events-none fixed inset-0 z-[150] flex">
+          {[0, 1, 2].map((i) => (
+            <motion.div
+              key={i}
+              className="h-full flex-1 origin-top bg-ink"
+              initial={{ scaleY: 1 }}
+              animate={{ scaleY: 0 }}
+              transition={{
+                duration: 0.65,
+                ease: [0.76, 0, 0.24, 1],
+                delay: i * 0.09,
+              }}
+            />
+          ))}
+        </div>
 
         <motion.div
-          initial={{ opacity: 0, y: 24 }}
+          initial={{ opacity: 0, y: 26 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: 0.15 }}
+          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: 0.25 }}
         >
           {children}
         </motion.div>

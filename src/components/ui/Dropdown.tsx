@@ -53,7 +53,7 @@ export function Dropdown({
             exit={{ opacity: 0, y: 8, scale: 0.97 }}
             transition={{ duration: 0.18, ease: [0.16, 1, 0.3, 1] }}
             className={cn(
-              "absolute top-full z-50 mt-3 min-w-[12rem] overflow-hidden rounded-xl border border-sand-200 bg-cream p-1.5 shadow-xl shadow-ink/5",
+              "absolute top-full z-50 mt-3 min-w-[12rem] overflow-hidden rounded-none border border-sand-200 bg-cream p-1.5 shadow-xl shadow-ink/5",
               align === "right" ? "right-0" : "left-0"
             )}
           >

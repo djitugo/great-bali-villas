@@ -78,7 +78,7 @@ export function LanguageSwitcher() {
                     choose(code);
                     close();
                   }}
-                  className={`notranslate w-full rounded-lg px-3 py-2 text-left text-sm transition-colors hover:bg-sand-100 ${
+                  className={`notranslate w-full rounded-none px-3 py-2 text-left text-sm transition-colors hover:bg-sand-100 ${
                     lang === code ? "text-gold" : "text-ink"
                   }`}
                 >

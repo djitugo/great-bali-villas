@@ -17,7 +17,7 @@ export default function BlogPage() {
     <section className="bg-sand pt-32 lg:pt-44">
       <div className="container-x pb-20 lg:pb-28">
         <Reveal>
-          <p className="mb-4 text-sm uppercase tracking-[0.22em] text-muted">Journal</p>
+          <p className="mb-4 eyebrow text-muted">Journal</p>
           <h1 className="max-w-3xl font-display text-5xl tracking-tight lg:text-7xl">
             Bali, by the people who live here.
           </h1>
@@ -26,7 +26,7 @@ export default function BlogPage() {
         {lead && (
           <Reveal delay={0.1}>
             <Link href={`/blog/${lead.slug}`} className="group mt-14 grid gap-8 lg:grid-cols-2 lg:items-center">
-              <div className="relative aspect-[16/10] overflow-hidden rounded-2xl">
+              <div className="relative aspect-[16/10] overflow-hidden rounded-none">
                 <Image src={lead.cover} alt={lead.title} fill sizes="(max-width:1024px) 100vw, 50vw" className="object-cover transition-transform duration-700 group-hover:scale-105" />
               </div>
               <div>
@@ -45,7 +45,7 @@ export default function BlogPage() {
           {rest.map((post, i) => (
             <Reveal key={post.slug} delay={(i % 3) * 0.06}>
               <Link href={`/blog/${post.slug}`} className="group block">
-                <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
+                <div className="relative aspect-[4/3] overflow-hidden rounded-none">
                   <Image src={post.cover} alt={post.title} fill sizes="(max-width:1024px) 50vw, 33vw" className="object-cover transition-transform duration-700 group-hover:scale-105" />
                 </div>
                 <p className="mt-4 text-sm text-muted">{formatDate(post.date)}</p>

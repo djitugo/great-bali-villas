@@ -46,7 +46,7 @@ export function InquiryForm({ propertyName, propertySlug }: { propertyName: stri
 
   if (status === "done") {
     return (
-      <div className="rounded-2xl border border-sand-200 bg-cream p-6 text-center">
+      <div className="rounded-none border border-sand-200 bg-cream p-6 text-center">
         <p className="font-display text-2xl">Thank you!</p>
         <p className="mt-2 text-sm text-muted">
           We&apos;ve received your enquiry for {propertyName}. Our team will reply shortly.
@@ -55,7 +55,7 @@ export function InquiryForm({ propertyName, propertySlug }: { propertyName: stri
           href={waHref}
           target="_blank"
           rel="noopener"
-          className="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-full bg-jungle py-3.5 font-medium text-cream"
+          className="mt-5 btn btn-dark w-full"
         >
           <WhatsappIcon className="h-5 w-5" /> Continue on WhatsApp
         </a>
@@ -69,7 +69,7 @@ export function InquiryForm({ propertyName, propertySlug }: { propertyName: stri
         href={waHref}
         target="_blank"
         rel="noopener"
-        className="flex w-full items-center justify-center gap-2 rounded-full bg-jungle py-3.5 font-medium text-cream transition-colors hover:bg-jungle-600"
+        className="btn btn-dark w-full"
       >
         <WhatsappIcon className="h-5 w-5" /> Enquire on WhatsApp
       </a>
@@ -94,7 +94,7 @@ export function InquiryForm({ propertyName, propertySlug }: { propertyName: stri
       <button
         type="submit"
         disabled={status === "sending"}
-        className="w-full rounded-full bg-ink py-3.5 font-medium text-cream transition-opacity hover:opacity-90 disabled:opacity-60"
+        className="btn btn-dark w-full disabled:opacity-60"
       >
         {status === "sending" ? "Sending…" : "Request availability"}
       </button>
@@ -108,4 +108,4 @@ export function InquiryForm({ propertyName, propertySlug }: { propertyName: stri
 }
 
 const inputCls =
-  "w-full rounded-xl border border-sand-200 bg-sand px-4 py-3 text-sm outline-none transition-colors focus:border-ink";
+  "w-full rounded-none border border-sand-200 bg-sand px-4 py-3 text-sm outline-none transition-colors focus:border-ink";

@@ -50,18 +50,21 @@ export function MobileMenu({
                 item.dropdown ? (
                   <motion.div
                     key={item.href}
-                    initial={{ opacity: 0, y: 16 }}
+                    initial={{ opacity: 0, y: 18 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.08 + i * 0.05 }}
-                    className="border-b border-sand-200"
+                    className="border-b border-ink/10"
                   >
                     <button
                       onClick={() => setExpanded((v) => !v)}
-                      className="flex w-full items-center justify-between py-4 text-left font-display text-3xl"
+                      className="flex w-full items-baseline justify-between py-5 text-left"
                     >
-                      {item.label}
-                      <svg width="18" height="18" viewBox="0 0 10 10" className={`transition-transform ${expanded ? "rotate-45" : ""}`}>
-                        <path d="M5 1v8M1 5h8" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" />
+                      <span className="flex items-baseline gap-4">
+                        <span className="eyebrow text-muted">0{i + 1}</span>
+                        <span className="font-display text-3xl">{item.label}</span>
+                      </span>
+                      <svg width="16" height="16" viewBox="0 0 10 10" className={`transition-transform duration-300 ${expanded ? "rotate-45" : ""}`}>
+                        <path d="M5 1v8M1 5h8" stroke="currentColor" strokeWidth="1" strokeLinecap="round" />
                       </svg>
                     </button>
                     <AnimatePresence>
@@ -72,26 +75,26 @@ export function MobileMenu({
                           exit={{ height: 0, opacity: 0 }}
                           className="overflow-hidden"
                         >
-                          <div className="grid grid-cols-2 gap-2 pb-5">
+                          <div className="grid grid-cols-2 gap-px border border-ink/10 bg-ink/10">
                             {types.map((t) => (
                               <Link
                                 key={t.value}
                                 href={`/properties?type=${encodeURIComponent(t.value)}`}
                                 onClick={onClose}
-                                className="flex items-center justify-between rounded-lg bg-cream px-3 py-2.5 text-sm"
+                                className="flex items-baseline justify-between bg-cream px-3.5 py-3 text-sm"
                               >
                                 {t.value}
                                 <span className="text-xs text-muted">{t.count}</span>
                               </Link>
                             ))}
                           </div>
-                          <div className="flex flex-wrap gap-2 pb-5">
+                          <div className="flex flex-wrap gap-2 py-5">
                             {areas.map((a) => (
                               <Link
                                 key={a.value}
                                 href={`/properties?area=${encodeURIComponent(a.value)}`}
                                 onClick={onClose}
-                                className="rounded-full border border-sand-300 px-3 py-1.5 text-xs"
+                                className="border border-ink/15 px-3 py-1.5 text-[11px] uppercase tracking-[0.14em]"
                               >
                                 {a.value}
                               </Link>
@@ -100,9 +103,9 @@ export function MobileMenu({
                           <Link
                             href="/properties"
                             onClick={onClose}
-                            className="mb-5 inline-block text-sm font-medium text-gold"
+                            className="eyebrow mb-6 inline-block border-b border-ink pb-1"
                           >
-                            View all {total} villas →
+                            All {total} villas
                           </Link>
                         </motion.div>
                       )}
@@ -111,38 +114,34 @@ export function MobileMenu({
                 ) : (
                   <motion.div
                     key={item.href}
-                    initial={{ opacity: 0, y: 16 }}
+                    initial={{ opacity: 0, y: 18 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.08 + i * 0.05 }}
                   >
                     <Link
                       href={item.href}
                       onClick={onClose}
-                      className="block border-b border-sand-200 py-4 font-display text-3xl"
+                      className="flex items-baseline gap-4 border-b border-ink/10 py-5"
                     >
-                      {item.label}
+                      <span className="eyebrow text-muted">0{i + 1}</span>
+                      <span className="font-display text-3xl">{item.label}</span>
                     </Link>
                   </motion.div>
                 )
               )}
             </nav>
 
-            <div className="mt-8 flex items-center justify-between rounded-2xl bg-cream p-4">
+            <div className="mt-8 flex items-center justify-between border border-ink/10 bg-cream p-4">
               <LanguageSwitcher />
               <CurrencySwitcher />
             </div>
           </div>
 
-          <div className="border-t border-sand-200 bg-cream px-6 py-5">
-            <a
-              href={SITE.whatsappHref}
-              target="_blank"
-              rel="noopener"
-              className="flex w-full items-center justify-center rounded-full bg-jungle py-4 font-medium text-cream"
-            >
+          <div className="border-t border-ink/10 bg-ink px-6 py-5">
+            <a href={SITE.whatsappHref} target="_blank" rel="noopener" className="btn btn-light w-full">
               Enquire on WhatsApp
             </a>
-            <p className="mt-3 text-center text-sm text-muted">{SITE.phoneOffice}</p>
+            <p className="mt-3 text-center text-xs tracking-wide text-cream/50">{SITE.phoneOffice}</p>
           </div>
         </motion.div>
       )}

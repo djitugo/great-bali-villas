@@ -27,7 +27,7 @@ export default function AboutPage() {
       <section className="bg-sand pt-32 lg:pt-44">
         <div className="container-x pb-16 lg:pb-24">
           <Reveal>
-            <p className="mb-4 text-sm uppercase tracking-[0.22em] text-muted">Since {SITE.since}</p>
+            <p className="mb-4 eyebrow text-muted">Since {SITE.since}</p>
             <h1 className="max-w-4xl font-display text-5xl leading-[1.02] tracking-tight lg:text-7xl">
               A Bali villa company run by people who live here.
             </h1>
@@ -46,7 +46,7 @@ export default function AboutPage() {
         <div className="container-x grid gap-3 py-3 sm:grid-cols-2">
           {showcase.map((p, i) => (
             <Reveal key={p.slug} delay={i * 0.1}>
-              <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
+              <div className="relative aspect-[4/3] overflow-hidden rounded-none">
                 <Image src={p.images[0]} alt={p.name} fill sizes="50vw" className="object-cover" />
               </div>
             </Reveal>
@@ -59,7 +59,7 @@ export default function AboutPage() {
           <Reveal className="lg:col-span-5">
             <h2 className="font-display text-4xl tracking-tight lg:text-5xl">What we believe</h2>
           </Reveal>
-          <div className="grid gap-px overflow-hidden rounded-2xl bg-sand-200 sm:grid-cols-2 lg:col-span-7">
+          <div className="grid gap-px overflow-hidden rounded-none bg-sand-200 sm:grid-cols-2 lg:col-span-7">
             {VALUES.map(([t, d], i) => (
               <Reveal key={t} delay={i * 0.07}>
                 <div className="h-full bg-cream p-7">
@@ -93,10 +93,10 @@ export default function AboutPage() {
             Own a villa? We&apos;ll run it like our own.
           </h2>
           <div className="flex gap-3">
-            <Link href="/contact" className="inline-flex items-center gap-2 rounded-full bg-jungle px-7 py-4 font-medium text-cream transition-colors hover:bg-jungle-600">
+            <Link href="/contact" className="btn btn-dark">
               Talk to us <ArrowIcon className="h-4 w-4" />
             </Link>
-            <Link href="/properties" className="inline-flex items-center rounded-full border border-sand-300 px-7 py-4 font-medium transition-colors hover:bg-sand">
+            <Link href="/properties" className="btn btn-outline-dark">
               Browse villas
             </Link>
           </div>

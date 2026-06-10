@@ -40,7 +40,7 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
           </h1>
         </Reveal>
         <Reveal delay={0.08}>
-          <div className="relative mt-8 aspect-[16/9] overflow-hidden rounded-2xl">
+          <div className="relative mt-8 aspect-[16/9] overflow-hidden rounded-none">
             <Image src={post.cover} alt={post.title} fill priority sizes="100vw" className="object-cover" />
           </div>
         </Reveal>
@@ -53,10 +53,10 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
           ))}
         </div>
 
-        <div className="mx-auto mt-14 max-w-2xl rounded-2xl bg-jungle p-8 text-center text-cream">
+        <div className="mx-auto mt-14 max-w-2xl rounded-none bg-jungle p-8 text-center text-cream">
           <p className="font-display text-2xl">Ready to experience it yourself?</p>
           <p className="mt-2 text-cream/70">Browse {SITE.stats.villas} private villas across Bali.</p>
-          <Link href="/properties" className="mt-5 inline-block rounded-full bg-cream px-7 py-3.5 font-medium text-ink">
+          <Link href="/properties" className="btn btn-light mt-5">
             Explore villas
           </Link>
         </div>
@@ -68,7 +68,7 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
           <div className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-3">
             {more.map((p) => (
               <Link key={p.slug} href={`/blog/${p.slug}`} className="group block">
-                <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
+                <div className="relative aspect-[4/3] overflow-hidden rounded-none">
                   <Image src={p.cover} alt={p.title} fill sizes="33vw" className="object-cover transition-transform duration-700 group-hover:scale-105" />
                 </div>
                 <h3 className="mt-3 font-display text-lg leading-snug transition-colors group-hover:text-muted">{p.title}</h3>

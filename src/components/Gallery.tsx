@@ -38,7 +38,7 @@ export function Gallery({ images, name }: { images: string[]; name: string }) {
 
   return (
     <>
-      <div className="grid grid-cols-4 grid-rows-2 gap-2 overflow-hidden rounded-2xl lg:gap-3" style={{ aspectRatio: "16/9" }}>
+      <div className="grid grid-cols-4 grid-rows-2 gap-2 overflow-hidden rounded-none lg:gap-3" style={{ aspectRatio: "16/9" }}>
         <button
           onClick={() => openAt(0)}
           className="group relative col-span-4 row-span-2 lg:col-span-2"
@@ -88,7 +88,7 @@ export function Gallery({ images, name }: { images: string[]; name: string }) {
               <button
                 onClick={() => go(-1)}
                 aria-label="Previous"
-                className="absolute left-4 z-10 flex h-12 w-12 items-center justify-center rounded-full bg-cream/10 text-cream hover:bg-cream/20"
+                className="absolute left-4 z-10 flex h-12 w-12 items-center justify-center rounded-none bg-cream/10 text-cream hover:bg-cream/20"
               >
                 ‹
               </button>
@@ -98,7 +98,7 @@ export function Gallery({ images, name }: { images: string[]; name: string }) {
               <button
                 onClick={() => go(1)}
                 aria-label="Next"
-                className="absolute right-4 z-10 flex h-12 w-12 items-center justify-center rounded-full bg-cream/10 text-cream hover:bg-cream/20"
+                className="absolute right-4 z-10 flex h-12 w-12 items-center justify-center rounded-none bg-cream/10 text-cream hover:bg-cream/20"
               >
                 ›
               </button>

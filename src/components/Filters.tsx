@@ -32,7 +32,7 @@ function Select({
         <select
           value={value}
           onChange={(e) => onChange(e.target.value)}
-          className="w-full appearance-none rounded-xl border border-sand-200 bg-cream px-4 py-2.5 pr-9 text-sm text-ink outline-none transition-colors hover:border-sand-300 focus:border-ink"
+          className="w-full appearance-none rounded-none border border-sand-200 bg-cream px-4 py-2.5 pr-9 text-sm text-ink outline-none transition-colors hover:border-sand-300 focus:border-ink"
         >
           {children}
         </select>
@@ -97,7 +97,7 @@ export function Filters({ facets, total }: { facets: Facets; total: number }) {
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
                 placeholder="Name, area, feature…"
-                className="rounded-xl border border-sand-200 bg-cream px-4 py-2.5 text-sm outline-none transition-colors hover:border-sand-300 focus:border-ink"
+                className="rounded-none border border-sand-200 bg-cream px-4 py-2.5 text-sm outline-none transition-colors hover:border-sand-300 focus:border-ink"
               />
             </label>
 

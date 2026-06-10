@@ -26,13 +26,13 @@ export function ContactForm() {
 
   if (status === "done")
     return (
-      <div className="rounded-2xl border border-sand-200 bg-cream p-8 text-center">
+      <div className="rounded-none border border-sand-200 bg-cream p-8 text-center">
         <p className="font-display text-2xl">Message sent</p>
         <p className="mt-2 text-muted">Thanks for reaching out — we&apos;ll be in touch shortly.</p>
       </div>
     );
 
-  const input = "w-full rounded-xl border border-sand-200 bg-cream px-4 py-3 text-sm outline-none transition-colors focus:border-ink";
+  const input = "w-full rounded-none border border-sand-200 bg-cream px-4 py-3 text-sm outline-none transition-colors focus:border-ink";
 
   return (
     <form onSubmit={submit} className="space-y-3">
@@ -45,7 +45,7 @@ export function ContactForm() {
       <button
         type="submit"
         disabled={status === "sending"}
-        className="w-full rounded-full bg-ink py-3.5 font-medium text-cream transition-opacity hover:opacity-90 disabled:opacity-60"
+        className="btn btn-dark w-full disabled:opacity-60"
       >
         {status === "sending" ? "Sending…" : "Send message"}
       </button>
