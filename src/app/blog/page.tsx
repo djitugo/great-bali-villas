@@ -3,10 +3,11 @@ import Image from "next/image";
 import type { Metadata } from "next";
 import { getAllPosts, formatDate } from "@/lib/blog";
 import { Reveal } from "@/components/Reveal";
+import { T } from "@/lib/i18n";
 
 export const metadata: Metadata = {
   title: "Journal",
-  description: "Bali travel guides, local gems, beaches, beach clubs, cafés and where to stay — from the Great Bali Villas team.",
+  description: "Bali travel guides, local gems, beaches, beach clubs, cafes and where to stay, from the Great Bali Villas team.",
 };
 
 export default function BlogPage() {
@@ -17,9 +18,9 @@ export default function BlogPage() {
     <section className="bg-sand pt-32 lg:pt-44">
       <div className="container-x pb-20 lg:pb-28">
         <Reveal>
-          <p className="mb-4 eyebrow text-muted">Journal</p>
+          <p className="mb-4 eyebrow text-muted"><T k="blog.eyebrow" /></p>
           <h1 className="max-w-3xl font-display text-5xl tracking-tight lg:text-7xl">
-            Bali, by the people who live here.
+            <T k="blog.title" />
           </h1>
         </Reveal>
 
@@ -35,7 +36,7 @@ export default function BlogPage() {
                   {lead.title}
                 </h2>
                 <p className="mt-4 line-clamp-3 text-muted">{lead.excerpt}</p>
-                <span className="mt-5 inline-block text-sm font-medium underline underline-offset-4">Read article</span>
+                <span className="mt-5 inline-block text-sm font-medium underline underline-offset-4"><T k="blog.read" /></span>
               </div>
             </Link>
           </Reveal>

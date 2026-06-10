@@ -3,10 +3,12 @@
 import { useCallback, useEffect, useState } from "react";
 import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
+import { useI18n } from "@/lib/i18n";
 
 export function Gallery({ images, name }: { images: string[]; name: string }) {
   const [open, setOpen] = useState(false);
   const [index, setIndex] = useState(0);
+  const { t } = useI18n();
 
   const go = useCallback(
     (dir: number) => setIndex((i) => (i + dir + images.length) % images.length),
@@ -38,34 +40,39 @@ export function Gallery({ images, name }: { images: string[]; name: string }) {
 
   return (
     <>
-      <div className="grid grid-cols-4 grid-rows-2 gap-2 overflow-hidden rounded-none lg:gap-3" style={{ aspectRatio: "16/9" }}>
-        <button
-          onClick={() => openAt(0)}
-          className="group relative col-span-4 row-span-2 lg:col-span-2"
-        >
-          <Image src={main} alt={name} fill priority sizes="(max-width:1024px) 100vw, 50vw" className="object-cover transition-transform duration-700 group-hover:scale-105" />
+      <div className="grid grid-cols-4 grid-rows-2 gap-2 overflow-hidden lg:gap-3" style={{ aspectRatio: "16/9" }}>
+        <button onClick={() => openAt(0)} className="group relative col-span-4 row-span-2 lg:col-span-2">
+          <Image
+            src={main}
+            alt={name}
+            fill
+            priority
+            quality={90}
+            sizes="(max-width:1024px) 100vw, 50vw"
+            className="object-cover transition-transform duration-700 group-hover:scale-105"
+          />
         </button>
         {rest.map((img, i) => (
-          <button
-            key={img}
-            onClick={() => openAt(i + 1)}
-            className="group relative hidden lg:block"
-          >
-            <Image src={img} alt={`${name} ${i + 2}`} fill sizes="25vw" className="object-cover transition-transform duration-700 group-hover:scale-105" />
+          <button key={img} onClick={() => openAt(i + 1)} className="group relative hidden lg:block">
+            <Image
+              src={img}
+              alt={`${name} ${i + 2}`}
+              fill
+              quality={85}
+              sizes="25vw"
+              className="object-cover transition-transform duration-700 group-hover:scale-105"
+            />
             {i === rest.length - 1 && images.length > 5 && (
               <span className="absolute inset-0 flex items-center justify-center bg-ink/55 text-sm font-medium text-cream">
-                +{images.length - 5} photos
+                {t("gallery.more", { n: images.length - 5 })}
               </span>
             )}
           </button>
         ))}
       </div>
 
-      <button
-        onClick={() => openAt(0)}
-        className="mt-3 text-sm font-medium underline underline-offset-4 lg:hidden"
-      >
-        View all {images.length} photos
+      <button onClick={() => openAt(0)} className="mt-3 text-sm font-medium underline underline-offset-4 lg:hidden">
+        {t("gallery.viewAll", { n: images.length })}
       </button>
 
       <AnimatePresence>
@@ -81,26 +88,33 @@ export function Gallery({ images, name }: { images: string[]; name: string }) {
                 {index + 1} / {images.length}
               </span>
               <button onClick={() => setOpen(false)} aria-label="Close" className="text-2xl leading-none">
-                ✕
+                &#10005;
               </button>
             </div>
             <div className="relative flex flex-1 items-center justify-center px-4 pb-6">
               <button
                 onClick={() => go(-1)}
                 aria-label="Previous"
-                className="absolute left-4 z-10 flex h-12 w-12 items-center justify-center rounded-none bg-cream/10 text-cream hover:bg-cream/20"
+                className="absolute left-4 z-10 flex h-12 w-12 items-center justify-center bg-cream/10 text-cream hover:bg-cream/20"
               >
-                ‹
+                &#8249;
               </button>
               <div className="relative h-full w-full max-w-5xl">
-                <Image src={images[index]} alt={`${name} ${index + 1}`} fill sizes="100vw" className="object-contain" />
+                <Image
+                  src={images[index]}
+                  alt={`${name} ${index + 1}`}
+                  fill
+                  quality={90}
+                  sizes="100vw"
+                  className="object-contain"
+                />
               </div>
               <button
                 onClick={() => go(1)}
                 aria-label="Next"
-                className="absolute right-4 z-10 flex h-12 w-12 items-center justify-center rounded-none bg-cream/10 text-cream hover:bg-cream/20"
+                className="absolute right-4 z-10 flex h-12 w-12 items-center justify-center bg-cream/10 text-cream hover:bg-cream/20"
               >
-                ›
+                &#8250;
               </button>
             </div>
           </motion.div>

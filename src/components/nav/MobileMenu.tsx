@@ -6,6 +6,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { CurrencySwitcher } from "@/components/CurrencySwitcher";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import { NAV, SITE } from "@/lib/site";
+import { useI18n, type DictKey } from "@/lib/i18n";
 
 interface Facet {
   value: string;
@@ -25,6 +26,7 @@ export function MobileMenu({
   areas: Facet[];
   total: number;
 }) {
+  const { t } = useI18n();
   const [expanded, setExpanded] = useState(false);
 
   useEffect(() => {
@@ -61,7 +63,7 @@ export function MobileMenu({
                     >
                       <span className="flex items-baseline gap-4">
                         <span className="eyebrow text-muted">0{i + 1}</span>
-                        <span className="font-display text-3xl">{item.label}</span>
+                        <span className="font-display text-3xl">{t(`nav.${item.key}` as DictKey)}</span>
                       </span>
                       <svg width="16" height="16" viewBox="0 0 10 10" className={`transition-transform duration-300 ${expanded ? "rotate-45" : ""}`}>
                         <path d="M5 1v8M1 5h8" stroke="currentColor" strokeWidth="1" strokeLinecap="round" />
@@ -105,7 +107,7 @@ export function MobileMenu({
                             onClick={onClose}
                             className="eyebrow mb-6 inline-block border-b border-ink pb-1"
                           >
-                            All {total} villas
+                            {t("nav.allVillas", {n: total})}
                           </Link>
                         </motion.div>
                       )}
@@ -124,7 +126,7 @@ export function MobileMenu({
                       className="flex items-baseline gap-4 border-b border-ink/10 py-5"
                     >
                       <span className="eyebrow text-muted">0{i + 1}</span>
-                      <span className="font-display text-3xl">{item.label}</span>
+                      <span className="font-display text-3xl">{t(`nav.${item.key}` as DictKey)}</span>
                     </Link>
                   </motion.div>
                 )
@@ -139,7 +141,7 @@ export function MobileMenu({
 
           <div className="border-t border-ink/10 bg-ink px-6 py-5">
             <a href={SITE.whatsappHref} target="_blank" rel="noopener" className="btn btn-light w-full">
-              Enquire on WhatsApp
+              {t("nav.enquireWa")}
             </a>
             <p className="mt-3 text-center text-xs tracking-wide text-cream/50">{SITE.phoneOffice}</p>
           </div>

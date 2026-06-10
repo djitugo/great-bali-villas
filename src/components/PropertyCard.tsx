@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import type { Property } from "@/lib/types";
 import { Price } from "./Price";
+import { T } from "@/lib/i18n";
 
 export function PropertyCard({
   p,
@@ -24,10 +25,11 @@ export function PropertyCard({
     <Link href={`/properties/${p.slug}`} className="group block">
       <div className="relative aspect-[4/5] overflow-hidden bg-sand-100">
         <Image
-          src={p.images[0]}
+          src={p.cover || p.images[0]}
           alt={p.name}
           fill
-          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+          quality={85}
           priority={priority}
           className="object-cover transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.04]"
         />
@@ -51,7 +53,7 @@ export function PropertyCard({
           </p>
         </div>
         <div className="shrink-0 text-right">
-          <p className="text-[10px] uppercase tracking-[0.14em] text-muted">from</p>
+          <p className="text-[10px] uppercase tracking-[0.14em] text-muted"><T k="common.from" /></p>
           <Price idr={p.price} period={p.period} className="text-sm font-medium text-ink" suffixClassName="text-[10px]" />
         </div>
       </div>

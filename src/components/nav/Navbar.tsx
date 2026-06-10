@@ -9,6 +9,7 @@ import { CurrencySwitcher } from "@/components/CurrencySwitcher";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import { MobileMenu } from "./MobileMenu";
 import { NAV, SITE } from "@/lib/site";
+import { useI18n, type DictKey } from "@/lib/i18n";
 import { cn } from "@/lib/cn";
 
 interface Facet {
@@ -25,6 +26,7 @@ export function Navbar({
   areas: Facet[];
   total: number;
 }) {
+  const { t } = useI18n();
   const [scrolled, setScrolled] = useState(false);
   const [propsOpen, setPropsOpen] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -80,7 +82,7 @@ export function Navbar({
                       !solid && onHome ? "text-cream" : "text-ink"
                     )}
                   >
-                    {item.label}
+                    {t(`nav.${item.key}` as DictKey)}
                     <svg width="9" height="9" viewBox="0 0 10 10" className={cn("transition-transform", propsOpen && "rotate-180")}>
                       <path d="M1 3l4 4 4-4" stroke="currentColor" strokeWidth="1.5" fill="none" strokeLinecap="round" />
                     </svg>
@@ -96,7 +98,7 @@ export function Navbar({
                       >
                         <div className="grid grid-cols-2 border border-ink/10 bg-cream shadow-2xl shadow-ink/10">
                           <div className="p-6">
-                            <p className="eyebrow mb-4 text-muted">By type</p>
+                            <p className="eyebrow mb-4 text-muted">{t("nav.byType")}</p>
                             {types.map((t) => (
                               <Link
                                 key={t.value}
@@ -109,7 +111,7 @@ export function Navbar({
                             ))}
                           </div>
                           <div className="bg-ink p-6 text-cream">
-                            <p className="eyebrow mb-4 text-cream/50">By destination</p>
+                            <p className="eyebrow mb-4 text-cream/50">{t("nav.byDest")}</p>
                             <div className="grid grid-cols-2 gap-x-4 gap-y-2">
                               {areas.map((a) => (
                                 <Link
@@ -125,7 +127,7 @@ export function Navbar({
                               href="/properties"
                               className="eyebrow mt-6 inline-block border-b border-cream/40 pb-1 text-cream transition-colors hover:border-cream"
                             >
-                              All {total} villas
+                              {t("nav.allVillas", {n: total})}
                             </Link>
                           </div>
                         </div>
@@ -143,7 +145,7 @@ export function Navbar({
                     !solid && onHome ? "text-cream" : "text-ink"
                   )}
                 >
-                  {item.label}
+                  {t(`nav.${item.key}` as DictKey)}
                 </Link>
               )
             )}
@@ -167,7 +169,7 @@ export function Navbar({
               rel="noopener"
               className={cn("btn hidden lg:inline-flex", !solid && onHome ? "btn-light" : "btn-dark")}
             >
-              Enquire
+              {t("nav.enquire")}
             </a>
 
             {/* Hamburger */}

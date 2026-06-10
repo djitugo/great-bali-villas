@@ -47,6 +47,7 @@ async function seedProperties() {
     description: p.description,
     features: p.features,
     images: p.images,
+    cover: p.cover || p.images[0] || null,
     featured: featuredSlugs.has(p.slug),
   }));
   let done = 0;

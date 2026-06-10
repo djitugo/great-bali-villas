@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { SITE } from "@/lib/site";
 import { getTypes, getAreas } from "@/lib/properties";
+import { T } from "@/lib/i18n";
 
 export function Footer() {
   const types = getTypes();
@@ -13,21 +14,22 @@ export function Footer() {
       {/* CTA band */}
       <div className="container-x grid gap-10 border-b border-cream/10 py-16 lg:grid-cols-12 lg:items-end lg:py-24">
         <div className="lg:col-span-7">
-          <p className="eyebrow mb-5 text-cream/40">Start the conversation</p>
+          <p className="eyebrow mb-5 text-cream/40"><T k="footer.eyebrow" /></p>
           <h2 className="font-display text-4xl leading-[1.05] text-cream lg:text-6xl">
-            Let&apos;s find <span className="italic">your</span> villa.
+            <T k="footer.t1" />
+            <span className="italic"><T k="footer.t2" /></span>
+            <T k="footer.t3" />
           </h2>
           <p className="mt-5 max-w-md text-sm leading-relaxed text-cream/55">
-            Tell us your dates, your group and the vibe you&apos;re after — our Bali team replies
-            within hours with handpicked options.
+            <T k="footer.sub" />
           </p>
         </div>
         <div className="flex flex-wrap gap-3 lg:col-span-5 lg:justify-end">
           <a href={SITE.whatsappHref} target="_blank" rel="noopener" className="btn btn-light">
-            Chat on WhatsApp
+            <T k="footer.wa" />
           </a>
           <Link href="/contact" className="btn btn-outline-light">
-            Send an enquiry
+            <T k="footer.enquiry" />
           </Link>
         </div>
       </div>
@@ -43,7 +45,7 @@ export function Footer() {
             className="h-14 w-auto"
           />
           <p className="mt-5 max-w-xs text-sm leading-relaxed text-cream/50">
-            {SITE.legalName} — boutique villa rental &amp; management across Bali since {SITE.since}.
+            <T k="footer.blurb" vars={{ legal: SITE.legalName, year: SITE.since }} />
           </p>
           <div className="mt-6 flex gap-2">
             {[
@@ -67,7 +69,7 @@ export function Footer() {
         </div>
 
         <div className="lg:col-span-2">
-          <h3 className="eyebrow mb-5 text-cream/40">Villa types</h3>
+          <h3 className="eyebrow mb-5 text-cream/40"><T k="footer.types" /></h3>
           <ul className="space-y-2.5 text-sm">
             {types.map((t) => (
               <li key={t.value}>
@@ -80,7 +82,7 @@ export function Footer() {
         </div>
 
         <div className="lg:col-span-2">
-          <h3 className="eyebrow mb-5 text-cream/40">Destinations</h3>
+          <h3 className="eyebrow mb-5 text-cream/40"><T k="footer.dest" /></h3>
           <ul className="space-y-2.5 text-sm">
             {areas.map((a) => (
               <li key={a.value}>
@@ -93,17 +95,18 @@ export function Footer() {
         </div>
 
         <div className="lg:col-span-2">
-          <h3 className="eyebrow mb-5 text-cream/40">Company</h3>
+          <h3 className="eyebrow mb-5 text-cream/40"><T k="footer.company" /></h3>
           <ul className="space-y-2.5 text-sm">
-            <li><Link href="/about" className="transition-colors hover:text-cream">About us</Link></li>
-            <li><Link href="/properties" className="transition-colors hover:text-cream">All villas</Link></li>
-            <li><Link href="/blog" className="transition-colors hover:text-cream">Journal</Link></li>
-            <li><Link href="/contact" className="transition-colors hover:text-cream">Contact</Link></li>
+            <li><Link href="/about" className="transition-colors hover:text-cream"><T k="footer.about" /></Link></li>
+            <li><Link href="/properties" className="transition-colors hover:text-cream"><T k="footer.all" /></Link></li>
+            <li><Link href="/longterm-villa" className="transition-colors hover:text-cream"><T k="footer.longterm" /></Link></li>
+            <li><Link href="/blog" className="transition-colors hover:text-cream"><T k="footer.journal" /></Link></li>
+            <li><Link href="/contact" className="transition-colors hover:text-cream"><T k="footer.contact" /></Link></li>
           </ul>
         </div>
 
         <div className="col-span-2 lg:col-span-2">
-          <h3 className="eyebrow mb-5 text-cream/40">Get in touch</h3>
+          <h3 className="eyebrow mb-5 text-cream/40"><T k="footer.touch" /></h3>
           <ul className="space-y-2.5 text-sm">
             <li><a href={`mailto:${SITE.email}`} className="transition-colors hover:text-cream">{SITE.email}</a></li>
             <li><a href={SITE.phoneOfficeHref} className="transition-colors hover:text-cream">{SITE.phoneOffice}</a></li>
@@ -124,7 +127,7 @@ export function Footer() {
       </div>
 
       <div className="container-x flex flex-col items-center justify-between gap-3 py-6 text-[11px] tracking-wide text-cream/35 sm:flex-row">
-        <p>&copy; {year} {SITE.legalName}. All rights reserved.</p>
+        <p>&copy; {year} {SITE.legalName}. <T k="footer.rights" /></p>
         <p>{SITE.address}</p>
       </div>
     </footer>

@@ -3,6 +3,7 @@
 import { Dropdown } from "./ui/Dropdown";
 import { useCurrency } from "@/lib/currency-context";
 import { CURRENCIES } from "@/lib/format";
+import { useI18n } from "@/lib/i18n";
 
 const LABELS: Record<string, string> = {
   IDR: "Indonesian Rupiah",
@@ -13,9 +14,13 @@ const LABELS: Record<string, string> = {
 
 export function CurrencySwitcher() {
   const { currency, setCurrency, list } = useCurrency();
+  const { t } = useI18n();
 
   return (
-    <Dropdown label={<span className="tabular-nums">{currency}</span>}>
+    <Dropdown
+      title={t("nav.currency")}
+      label={<span className="text-[11px] font-semibold uppercase tracking-[0.14em] tabular-nums">{currency}</span>}
+    >
       {(close) => (
         <ul>
           {list.map((c) => (
@@ -25,8 +30,8 @@ export function CurrencySwitcher() {
                   setCurrency(c);
                   close();
                 }}
-                className={`flex w-full items-center justify-between gap-4 rounded-none px-3 py-2 text-left text-sm transition-colors hover:bg-sand-100 ${
-                  currency === c ? "text-gold" : "text-ink"
+                className={`flex w-full items-center justify-between gap-6 px-3.5 py-2.5 text-left text-sm transition-colors hover:bg-sand-100 ${
+                  currency === c ? "font-semibold" : ""
                 }`}
               >
                 <span>{LABELS[c]}</span>

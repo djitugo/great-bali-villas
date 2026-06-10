@@ -21,6 +21,7 @@ export interface Property {
   address: string;
   description: string;
   features: string[];
+  cover?: string;
   images: string[];
 }
 

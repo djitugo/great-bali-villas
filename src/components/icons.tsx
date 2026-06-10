@@ -88,3 +88,57 @@ export const SparkleIcon = ({ className }: P) => (
     <path d="M12 2c.4 4.6 2.4 6.6 7 7-4.6.4-6.6 2.4-7 7-.4-4.6-2.4-6.6-7-7 4.6-.4 6.6-2.4 7-7Z" />
   </svg>
 );
+
+export const TagIcon = ({ className }: P) => (
+  <svg {...base(className)}>
+    <path d="M12.6 3H6a3 3 0 0 0-3 3v6.6a2 2 0 0 0 .6 1.4l7.8 7.8a2 2 0 0 0 2.8 0l7.2-7.2a2 2 0 0 0 0-2.8L13.9 3.6a2 2 0 0 0-1.3-.6Z" />
+    <circle cx="8.5" cy="8.5" r="1.5" />
+  </svg>
+);
+
+export const KeyIcon = ({ className }: P) => (
+  <svg {...base(className)}>
+    <circle cx="8" cy="16" r="4.5" />
+    <path d="M11.2 12.8 20 4M16.5 7.5 19 10M14 10l1.8 1.8" />
+  </svg>
+);
+
+export const BellIcon = ({ className }: P) => (
+  <svg {...base(className)}>
+    <path d="M3 18h18M5 18a7 7 0 1 1 14 0M12 11v-1M12 8V7M10 4h4" />
+  </svg>
+);
+
+export const ChatIcon = ({ className }: P) => (
+  <svg {...base(className)}>
+    <path d="M21 12a8 8 0 0 1-8 8H4l2.3-2.7A8 8 0 1 1 21 12Z" />
+    <path d="M8.5 11h.01M12 11h.01M15.5 11h.01" strokeWidth="2.2" />
+  </svg>
+);
+
+export const ShieldIcon = ({ className }: P) => (
+  <svg {...base(className)}>
+    <path d="M12 3 5 6v5c0 4.5 3 8 7 10 4-2 7-5.5 7-10V6l-7-3Z" />
+    <path d="m9.2 12 2 2 3.6-4" />
+  </svg>
+);
+
+export const ListIcon = ({ className }: P) => (
+  <svg {...base(className)}>
+    <path d="M9 6h12M9 12h12M9 18h12M4 6h.01M4 12h.01M4 18h.01" strokeWidth="2" />
+  </svg>
+);
+
+export const HomeHeartIcon = ({ className }: P) => (
+  <svg {...base(className)}>
+    <path d="M3 11 12 4l9 7M5 9.5V20h14V9.5" />
+    <path d="M12 17s-3-2-3-4.2c0-1 .8-1.8 1.8-1.8.5 0 1 .2 1.2.7.2-.5.7-.7 1.2-.7 1 0 1.8.8 1.8 1.8C15 15 12 17 12 17Z" />
+  </svg>
+);
+
+export const CalendarIcon = ({ className }: P) => (
+  <svg {...base(className)}>
+    <rect x="3" y="5" width="18" height="16" rx="1.5" />
+    <path d="M3 10h18M8 3v4M16 3v4" />
+  </svg>
+);

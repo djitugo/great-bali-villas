@@ -1,6 +1,7 @@
 "use client";
 
 import { useCurrency } from "@/lib/currency-context";
+import { useI18n } from "@/lib/i18n";
 import { cn } from "@/lib/cn";
 
 export function Price({
@@ -15,11 +16,13 @@ export function Price({
   suffixClassName?: string;
 }) {
   const { format } = useCurrency();
-  if (!idr) return <span className={className}>On request</span>;
+  const { t } = useI18n();
+  if (!idr) return <span className={className}>{t("price.onRequest")}</span>;
+  const per = period === "month" ? t("price.month") : t("price.night");
   return (
-    <span className={cn("notranslate", className)}>
+    <span className={className}>
       {format(idr)}
-      <span className={cn("text-muted", suffixClassName)}> / {period || "night"}</span>
+      <span className={cn("text-muted", suffixClassName)}> / {per}</span>
     </span>
   );
 }

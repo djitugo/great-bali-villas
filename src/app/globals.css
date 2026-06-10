@@ -142,22 +142,6 @@ body {
   }
 }
 
-/* Hide Google Translate injected banner/tooltip; keep page flush */
-.goog-te-banner-frame,
-.skiptranslate iframe,
-#goog-gt-tt,
-.goog-te-balloon-frame {
-  display: none !important;
-}
-body {
-  top: 0 !important;
-}
-.goog-tooltip,
-.goog-text-highlight {
-  background: none !important;
-  box-shadow: none !important;
-}
-
 .gbv-marquee {
   animation: gbv-marquee 38s linear infinite;
 }

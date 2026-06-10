@@ -5,6 +5,7 @@ import type { Metadata } from "next";
 import { getPostBySlug, getPostSlugs, getAllPosts, formatDate } from "@/lib/blog";
 import { Reveal } from "@/components/Reveal";
 import { SITE } from "@/lib/site";
+import { T } from "@/lib/i18n";
 
 export function generateStaticParams() {
   return getPostSlugs().map((slug) => ({ slug }));
@@ -32,7 +33,7 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
       <div className="container-x pt-28 lg:pt-36">
         <Reveal>
           <Link href="/blog" className="text-sm text-muted underline-offset-4 hover:text-ink hover:underline">
-            ← Journal
+            &larr; <T k="blog.back" />
           </Link>
           <p className="mt-6 text-sm text-muted">{formatDate(post.date)}</p>
           <h1 className="mt-2 max-w-3xl font-display text-4xl leading-tight tracking-tight lg:text-6xl">
@@ -54,8 +55,8 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
         </div>
 
         <div className="mx-auto mt-14 max-w-2xl rounded-none bg-jungle p-8 text-center text-cream">
-          <p className="font-display text-2xl">Ready to experience it yourself?</p>
-          <p className="mt-2 text-cream/70">Browse {SITE.stats.villas} private villas across Bali.</p>
+          <p className="font-display text-2xl"><T k="blog.ready" /></p>
+          <p className="mt-2 text-cream/70"><T k="blog.readyBody" vars={{n: SITE.stats.villas}} /></p>
           <Link href="/properties" className="btn btn-light mt-5">
             Explore villas
           </Link>
@@ -64,7 +65,7 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
 
       <section className="bg-cream">
         <div className="container-x py-16">
-          <h2 className="mb-8 font-display text-3xl">More from the journal</h2>
+          <h2 className="mb-8 font-display text-3xl"><T k="blog.more" /></h2>
           <div className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-3">
             {more.map((p) => (
               <Link key={p.slug} href={`/blog/${p.slug}`} className="group block">

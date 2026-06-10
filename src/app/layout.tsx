@@ -26,7 +26,7 @@ const fraunces = Fraunces({
 export const metadata: Metadata = {
   metadataBase: new URL("https://greatbalivillas.com"),
   title: {
-    default: `${SITE.name} — Private Villa Rental in Bali`,
+    default: `${SITE.name} | Private Villa Rental in Bali`,
     template: `%s · ${SITE.name}`,
   },
   description: SITE.description,
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     type: "website",
-    title: `${SITE.name} — Private Villa Rental in Bali`,
+    title: `${SITE.name} | Private Villa Rental in Bali`,
     description: SITE.description,
     siteName: SITE.name,
   },

@@ -1,10 +1,12 @@
 "use client";
 
 import { useState } from "react";
+import { useI18n } from "@/lib/i18n";
 
 export function ContactForm() {
   const [status, setStatus] = useState<"idle" | "sending" | "done" | "error">("idle");
   const [form, setForm] = useState({ name: "", email: "", phone: "", message: "" });
+  const { t } = useI18n();
   const set = (k: keyof typeof form) => (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) =>
     setForm((f) => ({ ...f, [k]: e.target.value }));
 
@@ -26,30 +28,27 @@ export function ContactForm() {
 
   if (status === "done")
     return (
-      <div className="rounded-none border border-sand-200 bg-cream p-8 text-center">
-        <p className="font-display text-2xl">Message sent</p>
-        <p className="mt-2 text-muted">Thanks for reaching out — we&apos;ll be in touch shortly.</p>
+      <div className="border border-ink/10 bg-cream p-8 text-center">
+        <p className="font-display text-2xl">{t("contact.sent")}</p>
+        <p className="mt-2 text-muted">{t("contact.sentBody")}</p>
       </div>
     );
 
-  const input = "w-full rounded-none border border-sand-200 bg-cream px-4 py-3 text-sm outline-none transition-colors focus:border-ink";
+  const input =
+    "w-full border border-ink/15 bg-cream px-4 py-3 text-sm outline-none transition-colors focus:border-ink";
 
   return (
     <form onSubmit={submit} className="space-y-3">
-      <input required value={form.name} onChange={set("name")} placeholder="Full name" className={input} />
+      <input required value={form.name} onChange={set("name")} placeholder={t("inq.name")} className={input} />
       <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
-        <input required type="email" value={form.email} onChange={set("email")} placeholder="Email" className={input} />
-        <input value={form.phone} onChange={set("phone")} placeholder="Phone / WhatsApp" className={input} />
+        <input required type="email" value={form.email} onChange={set("email")} placeholder={t("inq.email")} className={input} />
+        <input value={form.phone} onChange={set("phone")} placeholder={t("inq.phone")} className={input} />
       </div>
-      <textarea required rows={5} value={form.message} onChange={set("message")} placeholder="How can we help?" className={`${input} resize-none`} />
-      <button
-        type="submit"
-        disabled={status === "sending"}
-        className="btn btn-dark w-full disabled:opacity-60"
-      >
-        {status === "sending" ? "Sending…" : "Send message"}
+      <textarea required rows={5} value={form.message} onChange={set("message")} placeholder={t("contact.message")} className={`${input} resize-none`} />
+      <button type="submit" disabled={status === "sending"} className="btn btn-dark w-full disabled:opacity-60">
+        {status === "sending" ? t("inq.sending") : t("contact.send")}
       </button>
-      {status === "error" && <p className="text-center text-sm text-clay">Something went wrong. Please try WhatsApp.</p>}
+      {status === "error" && <p className="text-center text-sm text-clay">{t("inq.error")}</p>}
     </form>
   );
 }

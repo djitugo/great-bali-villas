@@ -9,6 +9,7 @@ import { PropertyCard } from "@/components/PropertyCard";
 import { Reveal } from "@/components/Reveal";
 import { BedIcon, BathIcon, PinIcon, CheckIcon, ArrowIcon } from "@/components/icons";
 import { SITE } from "@/lib/site";
+import { T } from "@/lib/i18n";
 
 export function generateStaticParams() {
   return getAllSlugs().map((slug) => ({ slug }));
@@ -32,11 +33,15 @@ export default async function PropertyPage({ params }: { params: Promise<{ slug:
   const related = getRelated(p, 3);
 
   const facts = [
-    p.bedrooms != null && { icon: BedIcon, label: "Bedrooms", value: p.bedrooms },
-    p.bathrooms != null && { icon: BathIcon, label: "Bathrooms", value: p.bathrooms },
-    { icon: PinIcon, label: "Area", value: p.area },
-    { icon: CheckIcon, label: "Type", value: p.type },
-  ].filter(Boolean) as { icon: typeof BedIcon; label: string; value: string | number }[];
+    p.bedrooms != null && { icon: BedIcon, label: "detail.bedrooms" as const, value: p.bedrooms },
+    p.bathrooms != null && { icon: BathIcon, label: "detail.bathrooms" as const, value: p.bathrooms },
+    { icon: PinIcon, label: "detail.area" as const, value: p.area },
+    { icon: CheckIcon, label: "detail.type" as const, value: p.type },
+  ].filter(Boolean) as {
+    icon: typeof BedIcon;
+    label: "detail.bedrooms" | "detail.bathrooms" | "detail.area" | "detail.type";
+    value: string | number;
+  }[];
 
   const descParas = p.description ? p.description.split("\n\n").filter(Boolean) : [];
 
@@ -46,9 +51,9 @@ export default async function PropertyPage({ params }: { params: Promise<{ slug:
         {/* breadcrumb + title */}
         <Reveal>
           <nav className="mb-5 flex flex-wrap items-center gap-2 text-sm text-muted">
-            <Link href="/" className="hover:text-ink">Home</Link>
+            <Link href="/" className="hover:text-ink"><T k="detail.home" /></Link>
             <span>/</span>
-            <Link href="/properties" className="hover:text-ink">Villas</Link>
+            <Link href="/properties" className="hover:text-ink"><T k="detail.villas" /></Link>
             <span>/</span>
             <Link href={`/properties?area=${encodeURIComponent(p.area)}`} className="hover:text-ink">{p.area}</Link>
           </nav>
@@ -60,7 +65,7 @@ export default async function PropertyPage({ params }: { params: Promise<{ slug:
               </p>
             </div>
             <div className="shrink-0 lg:text-right">
-              <p className="text-sm text-muted">from</p>
+              <p className="text-sm text-muted"><T k="common.from" /></p>
               <Price idr={p.price} period={p.period} className="font-display text-3xl text-ink" suffixClassName="text-sm" />
             </div>
           </div>
@@ -80,7 +85,7 @@ export default async function PropertyPage({ params }: { params: Promise<{ slug:
                 <div key={f.label}>
                   <f.icon className="h-6 w-6 text-muted" />
                   <p className="mt-3 font-display text-2xl text-ink">{f.value}</p>
-                  <p className="text-sm text-muted">{f.label}</p>
+                  <p className="text-sm text-muted"><T k={f.label} /></p>
                 </div>
               ))}
             </div>
@@ -88,7 +93,7 @@ export default async function PropertyPage({ params }: { params: Promise<{ slug:
             {/* description */}
             {descParas.length > 0 && (
               <div className="border-b border-sand-200 py-10">
-                <h2 className="mb-5 font-display text-3xl">About this villa</h2>
+                <h2 className="mb-5 font-display text-3xl"><T k="detail.about" /></h2>
                 <div className="space-y-4 leading-relaxed text-ink-soft">
                   {descParas.map((para, i) => (
                     <p key={i}>{para}</p>
@@ -100,7 +105,7 @@ export default async function PropertyPage({ params }: { params: Promise<{ slug:
             {/* features */}
             {p.features.length > 0 && (
               <div className="py-10">
-                <h2 className="mb-6 font-display text-3xl">Features &amp; amenities</h2>
+                <h2 className="mb-6 font-display text-3xl"><T k="detail.features" /></h2>
                 <ul className="grid grid-cols-2 gap-x-6 gap-y-3 sm:grid-cols-3">
                   {p.features.map((f) => (
                     <li key={f} className="flex items-center gap-2.5 text-sm">
@@ -119,14 +124,14 @@ export default async function PropertyPage({ params }: { params: Promise<{ slug:
               <div className="rounded-none border border-sand-200 bg-cream p-6 shadow-xl shadow-ink/5">
                 <div className="mb-5 flex items-baseline justify-between">
                   <div>
-                    <p className="text-sm text-muted">from</p>
+                    <p className="text-sm text-muted"><T k="common.from" /></p>
                     <Price idr={p.price} period={p.period} className="font-display text-2xl text-ink" suffixClassName="text-xs" />
                   </div>
                   <span className="rounded-none bg-sand px-3 py-1 text-xs font-medium">{p.type}</span>
                 </div>
                 <InquiryForm propertyName={p.name} propertySlug={p.slug} />
                 <p className="mt-4 text-center text-xs text-muted">
-                  Or call {SITE.phoneOffice} — replies within hours.
+                  <T k="detail.call" vars={{phone: SITE.phoneOffice}} />
                 </p>
               </div>
             </div>
@@ -139,9 +144,9 @@ export default async function PropertyPage({ params }: { params: Promise<{ slug:
         <section className="bg-cream">
           <div className="container-x py-16 lg:py-24">
             <div className="mb-10 flex items-end justify-between">
-              <h2 className="font-display text-3xl tracking-tight lg:text-4xl">You may also like</h2>
+              <h2 className="font-display text-3xl tracking-tight lg:text-4xl"><T k="detail.also" /></h2>
               <Link href="/properties" className="group inline-flex items-center gap-2 text-sm font-medium">
-                All villas <ArrowIcon className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                <T k="detail.all" /> <ArrowIcon className="h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Link>
             </div>
             <div className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">

@@ -4,11 +4,12 @@ import { queryProperties, getFacets } from "@/lib/properties";
 import { PropertyCard } from "@/components/PropertyCard";
 import { Filters } from "@/components/Filters";
 import { Reveal } from "@/components/Reveal";
+import { T } from "@/lib/i18n";
 import type { PropertyQuery } from "@/lib/types";
 
 export const metadata: Metadata = {
   title: "All Villas",
-  description: "Browse handpicked private villas across Bali — filter by destination, type, bedrooms and price.",
+  description: "Browse handpicked private villas across Bali. Filter by destination, type, bedrooms and price.",
 };
 
 type SP = Promise<{ [key: string]: string | string[] | undefined }>;
@@ -31,12 +32,6 @@ export default async function PropertiesPage({ searchParams }: { searchParams: S
 
   const { items, total, page, pages } = queryProperties(q);
 
-  const title = q.area
-    ? `Villas in ${q.area}`
-    : q.type
-    ? `${q.type}s`
-    : "Every villa, handpicked";
-
   const buildHref = (p: number) => {
     const params = new URLSearchParams();
     Object.entries(sp).forEach(([k, v]) => {
@@ -52,10 +47,18 @@ export default async function PropertiesPage({ searchParams }: { searchParams: S
       <section className="bg-sand pt-32 lg:pt-40">
         <div className="container-x pb-8">
           <Reveal>
-            <p className="mb-3 eyebrow text-muted">
-              {total} villas across Bali
+            <p className="eyebrow mb-4 text-muted">
+              <T k="list.eyebrow" vars={{ n: total }} />
             </p>
-            <h1 className="max-w-3xl font-display text-5xl tracking-tight lg:text-6xl">{title}</h1>
+            <h1 className="max-w-3xl font-display text-5xl tracking-tight lg:text-6xl">
+              {q.area ? (
+                <T k="list.titleArea" vars={{ x: q.area }} />
+              ) : q.type ? (
+                q.type
+              ) : (
+                <T k="list.title" />
+              )}
+            </h1>
           </Reveal>
         </div>
       </section>
@@ -66,9 +69,9 @@ export default async function PropertiesPage({ searchParams }: { searchParams: S
         <div className="container-x py-12 lg:py-16">
           {items.length === 0 ? (
             <div className="py-24 text-center">
-              <p className="font-display text-3xl">No villas match those filters.</p>
+              <p className="font-display text-3xl"><T k="list.empty" /></p>
               <Link href="/properties" className="mt-4 inline-block text-sm font-medium underline underline-offset-4">
-                Clear filters
+                <T k="list.clear" />
               </Link>
             </div>
           ) : (
@@ -82,21 +85,21 @@ export default async function PropertiesPage({ searchParams }: { searchParams: S
           )}
 
           {pages > 1 && (
-            <nav className="mt-16 flex items-center justify-center gap-2">
+            <nav className="mt-16 flex flex-wrap items-center justify-center gap-2">
               {page > 1 && (
-                <Link href={buildHref(page - 1)} className="rounded-none border border-sand-300 px-5 py-2.5 text-sm hover:bg-cream" scroll>
-                  ← Prev
+                <Link href={buildHref(page - 1)} className="border border-ink/20 px-5 py-2.5 text-sm hover:bg-cream">
+                  &larr; <T k="list.prev" />
                 </Link>
               )}
               {Array.from({ length: pages }, (_, i) => i + 1)
                 .filter((n) => n === 1 || n === pages || Math.abs(n - page) <= 1)
                 .map((n, idx, arr) => (
                   <span key={n} className="flex items-center gap-2">
-                    {idx > 0 && arr[idx - 1] !== n - 1 && <span className="text-muted">…</span>}
+                    {idx > 0 && arr[idx - 1] !== n - 1 && <span className="text-muted">&hellip;</span>}
                     <Link
                       href={buildHref(n)}
-                      className={`flex h-10 min-w-10 items-center justify-center rounded-none px-3 text-sm transition-colors ${
-                        n === page ? "bg-ink text-cream" : "border border-sand-300 hover:bg-cream"
+                      className={`flex h-10 min-w-10 items-center justify-center px-3 text-sm transition-colors ${
+                        n === page ? "bg-ink text-cream" : "border border-ink/20 hover:bg-cream"
                       }`}
                     >
                       {n}
@@ -104,8 +107,8 @@ export default async function PropertiesPage({ searchParams }: { searchParams: S
                   </span>
                 ))}
               {page < pages && (
-                <Link href={buildHref(page + 1)} className="rounded-none border border-sand-300 px-5 py-2.5 text-sm hover:bg-cream">
-                  Next →
+                <Link href={buildHref(page + 1)} className="border border-ink/20 px-5 py-2.5 text-sm hover:bg-cream">
+                  <T k="list.next" /> &rarr;
                 </Link>
               )}
             </nav>

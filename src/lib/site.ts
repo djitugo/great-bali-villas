@@ -4,7 +4,7 @@ export const SITE = {
   tagline: "Your private Bali, beautifully managed.",
   since: 2014,
   description:
-    "Handpicked private villas across Bali — from romantic one-bedroom hideaways to beachfront estates. Boutique villa rental & management with hotel-grade service since 2014.",
+    "Handpicked private villas across Bali, from romantic one-bedroom hideaways to beachfront estates. Boutique villa rental and management with hotel-grade service since 2014.",
   email: "info@greatbalivillas.com",
   phoneOffice: "+62 361 3352158",
   phoneOfficeHref: "tel:+623613352158",
@@ -26,12 +26,16 @@ export const SITE = {
   },
 };
 
-export const NAV = [
-  { label: "Home", href: "/" },
-  { label: "About", href: "/about" },
-  { label: "Properties", href: "/properties", dropdown: true },
-  { label: "Blog", href: "/blog" },
-  { label: "Contact", href: "/contact" },
+export const NAV: {
+  key: "home" | "about" | "properties" | "blog" | "contact";
+  href: string;
+  dropdown?: boolean;
+}[] = [
+  { key: "home", href: "/" },
+  { key: "about", href: "/about" },
+  { key: "properties", href: "/properties", dropdown: true },
+  { key: "blog", href: "/blog" },
+  { key: "contact", href: "/contact" },
 ];
 
 export const HERO_AREAS = ["Seminyak", "Ubud", "Canggu", "Jimbaran", "Uluwatu", "Nusa Dua"];

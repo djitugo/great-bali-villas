@@ -4,7 +4,8 @@ import type { Metadata } from "next";
 import { getFeatured } from "@/lib/properties";
 import { Reveal } from "@/components/Reveal";
 import { SITE } from "@/lib/site";
-import { ArrowIcon } from "@/components/icons";
+import { T } from "@/lib/i18n";
+import { ArrowIcon, KeyIcon, BellIcon, ShieldIcon, ChatIcon } from "@/components/icons";
 
 export const metadata: Metadata = {
   title: "About",
@@ -13,11 +14,11 @@ export const metadata: Metadata = {
 };
 
 const VALUES = [
-  ["Owned, not aggregated", "We don't resell listings. We manage these villas ourselves — staffing, cleaning, maintenance and guest care."],
-  ["Hotel service, villa freedom", "Daily housekeeping, airport pick-up, private chef and concierge — the comfort of a resort in your own home."],
-  ["Honest by default", "Real photos, transparent pricing, and a 100% best-price guarantee when you book direct."],
-  ["A local team", "An English-speaking crew on the ground in Bali, reachable on WhatsApp and quick to reply."],
-];
+  { icon: KeyIcon, t: "about.v1t", d: "about.v1d" },
+  { icon: BellIcon, t: "about.v2t", d: "about.v2d" },
+  { icon: ShieldIcon, t: "about.v3t", d: "about.v3d" },
+  { icon: ChatIcon, t: "about.v4t", d: "about.v4d" },
+] as const;
 
 export default function AboutPage() {
   const showcase = getFeatured(2);
@@ -27,16 +28,14 @@ export default function AboutPage() {
       <section className="bg-sand pt-32 lg:pt-44">
         <div className="container-x pb-16 lg:pb-24">
           <Reveal>
-            <p className="mb-4 eyebrow text-muted">Since {SITE.since}</p>
+            <p className="eyebrow mb-4 text-muted"><T k="about.eyebrow" vars={{ year: SITE.since }} /></p>
             <h1 className="max-w-4xl font-display text-5xl leading-[1.02] tracking-tight lg:text-7xl">
-              A Bali villa company run by people who live here.
+              <T k="about.title" />
             </h1>
           </Reveal>
           <Reveal delay={0.12}>
             <p className="mt-8 max-w-2xl text-lg text-muted">
-              {SITE.legalName} began in {SITE.since} with a simple idea: give villa guests the
-              reliability of a hotel without giving up the privacy of their own home. Today our team
-              manages {SITE.stats.villas} private villas, resorts and bungalows across Bali and Lombok.
+              <T k="about.body" vars={{ legal: SITE.legalName, year: SITE.since, n: SITE.stats.villas }} />
             </p>
           </Reveal>
         </div>
@@ -46,8 +45,8 @@ export default function AboutPage() {
         <div className="container-x grid gap-3 py-3 sm:grid-cols-2">
           {showcase.map((p, i) => (
             <Reveal key={p.slug} delay={i * 0.1}>
-              <div className="relative aspect-[4/3] overflow-hidden rounded-none">
-                <Image src={p.images[0]} alt={p.name} fill sizes="50vw" className="object-cover" />
+              <div className="relative aspect-[4/3] overflow-hidden">
+                <Image src={p.images[0]} alt={p.name} fill sizes="50vw" quality={85} className="object-cover" />
               </div>
             </Reveal>
           ))}
@@ -57,14 +56,15 @@ export default function AboutPage() {
       <section className="bg-cream">
         <div className="container-x grid gap-12 py-20 lg:grid-cols-12 lg:py-28">
           <Reveal className="lg:col-span-5">
-            <h2 className="font-display text-4xl tracking-tight lg:text-5xl">What we believe</h2>
+            <h2 className="font-display text-4xl tracking-tight lg:text-5xl"><T k="about.believe" /></h2>
           </Reveal>
-          <div className="grid gap-px overflow-hidden rounded-none bg-sand-200 sm:grid-cols-2 lg:col-span-7">
-            {VALUES.map(([t, d], i) => (
-              <Reveal key={t} delay={i * 0.07}>
+          <div className="grid gap-px border border-ink/10 bg-ink/10 sm:grid-cols-2 lg:col-span-7">
+            {VALUES.map((v, i) => (
+              <Reveal key={v.t} delay={i * 0.07}>
                 <div className="h-full bg-cream p-7">
-                  <h3 className="text-lg font-medium">{t}</h3>
-                  <p className="mt-2 text-sm text-muted">{d}</p>
+                  <v.icon className="h-7 w-7 text-ink" />
+                  <h3 className="mt-5 text-lg font-medium"><T k={v.t} /></h3>
+                  <p className="mt-2 text-sm text-muted"><T k={v.d} /></p>
                 </div>
               </Reveal>
             ))}
@@ -72,16 +72,16 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="bg-jungle text-cream">
+      <section className="bg-ink text-cream">
         <div className="container-x grid gap-10 py-20 lg:grid-cols-3 lg:py-24">
           {[
-            [SITE.stats.villas, "Villas under management"],
-            [`${SITE.stats.years}+`, "Years on the island"],
-            ["100%", "Best-price guarantee"],
-          ].map(([n, l]) => (
-            <Reveal key={l}>
+            [SITE.stats.villas, "about.s1"],
+            [`${SITE.stats.years}+`, "about.s2"],
+            ["100%", "about.s3"],
+          ].map(([n, k]) => (
+            <Reveal key={k}>
               <p className="font-display text-6xl">{n}</p>
-              <p className="mt-2 text-cream/60">{l}</p>
+              <p className="mt-2 text-cream/60"><T k={k as "about.s1"} /></p>
             </Reveal>
           ))}
         </div>
@@ -90,14 +90,14 @@ export default function AboutPage() {
       <section className="bg-cream">
         <div className="container-x flex flex-col items-start justify-between gap-8 py-20 lg:flex-row lg:items-center lg:py-28">
           <h2 className="max-w-xl font-display text-4xl tracking-tight lg:text-5xl">
-            Own a villa? We&apos;ll run it like our own.
+            <T k="about.own" />
           </h2>
           <div className="flex gap-3">
             <Link href="/contact" className="btn btn-dark">
-              Talk to us <ArrowIcon className="h-4 w-4" />
+              <T k="about.talk" /> <ArrowIcon className="h-4 w-4" />
             </Link>
             <Link href="/properties" className="btn btn-outline-dark">
-              Browse villas
+              <T k="about.browse" />
             </Link>
           </div>
         </div>
