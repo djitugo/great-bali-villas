@@ -8,7 +8,7 @@ const dir = path.join(__dirname, "data", "agent-batches");
 fs.mkdirSync(dir, { recursive: true });
 fs.mkdirSync(path.join(__dirname, "data", "covers"), { recursive: true });
 
-const N = 7;
+const N = 8;
 const per = Math.ceil(map.length / N);
 for (let i = 0; i < N; i++) {
   const chunk = map.slice(i * per, (i + 1) * per).map((s) => ({

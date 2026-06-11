@@ -130,6 +130,17 @@ export function Navbar({
                               {t("nav.allVillas", {n: total})}
                             </Link>
                           </div>
+                          <div className="col-span-2 flex flex-wrap items-center gap-x-7 gap-y-2 border-t border-ink/10 bg-sand px-6 py-4">
+                            <Link href="/properties" className="text-sm text-ink transition-opacity hover:opacity-60">
+                              {t("nav.holiday")}
+                            </Link>
+                            <Link href="/longterm-villa" className="text-sm text-ink transition-opacity hover:opacity-60">
+                              {t("nav.longterm")}
+                            </Link>
+                            <Link href="/villa-management" className="text-sm text-ink transition-opacity hover:opacity-60">
+                              {t("nav.management")}
+                            </Link>
+                          </div>
                         </div>
                       </motion.div>
                     )}
@@ -160,7 +171,7 @@ export function Navbar({
               )}
             >
               <LanguageSwitcher />
-              <span className="h-4 w-px bg-current opacity-20" />
+              <span className="h-4 w-px bg-current opacity-10" />
               <CurrencySwitcher />
             </div>
             <a

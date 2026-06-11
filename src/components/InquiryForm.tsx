@@ -70,8 +70,8 @@ export function InquiryForm({ propertyName, propertySlug }: { propertyName: stri
       </div>
 
       <div className="grid grid-cols-2 gap-3">
-        <input required value={form.checkin} onChange={set("checkin")} type="date" aria-label={t("inq.checkin")} className={inputCls} />
-        <input required value={form.checkout} onChange={set("checkout")} type="date" aria-label={t("inq.checkout")} className={inputCls} />
+        <input required value={form.checkin} onChange={set("checkin")} onClick={(e) => e.currentTarget.showPicker?.()} type="date" aria-label={t("inq.checkin")} className={inputCls} />
+        <input required value={form.checkout} onChange={set("checkout")} onClick={(e) => e.currentTarget.showPicker?.()} type="date" aria-label={t("inq.checkout")} className={inputCls} />
       </div>
       <input required value={form.name} onChange={set("name")} placeholder={t("inq.name")} className={inputCls} />
       <div className="grid grid-cols-2 gap-3">
@@ -90,4 +90,4 @@ export function InquiryForm({ propertyName, propertySlug }: { propertyName: stri
 }
 
 const inputCls =
-  "w-full border border-ink/15 bg-sand px-4 py-3 text-sm outline-none transition-colors focus:border-ink";
+  "w-full border border-ink/10 bg-sand px-4 py-3 text-sm outline-none transition-colors focus:border-ink";

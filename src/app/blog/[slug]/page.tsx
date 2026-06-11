@@ -57,9 +57,7 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
         <div className="mx-auto mt-14 max-w-2xl rounded-none bg-jungle p-8 text-center text-cream">
           <p className="font-display text-2xl"><T k="blog.ready" /></p>
           <p className="mt-2 text-cream/70"><T k="blog.readyBody" vars={{n: SITE.stats.villas}} /></p>
-          <Link href="/properties" className="btn btn-light mt-5">
-            Explore villas
-          </Link>
+          <Link href="/properties" className="btn btn-light mt-5"><T k="blog.explore" /></Link>
         </div>
       </div>
 

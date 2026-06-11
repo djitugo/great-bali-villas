@@ -1,15 +1,21 @@
 "use client";
 
+import { useEffect } from "react";
 import { usePathname } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
 
 /**
  * Per-navigation transition, distinct from the first-load loader:
- * three ink columns wipe upward in a stagger to reveal the new page,
- * while the content rises in beneath them.
+ * three ink columns wipe upward in a stagger to reveal the new page.
+ * Also resets scroll to the top on every route change (all viewports).
  */
 export function PageTransition({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
+
+  useEffect(() => {
+    if (window.__lenis) window.__lenis.scrollTo(0, { immediate: true });
+    window.scrollTo(0, 0);
+  }, [pathname]);
 
   return (
     <AnimatePresence mode="wait">

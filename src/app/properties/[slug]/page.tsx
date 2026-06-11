@@ -64,10 +64,7 @@ export default async function PropertyPage({ params }: { params: Promise<{ slug:
                 <PinIcon className="h-4 w-4" /> {p.address || `${p.area}, Bali`}
               </p>
             </div>
-            <div className="shrink-0 lg:text-right">
-              <p className="text-sm text-muted"><T k="common.from" /></p>
-              <Price idr={p.price} period={p.period} className="font-display text-3xl text-ink" suffixClassName="text-sm" />
-            </div>
+            <div className="shrink-0 lg:text-right"><span className="mr-2 text-sm text-muted"><T k="common.from" /></span><Price idr={p.price} period={p.period} className="font-display text-3xl text-ink" suffixClassName="text-sm" /></div>
           </div>
         </Reveal>
 
@@ -80,7 +77,7 @@ export default async function PropertyPage({ params }: { params: Promise<{ slug:
         <div className="grid gap-12 py-14 lg:grid-cols-12 lg:py-20">
           <div className="lg:col-span-7">
             {/* key facts */}
-            <div className="grid grid-cols-2 gap-4 border-b border-sand-200 pb-10 sm:grid-cols-4">
+            <div className="grid grid-cols-2 gap-4 border-b border-ink/10 pb-10 sm:grid-cols-4">
               {facts.map((f) => (
                 <div key={f.label}>
                   <f.icon className="h-6 w-6 text-muted" />
@@ -92,7 +89,7 @@ export default async function PropertyPage({ params }: { params: Promise<{ slug:
 
             {/* description */}
             {descParas.length > 0 && (
-              <div className="border-b border-sand-200 py-10">
+              <div className="border-b border-ink/10 py-10">
                 <h2 className="mb-5 font-display text-3xl"><T k="detail.about" /></h2>
                 <div className="space-y-4 leading-relaxed text-ink-soft">
                   {descParas.map((para, i) => (
@@ -123,10 +120,7 @@ export default async function PropertyPage({ params }: { params: Promise<{ slug:
             <div className="lg:sticky lg:top-28">
               <div className="rounded-none border border-sand-200 bg-cream p-6 shadow-xl shadow-ink/5">
                 <div className="mb-5 flex items-baseline justify-between">
-                  <div>
-                    <p className="text-sm text-muted"><T k="common.from" /></p>
-                    <Price idr={p.price} period={p.period} className="font-display text-2xl text-ink" suffixClassName="text-xs" />
-                  </div>
+                  <div><span className="mr-2 text-sm text-muted"><T k="common.from" /></span><Price idr={p.price} period={p.period} className="font-display text-2xl text-ink" suffixClassName="text-xs" /></div>
                   <span className="rounded-none bg-sand px-3 py-1 text-xs font-medium">{p.type}</span>
                 </div>
                 <InquiryForm propertyName={p.name} propertySlug={p.slug} />

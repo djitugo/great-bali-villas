@@ -3,19 +3,23 @@
 import { useEffect } from "react";
 import Lenis from "lenis";
 
-/** Lenis smooth scroll — desktop only (>=1024px and a fine pointer). */
+declare global {
+  interface Window {
+    __lenis?: Lenis;
+  }
+}
+
+/** Lenis smooth scroll, desktop only (>=1024px and a fine pointer). */
 export function SmoothScroll() {
   useEffect(() => {
     const mq = window.matchMedia("(min-width: 1024px) and (pointer: fine)");
     if (!mq.matches) return;
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
-    const lenis = new Lenis({
-      duration: 1.1,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-      wheelMultiplier: 1,
-      touchMultiplier: 1.5,
-    });
+    // Default lerp-based smoothing: interruptible and stall-free
+    // (custom duration/easing can fight native scroll and feel stuck).
+    const lenis = new Lenis({ lerp: 0.12, wheelMultiplier: 1 });
+    window.__lenis = lenis;
 
     let raf = 0;
     function loop(time: number) {
@@ -24,7 +28,6 @@ export function SmoothScroll() {
     }
     raf = requestAnimationFrame(loop);
 
-    // anchor links -> smooth scroll via lenis
     const onClick = (e: MouseEvent) => {
       const a = (e.target as HTMLElement)?.closest?.('a[href^="#"]') as HTMLAnchorElement | null;
       if (!a) return;
@@ -42,6 +45,7 @@ export function SmoothScroll() {
       cancelAnimationFrame(raf);
       document.removeEventListener("click", onClick);
       lenis.destroy();
+      delete window.__lenis;
     };
   }, []);
 

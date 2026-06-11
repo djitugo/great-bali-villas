@@ -100,6 +100,7 @@ export function Footer() {
             <li><Link href="/about" className="transition-colors hover:text-cream"><T k="footer.about" /></Link></li>
             <li><Link href="/properties" className="transition-colors hover:text-cream"><T k="footer.all" /></Link></li>
             <li><Link href="/longterm-villa" className="transition-colors hover:text-cream"><T k="footer.longterm" /></Link></li>
+            <li><Link href="/villa-management" className="transition-colors hover:text-cream"><T k="nav.management" /></Link></li>
             <li><Link href="/blog" className="transition-colors hover:text-cream"><T k="footer.journal" /></Link></li>
             <li><Link href="/contact" className="transition-colors hover:text-cream"><T k="footer.contact" /></Link></li>
           </ul>

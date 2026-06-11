@@ -56,7 +56,7 @@ export default function HomePage() {
       {/* ============ HERO ============ */}
       <section className="relative flex min-h-[100svh] flex-col justify-end overflow-hidden">
         <Image src={hero.images[0]} alt={hero.name} fill priority sizes="100vw" quality={85} className="object-cover" />
-        <div className="absolute inset-0 bg-gradient-to-b from-ink/45 via-ink/10 to-ink/80" />
+        <div className="absolute inset-0 bg-gradient-to-b from-ink/60 via-ink/35 to-ink/85" />
 
         <div className="container-x relative z-10 w-full pb-10 pt-36 text-cream">
           <Reveal>
@@ -91,7 +91,7 @@ export default function HomePage() {
 
           {/* stat bar */}
           <Reveal delay={0.3}>
-            <dl className="mt-12 grid grid-cols-2 gap-px border border-cream/20 bg-cream/20 sm:grid-cols-4">
+            <dl className="mt-12 grid grid-cols-2 gap-px border border-cream/10 bg-cream/10 sm:grid-cols-4">
               {[
                 [`${total}+`, "hero.stat1"],
                 [SITE.stats.areas, "hero.stat2"],
@@ -136,7 +136,7 @@ export default function HomePage() {
           </Reveal>
           <div className="flex flex-col justify-end lg:col-span-5 lg:pl-12">
             <Reveal delay={0.12}>
-              <p className="border-t border-ink/15 pt-6 text-sm leading-relaxed text-muted">
+              <p className="border-t border-ink/10 pt-6 text-sm leading-relaxed text-muted">
                 <T k="intro.body" vars={{ legal: SITE.legalName, year: SITE.since }} />
               </p>
               <Link href="/about" className="eyebrow mt-6 inline-block border-b border-ink pb-1 transition-opacity hover:opacity-60">
@@ -185,7 +185,7 @@ export default function HomePage() {
                   {lead.name}
                 </h3>
                 <p className="mt-4 line-clamp-3 text-sm leading-relaxed text-muted">{lead.description}</p>
-                <p className="mt-5 border-t border-ink/15 pt-4 text-sm">
+                <p className="mt-5 border-t border-ink/10 pt-4 text-sm">
                   <span className="text-muted"><T k="common.from" /> </span>
                   <Price idr={lead.price} period={lead.period} className="font-medium text-ink" suffixClassName="text-xs" />
                 </p>
@@ -253,12 +253,12 @@ export default function HomePage() {
             <p className="eyebrow mb-4 text-muted"><T k="types.eyebrow" /></p>
             <h2 className="mb-12 font-display text-4xl tracking-tight lg:text-6xl"><T k="types.title" /></h2>
           </Reveal>
-          <div className="border-t border-ink/15">
+          <div className="border-t border-ink/10">
             {types.map((t, i) => (
               <Reveal key={t.value} delay={i * 0.04}>
                 <Link
                   href={`/properties?type=${encodeURIComponent(t.value)}`}
-                  className="group flex items-baseline justify-between border-b border-ink/15 py-6 transition-all hover:px-3 lg:py-8"
+                  className="group flex items-baseline justify-between border-b border-ink/10 py-6 transition-all hover:px-3 lg:py-8"
                 >
                   <span className="flex items-baseline gap-6">
                     <span className="eyebrow text-muted">0{i + 1}</span>
@@ -288,7 +288,7 @@ export default function HomePage() {
               <T k="why.t3" />
             </h2>
           </Reveal>
-          <div className="grid gap-px border border-cream/15 bg-cream/15 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="grid gap-px border border-cream/10 bg-cream/10 sm:grid-cols-2 lg:grid-cols-4">
             {WHY.map((item, i) => (
               <Reveal key={item.t} delay={i * 0.07}>
                 <div className="h-full bg-ink p-8 lg:p-9">
@@ -318,11 +318,11 @@ export default function HomePage() {
               <ArrowIcon className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />
             </a>
           </Reveal>
-          <div className="border-t border-ink/15 lg:col-span-8 lg:border-t-0 lg:pl-12">
+          <div className="border-t border-ink/10 lg:col-span-8 lg:border-t-0 lg:pl-12">
             {HOW.map((item, i) => (
               <Reveal key={item.t} delay={i * 0.07}>
-                <div className="flex gap-7 border-b border-ink/15 py-7 lg:py-8">
-                  <span className="flex h-12 w-12 shrink-0 items-center justify-center border border-ink/15">
+                <div className="flex gap-7 border-b border-ink/10 py-7 lg:py-8">
+                  <span className="flex h-12 w-12 shrink-0 items-center justify-center border border-ink/10">
                     <item.icon className="h-5 w-5" />
                   </span>
                   <div>

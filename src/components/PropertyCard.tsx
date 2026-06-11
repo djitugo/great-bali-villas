@@ -43,7 +43,7 @@ export function PropertyCard({
         )}
       </div>
 
-      <div className="mt-4 flex items-start justify-between gap-4 border-t border-ink/15 pt-3.5">
+      <div className="mt-4 flex items-start justify-between gap-4 border-t border-ink/10 pt-3.5">
         <div className="min-w-0">
           <h3 className="truncate font-display text-lg leading-snug text-ink transition-opacity group-hover:opacity-60">
             {p.name}
@@ -52,10 +52,7 @@ export function PropertyCard({
             {meta}
           </p>
         </div>
-        <div className="shrink-0 text-right">
-          <p className="text-[10px] uppercase tracking-[0.14em] text-muted"><T k="common.from" /></p>
-          <Price idr={p.price} period={p.period} className="text-sm font-medium text-ink" suffixClassName="text-[10px]" />
-        </div>
+        <div className="shrink-0 text-right text-sm"><span className="text-[10px] uppercase tracking-[0.14em] text-muted"><T k="common.from" /> </span><Price idr={p.price} period={p.period} className="font-medium text-ink" suffixClassName="text-[10px]" /></div>
       </div>
     </Link>
   );

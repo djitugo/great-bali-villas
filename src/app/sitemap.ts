@@ -5,7 +5,7 @@ import { getPostSlugs } from "@/lib/blog";
 const BASE = "https://greatbalivillas.com";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const staticRoutes = ["", "/properties", "/longterm-villa", "/about", "/blog", "/contact"].map((p) => ({
+  const staticRoutes = ["", "/properties", "/longterm-villa", "/villa-management", "/about", "/blog", "/contact"].map((p) => ({
     url: `${BASE}${p}`,
     changeFrequency: "weekly" as const,
     priority: p === "" ? 1 : 0.8,

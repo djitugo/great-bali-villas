@@ -9,12 +9,8 @@ export default function NotFound() {
         <h1 className="mt-4 font-display text-3xl tracking-tight"><T k="nf.title" /></h1>
         <p className="mt-3 text-muted"><T k="nf.sub" /></p>
         <div className="mt-8 flex justify-center gap-3">
-          <Link href="/" className="btn btn-dark">
-            Back home
-          </Link>
-          <Link href="/properties" className="btn btn-outline-dark">
-            Browse villas
-          </Link>
+          <Link href="/" className="btn btn-dark"><T k="nf.home" /></Link>
+          <Link href="/properties" className="btn btn-outline-dark"><T k="nf.browse" /></Link>
         </div>
       </div>
     </section>

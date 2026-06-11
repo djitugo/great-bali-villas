@@ -142,6 +142,31 @@ body {
   }
 }
 
+/* Date fields: styled like other inputs, whole field opens the picker */
+input[type="date"] {
+  position: relative;
+  color-scheme: light;
+  font-family: var(--font-sans);
+  cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none;
+  min-height: 2.85rem;
+}
+input[type="date"]::-webkit-calendar-picker-indicator {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+input[type="date"]::-webkit-datetime-edit {
+  color: var(--color-ink);
+}
+input[type="date"]:invalid::-webkit-datetime-edit {
+  color: var(--color-muted);
+}
+
 .gbv-marquee {
   animation: gbv-marquee 38s linear infinite;
 }

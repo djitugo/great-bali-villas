@@ -28,6 +28,7 @@ for (const target of TARGETS) {
       set++;
       dist[n] = (dist[n] || 0) + 1;
     } else {
+      // 0 or missing = no bedroom photo exists; keep the default first image
       p.cover = p.images[0];
       fallback++;
     }

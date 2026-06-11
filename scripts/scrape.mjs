@@ -12,7 +12,7 @@ fs.mkdirSync(OUT, { recursive: true });
 const BASE = "https://greatbalivillas.com";
 const UA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36";
 const CONCURRENCY = 8;
-const IMG_CAP = 10;
+const IMG_CAP = parseInt(process.env.IMG_CAP || "10", 10);
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
@@ -145,7 +145,7 @@ async function main() {
 
   const ok = data.filter((d) => d && !d.error);
   const errs = data.filter((d) => d && d.error);
-  fs.writeFileSync(path.join(OUT, "properties.json"), JSON.stringify(ok, null, 2));
+  fs.writeFileSync(path.join(OUT, process.env.OUTFILE || "properties.json"), JSON.stringify(ok, null, 2));
   if (errs.length) fs.writeFileSync(path.join(OUT, "errors.json"), JSON.stringify(errs, null, 2));
 
   // Stats

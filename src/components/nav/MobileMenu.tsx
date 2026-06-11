@@ -96,11 +96,22 @@ export function MobileMenu({
                                 key={a.value}
                                 href={`/properties?area=${encodeURIComponent(a.value)}`}
                                 onClick={onClose}
-                                className="border border-ink/15 px-3 py-1.5 text-[11px] uppercase tracking-[0.14em]"
+                                className="border border-ink/10 px-3 py-1.5 text-[11px] uppercase tracking-[0.14em]"
                               >
                                 {a.value}
                               </Link>
                             ))}
+                          </div>
+                          <div className="mb-4 flex flex-col gap-2.5 border-t border-ink/10 pt-4">
+                            <Link href="/properties" onClick={onClose} className="text-sm">
+                              {t("nav.holiday")}
+                            </Link>
+                            <Link href="/longterm-villa" onClick={onClose} className="text-sm">
+                              {t("nav.longterm")}
+                            </Link>
+                            <Link href="/villa-management" onClick={onClose} className="text-sm">
+                              {t("nav.management")}
+                            </Link>
                           </div>
                           <Link
                             href="/properties"

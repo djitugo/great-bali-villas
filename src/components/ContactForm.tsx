@@ -35,7 +35,7 @@ export function ContactForm() {
     );
 
   const input =
-    "w-full border border-ink/15 bg-cream px-4 py-3 text-sm outline-none transition-colors focus:border-ink";
+    "w-full border border-ink/10 bg-cream px-4 py-3 text-sm outline-none transition-colors focus:border-ink";
 
   return (
     <form onSubmit={submit} className="space-y-3">
