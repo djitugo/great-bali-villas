@@ -45,7 +45,6 @@ export const metadata: Metadata = {
     siteName: SITE.name,
   },
   twitter: { card: "summary_large_image" },
-  icons: { icon: "/icon.svg", apple: "/icon.svg" },
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
