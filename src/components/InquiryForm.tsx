@@ -2,8 +2,17 @@
 
 import { useState } from "react";
 import { SITE } from "@/lib/site";
-import { useI18n } from "@/lib/i18n";
+import { useI18n, type DictKey } from "@/lib/i18n";
 import { WhatsappIcon } from "./icons";
+
+function Field({ label, children }: { label: string; children: React.ReactNode }) {
+  return (
+    <label className="flex flex-col">
+      <span className="mb-1.5 text-[0.7rem] font-medium uppercase tracking-[0.14em] text-muted">{label}</span>
+      {children}
+    </label>
+  );
+}
 
 export function InquiryForm({ propertyName, propertySlug }: { propertyName: string; propertySlug: string }) {
   const [status, setStatus] = useState<"idle" | "sending" | "done" | "error">("idle");
@@ -58,8 +67,10 @@ export function InquiryForm({ propertyName, propertySlug }: { propertyName: stri
     );
   }
 
+  const label = (k: DictKey) => t(k);
+
   return (
-    <form onSubmit={submit} className="space-y-3">
+    <form onSubmit={submit} className="space-y-3.5">
       <a href={waHref} target="_blank" rel="noopener" className="btn btn-dark w-full">
         <WhatsappIcon className="h-4 w-4" /> {t("inq.wa")}
       </a>
@@ -70,16 +81,30 @@ export function InquiryForm({ propertyName, propertySlug }: { propertyName: stri
       </div>
 
       <div className="grid grid-cols-2 gap-3">
-        <input required value={form.checkin} onChange={set("checkin")} onClick={(e) => e.currentTarget.showPicker?.()} type="date" aria-label={t("inq.checkin")} className={inputCls} />
-        <input required value={form.checkout} onChange={set("checkout")} onClick={(e) => e.currentTarget.showPicker?.()} type="date" aria-label={t("inq.checkout")} className={inputCls} />
+        <Field label={label("inq.checkin")}>
+          <input required value={form.checkin} onChange={set("checkin")} onClick={(e) => e.currentTarget.showPicker?.()} type="date" className={inputCls} />
+        </Field>
+        <Field label={label("inq.checkout")}>
+          <input required value={form.checkout} onChange={set("checkout")} onClick={(e) => e.currentTarget.showPicker?.()} type="date" className={inputCls} />
+        </Field>
       </div>
-      <input required value={form.name} onChange={set("name")} placeholder={t("inq.name")} className={inputCls} />
+      <Field label={label("inq.name")}>
+        <input required value={form.name} onChange={set("name")} placeholder={t("inq.name")} className={inputCls} />
+      </Field>
       <div className="grid grid-cols-2 gap-3">
-        <input required value={form.email} onChange={set("email")} type="email" placeholder={t("inq.email")} className={inputCls} />
-        <input value={form.phone} onChange={set("phone")} placeholder={t("inq.phone")} className={inputCls} />
+        <Field label={label("inq.email")}>
+          <input required value={form.email} onChange={set("email")} type="email" placeholder="you@email.com" className={inputCls} />
+        </Field>
+        <Field label={label("inq.phone")}>
+          <input value={form.phone} onChange={set("phone")} placeholder="+62 ..." className={inputCls} />
+        </Field>
       </div>
-      <input value={form.guests} onChange={set("guests")} type="number" min={1} placeholder={t("inq.guests")} className={inputCls} />
-      <textarea value={form.message} onChange={set("message")} rows={3} placeholder={t("inq.notes")} className={`${inputCls} resize-none`} />
+      <Field label={label("inq.guests")}>
+        <input value={form.guests} onChange={set("guests")} type="number" min={1} className={inputCls} />
+      </Field>
+      <Field label={label("inq.notes")}>
+        <textarea value={form.message} onChange={set("message")} rows={3} placeholder={t("inq.notes")} className={`${inputCls} resize-none`} />
+      </Field>
 
       <button type="submit" disabled={status === "sending"} className="btn btn-outline-dark w-full disabled:opacity-60">
         {status === "sending" ? t("inq.sending") : t("inq.submit")}
@@ -90,4 +115,4 @@ export function InquiryForm({ propertyName, propertySlug }: { propertyName: stri
 }
 
 const inputCls =
-  "w-full border border-ink/10 bg-sand px-4 py-3 text-sm outline-none transition-colors focus:border-ink";
+  "w-full border border-ink/15 bg-sand px-4 py-3 text-sm text-ink outline-none transition-colors focus:border-ink";

@@ -4,7 +4,8 @@ import { getFeatured, getAllProperties, getTypes, getAreas } from "@/lib/propert
 import { PropertyCard } from "@/components/PropertyCard";
 import { Price } from "@/components/Price";
 import { Reveal } from "@/components/Reveal";
-import { SITE, HERO_AREAS } from "@/lib/site";
+import { SITE, HERO_AREAS, HERO_IMAGES } from "@/lib/site";
+import { HeroSlideshow } from "@/components/HeroSlideshow";
 import { T } from "@/lib/i18n";
 import {
   ArrowIcon,
@@ -38,9 +39,8 @@ const HOW = [
 
 export default function HomePage() {
   const featured = getFeatured(7);
-  const hero = featured[0];
-  const lead = featured[1];
-  const rest = featured.slice(2);
+  const lead = featured[0];
+  const rest = featured.slice(1);
   const total = getAllProperties().length;
   const types = getTypes();
   const areas = getAreas();
@@ -55,8 +55,8 @@ export default function HomePage() {
     <>
       {/* ============ HERO ============ */}
       <section className="relative flex min-h-[100svh] flex-col justify-end overflow-hidden">
-        <Image src={hero.images[0]} alt={hero.name} fill priority sizes="100vw" quality={85} className="object-cover" />
-        <div className="absolute inset-0 bg-gradient-to-b from-ink/60 via-ink/35 to-ink/85" />
+        <HeroSlideshow images={HERO_IMAGES} />
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-ink/60 via-ink/35 to-ink/85" />
 
         <div className="container-x relative z-10 w-full pb-10 pt-36 text-cream">
           <Reveal>

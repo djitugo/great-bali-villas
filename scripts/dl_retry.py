@@ -27,8 +27,8 @@ for attempt in range(4):
             print(f"  ok {slug}: {count(slug)} files", flush=True)
         except Exception as e:
             print(f"  retry-later {slug}: {str(e)[:80]}", flush=True)
-        time.sleep(20)
-    time.sleep(30)
+        time.sleep(45)
+    time.sleep(60)
 
 print("=== final counts ===", flush=True)
 for slug, _ in rows:

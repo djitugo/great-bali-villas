@@ -3,6 +3,15 @@
 import { useState } from "react";
 import { useI18n } from "@/lib/i18n";
 
+function Field({ label, children }: { label: string; children: React.ReactNode }) {
+  return (
+    <label className="flex flex-col">
+      <span className="mb-1.5 text-[0.7rem] font-medium uppercase tracking-[0.14em] text-muted">{label}</span>
+      {children}
+    </label>
+  );
+}
+
 export function ContactForm() {
   const [status, setStatus] = useState<"idle" | "sending" | "done" | "error">("idle");
   const [form, setForm] = useState({ name: "", email: "", phone: "", message: "" });
@@ -35,16 +44,24 @@ export function ContactForm() {
     );
 
   const input =
-    "w-full border border-ink/10 bg-cream px-4 py-3 text-sm outline-none transition-colors focus:border-ink";
+    "w-full border border-ink/15 bg-cream px-4 py-3 text-sm text-ink outline-none transition-colors focus:border-ink";
 
   return (
-    <form onSubmit={submit} className="space-y-3">
-      <input required value={form.name} onChange={set("name")} placeholder={t("inq.name")} className={input} />
-      <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
-        <input required type="email" value={form.email} onChange={set("email")} placeholder={t("inq.email")} className={input} />
-        <input value={form.phone} onChange={set("phone")} placeholder={t("inq.phone")} className={input} />
+    <form onSubmit={submit} className="space-y-3.5">
+      <Field label={t("inq.name")}>
+        <input required value={form.name} onChange={set("name")} placeholder={t("inq.name")} className={input} />
+      </Field>
+      <div className="grid grid-cols-1 gap-3.5 sm:grid-cols-2">
+        <Field label={t("inq.email")}>
+          <input required type="email" value={form.email} onChange={set("email")} placeholder="you@email.com" className={input} />
+        </Field>
+        <Field label={t("inq.phone")}>
+          <input value={form.phone} onChange={set("phone")} placeholder="+62 ..." className={input} />
+        </Field>
       </div>
-      <textarea required rows={5} value={form.message} onChange={set("message")} placeholder={t("contact.message")} className={`${input} resize-none`} />
+      <Field label={t("contact.message")}>
+        <textarea required rows={5} value={form.message} onChange={set("message")} placeholder={t("contact.message")} className={`${input} resize-none`} />
+      </Field>
       <button type="submit" disabled={status === "sending"} className="btn btn-dark w-full disabled:opacity-60">
         {status === "sending" ? t("inq.sending") : t("contact.send")}
       </button>
