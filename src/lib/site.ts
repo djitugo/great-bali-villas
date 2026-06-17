@@ -40,13 +40,13 @@ export const NAV: {
 
 export const HERO_AREAS = ["Seminyak", "Ubud", "Canggu", "Jimbaran", "Uluwatu", "Nusa Dua"];
 
-// Curated scenic HD villa shots for the home hero slideshow (Supabase CDN).
+// Iconic Bali destinations for the home hero slideshow (HD stock, re-hosted on our CDN).
 const CDN = "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images";
 export const HERO_IMAGES = [
-  `${CDN}/yasmine-close-to-beach/0.webp?v=2`,
-  `${CDN}/gracie-villa-closes-to-jimbaran-beach/0.webp?v=2`,
-  `${CDN}/waterfront-3-bedroom-private-villa-in-benoa-bay/0.webp?v=2`,
-  `${CDN}/amazing-rustic-style-4br-private-villa-in-nusa-dua/0.webp?v=2`,
-  `${CDN}/three-bedroom-villa-with-private-pool-at-canggu/0.webp?v=2`,
-  `${CDN}/alang-alang-villa-for-family/0.webp?v=2`,
+  `${CDN}/hero/tanah-lot.webp`,
+  `${CDN}/hero/kelingking.webp`,
+  `${CDN}/hero/lempuyang.webp`,
+  `${CDN}/hero/uluwatu.webp`,
+  `${CDN}/hero/tegallalang.webp`,
+  `${CDN}/hero/handara.webp`,
 ];
