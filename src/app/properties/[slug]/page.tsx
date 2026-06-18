@@ -10,6 +10,8 @@ import { Reveal } from "@/components/Reveal";
 import { BedIcon, BathIcon, PinIcon, CheckIcon, ArrowIcon } from "@/components/icons";
 import { SITE } from "@/lib/site";
 import { T } from "@/lib/i18n";
+import { Map } from "@/components/Map";
+import { coordFor } from "@/lib/geo";
 
 export function generateStaticParams() {
   return getAllSlugs().map((slug) => ({ slug }));
@@ -44,6 +46,7 @@ export default async function PropertyPage({ params }: { params: Promise<{ slug:
   }[];
 
   const descParas = p.description ? p.description.split("\n\n").filter(Boolean) : [];
+  const [lat, lng] = coordFor(p);
 
   return (
     <>
@@ -101,7 +104,7 @@ export default async function PropertyPage({ params }: { params: Promise<{ slug:
 
             {/* features */}
             {p.features.length > 0 && (
-              <div className="py-10">
+              <div className="border-b border-ink/10 py-10">
                 <h2 className="mb-6 font-display text-3xl"><T k="detail.features" /></h2>
                 <ul className="grid grid-cols-2 gap-x-6 gap-y-3 sm:grid-cols-3">
                   {p.features.map((f) => (
@@ -113,6 +116,22 @@ export default async function PropertyPage({ params }: { params: Promise<{ slug:
                 </ul>
               </div>
             )}
+
+            {/* location */}
+            <div className="py-10">
+              <h2 className="mb-2 font-display text-3xl"><T k="detail.location" /></h2>
+              <p className="mb-6 flex items-center gap-2 text-sm text-muted">
+                <PinIcon className="h-4 w-4 shrink-0" />
+                <T k="detail.locationNote" vars={{ area: p.area }} />
+              </p>
+              <Map
+                markers={[{ lat, lng, label: p.name }]}
+                center={[lat, lng]}
+                zoom={14}
+                circle
+                className="h-[55vh] min-h-[340px] w-full border border-ink/10"
+              />
+            </div>
           </div>
 
           {/* sticky enquiry */}

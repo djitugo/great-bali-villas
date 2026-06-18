@@ -181,6 +181,10 @@ const en = {
   "detail.also": "You may also like",
   "detail.all": "All villas",
   "detail.call": "Or call {phone}. We reply within hours.",
+  "detail.location": "Location",
+  "detail.locationNote": "Approximate area · {area}, Bali. The exact address is shared after booking.",
+  "map.title": "Where our villas are",
+  "map.note": "Explore villas across Bali. Tap a pin to view.",
 
   // inquiry form
   "inq.wa": "Enquire on WhatsApp",
@@ -415,6 +419,10 @@ const id: typeof en = {
   "detail.also": "Vila serupa",
   "detail.all": "Semua vila",
   "detail.call": "Atau telepon {phone}. Kami balas dalam hitungan jam.",
+  "detail.location": "Lokasi",
+  "detail.locationNote": "Perkiraan area · {area}, Bali. Alamat persis diberikan setelah pemesanan.",
+  "map.title": "Sebaran vila kami",
+  "map.note": "Jelajahi vila di seluruh Bali. Ketuk pin untuk lihat.",
 
   "inq.wa": "Tanya via WhatsApp",
   "inq.or": "atau kirim permintaan",

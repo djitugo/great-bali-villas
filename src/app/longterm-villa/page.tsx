@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { queryProperties } from "@/lib/properties";
 import { PropertyCard } from "@/components/PropertyCard";
 import { Reveal } from "@/components/Reveal";
+import { Map } from "@/components/Map";
+import { coordFor } from "@/lib/geo";
 import { SITE } from "@/lib/site";
 import { T } from "@/lib/i18n";
 
@@ -13,6 +15,10 @@ export const metadata: Metadata = {
 
 export default function LongtermPage() {
   const { items } = queryProperties({ kind: "longterm", perPage: 100 });
+  const mapMarkers = items.map((p) => {
+    const [lat, lng] = coordFor(p);
+    return { lat, lng, label: p.name, href: `/properties/${p.slug}` };
+  });
 
   return (
     <section className="bg-sand pt-32 lg:pt-40">
@@ -41,6 +47,14 @@ export default function LongtermPage() {
             </Reveal>
           ))}
         </div>
+
+        {mapMarkers.length > 0 && (
+          <div className="mt-20 border-t border-ink/10 pt-12">
+            <p className="eyebrow mb-3 text-muted"><T k="map.title" /></p>
+            <h2 className="mb-6 font-display text-3xl tracking-tight lg:text-4xl"><T k="map.note" /></h2>
+            <Map markers={mapMarkers} className="h-[60vh] min-h-[360px] w-full border border-ink/10" />
+          </div>
+        )}
       </div>
     </section>
   );

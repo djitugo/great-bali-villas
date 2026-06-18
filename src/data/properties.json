@@ -39619,7 +39619,7 @@
       "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/villa-rumma-lanna/d13.webp?v=2",
       "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/villa-rumma-lanna/d14.webp?v=2"
     ],
-    "cover": "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/villa-rumma-lanna/d7.webp?v=2",
+    "cover": "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/villa-rumma-lanna/d0.webp?v=2",
     "needsPhotos": false
   },
   {
@@ -39669,7 +39669,7 @@
       "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/secluded-jungle-sanctuary-ubud/d13.webp?v=2",
       "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/secluded-jungle-sanctuary-ubud/d14.webp?v=2"
     ],
-    "cover": "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/secluded-jungle-sanctuary-ubud/d2.webp?v=2",
+    "cover": "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/secluded-jungle-sanctuary-ubud/d0.webp?v=2",
     "needsPhotos": false
   },
   {
@@ -39704,10 +39704,24 @@
       "Weekly Housekeeping"
     ],
     "images": [
-      "/placeholder-villa.webp"
+      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/askana-suites-payangan/d0.webp?v=2",
+      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/askana-suites-payangan/d1.webp?v=2",
+      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/askana-suites-payangan/d2.webp?v=2",
+      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/askana-suites-payangan/d3.webp?v=2",
+      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/askana-suites-payangan/d4.webp?v=2",
+      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/askana-suites-payangan/d5.webp?v=2",
+      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/askana-suites-payangan/d6.webp?v=2",
+      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/askana-suites-payangan/d7.webp?v=2",
+      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/askana-suites-payangan/d8.webp?v=2",
+      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/askana-suites-payangan/d9.webp?v=2",
+      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/askana-suites-payangan/d10.webp?v=2",
+      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/askana-suites-payangan/d11.webp?v=2",
+      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/askana-suites-payangan/d12.webp?v=2",
+      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/askana-suites-payangan/d13.webp?v=2",
+      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/askana-suites-payangan/d14.webp?v=2"
     ],
-    "cover": "/placeholder-villa.webp",
-    "needsPhotos": true
+    "cover": "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/askana-suites-payangan/d13.webp?v=2",
+    "needsPhotos": false
   },
   {
     "slug": "the-twenty-eight-ungasan",

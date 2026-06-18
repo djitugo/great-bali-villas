@@ -4,6 +4,8 @@ import { queryProperties, getFacets } from "@/lib/properties";
 import { PropertyCard } from "@/components/PropertyCard";
 import { Filters } from "@/components/Filters";
 import { Reveal } from "@/components/Reveal";
+import { Map } from "@/components/Map";
+import { coordFor } from "@/lib/geo";
 import { T } from "@/lib/i18n";
 import type { PropertyQuery } from "@/lib/types";
 
@@ -31,6 +33,10 @@ export default async function PropertiesPage({ searchParams }: { searchParams: S
   };
 
   const { items, total, page, pages } = queryProperties(q);
+  const mapMarkers = items.map((p) => {
+    const [lat, lng] = coordFor(p);
+    return { lat, lng, label: p.name, href: `/properties/${p.slug}` };
+  });
 
   const buildHref = (p: number) => {
     const params = new URLSearchParams();
@@ -115,6 +121,16 @@ export default async function PropertiesPage({ searchParams }: { searchParams: S
           )}
         </div>
       </section>
+
+      {mapMarkers.length > 0 && (
+        <section className="border-t border-ink/10 bg-cream">
+          <div className="container-x py-16 lg:py-20">
+            <p className="eyebrow mb-3 text-muted"><T k="map.title" /></p>
+            <h2 className="mb-6 font-display text-3xl tracking-tight lg:text-4xl"><T k="map.note" /></h2>
+            <Map markers={mapMarkers} className="h-[60vh] min-h-[360px] w-full border border-ink/10" />
+          </div>
+        </section>
+      )}
     </>
   );
 }
