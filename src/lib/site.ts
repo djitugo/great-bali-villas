@@ -16,8 +16,10 @@ export const SITE = {
     instagram: "https://instagram.com/greatbalivillas.official",
     facebook: "https://facebook.com/greatbalivillas",
     tiktok: "https://tiktok.com/@greatbalivillas",
+    linkedin: "https://www.linkedin.com/company/great-bali-villas",
     whatsapp: "https://wa.me/6282146475705",
   },
+  website: "https://greatbalivillas.com",
   partners: ["Airbnb", "Booking.com", "Agoda", "Expedia", "Traveloka", "Tiket.com"],
   stats: {
     villas: "400+",

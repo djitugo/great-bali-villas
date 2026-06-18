@@ -7,6 +7,7 @@ import { SmoothScroll } from "@/components/SmoothScroll";
 import { SiteHeader } from "@/components/nav/SiteHeader";
 import { Footer } from "@/components/Footer";
 import { PageTransition } from "@/components/PageTransition";
+import { Chrome } from "@/components/Chrome";
 import { SITE } from "@/lib/site";
 
 const inter = Inter({
@@ -54,11 +55,15 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <Providers>
           <Loader />
           <SmoothScroll />
-          <SiteHeader />
+          <Chrome>
+            <SiteHeader />
+          </Chrome>
           <main>
             <PageTransition>{children}</PageTransition>
           </main>
-          <Footer />
+          <Chrome>
+            <Footer />
+          </Chrome>
         </Providers>
       </body>
     </html>
