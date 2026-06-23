@@ -3,6 +3,7 @@ import Image from "next/image";
 import { SITE } from "@/lib/site";
 import { getTypes, getAreas } from "@/lib/properties";
 import { T } from "@/lib/i18n";
+import { InstagramIcon, FacebookIcon, TiktokIcon, WhatsappIcon } from "@/components/icons";
 
 export function Footer() {
   const types = getTypes();
@@ -25,7 +26,7 @@ export function Footer() {
           </p>
         </div>
         <div className="flex flex-wrap gap-3 lg:col-span-5 lg:justify-end">
-          <a href={SITE.whatsappHref} target="_blank" rel="noopener" className="btn btn-light">
+          <a href={SITE.whatsappCtaHref} target="_blank" rel="noopener" className="btn btn-light">
             <T k="footer.wa" />
           </a>
           <Link href="/contact" className="btn btn-outline-light">
@@ -47,24 +48,27 @@ export function Footer() {
           <p className="mt-5 max-w-xs text-sm leading-relaxed text-cream/50">
             <T k="footer.blurb" vars={{ legal: SITE.legalName, year: SITE.since }} />
           </p>
-          <div className="mt-6 flex gap-2">
+          <div className="mt-6 flex gap-2.5">
             {[
-              ["IG", SITE.social.instagram, "Instagram"],
-              ["FB", SITE.social.facebook, "Facebook"],
-              ["TT", SITE.social.tiktok, "TikTok"],
-              ["WA", SITE.social.whatsapp, "WhatsApp"],
-            ].map(([label, href, name]) => (
-              <a
-                key={label}
-                href={href}
-                target="_blank"
-                rel="noopener"
-                aria-label={name}
-                className="flex h-10 w-10 items-center justify-center border border-cream/15 text-[10px] tracking-[0.1em] transition-colors hover:border-cream hover:text-cream"
-              >
-                {label}
-              </a>
-            ))}
+              [InstagramIcon, SITE.social.instagram, "Instagram"],
+              [FacebookIcon, SITE.social.facebook, "Facebook"],
+              [TiktokIcon, SITE.social.tiktok, "TikTok"],
+              [WhatsappIcon, SITE.social.whatsapp, "WhatsApp"],
+            ].map(([Icon, href, name]) => {
+              const I = Icon as React.FC<{ className?: string }>;
+              return (
+                <a
+                  key={name as string}
+                  href={href as string}
+                  target="_blank"
+                  rel="noopener"
+                  aria-label={name as string}
+                  className="flex h-10 w-10 items-center justify-center border border-cream/15 text-cream transition-colors hover:border-cream hover:bg-cream hover:text-ink"
+                >
+                  <I className="h-4 w-4" />
+                </a>
+              );
+            })}
           </div>
         </div>
 

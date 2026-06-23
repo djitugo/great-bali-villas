@@ -2,7 +2,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { getFeatured, getAllProperties, getTypes, getAreas } from "@/lib/properties";
 import { PropertyCard } from "@/components/PropertyCard";
-import { Price } from "@/components/Price";
 import { Reveal } from "@/components/Reveal";
 import { SITE, HERO_AREAS, HERO_IMAGES } from "@/lib/site";
 import { HeroSlideshow } from "@/components/HeroSlideshow";
@@ -38,9 +37,7 @@ const HOW = [
 ] as const;
 
 export default function HomePage() {
-  const featured = getFeatured(7);
-  const lead = featured[0];
-  const rest = featured.slice(1);
+  const featured = getFeatured(6);
   const total = getAllProperties().length;
   const types = getTypes();
   const areas = getAreas();
@@ -163,40 +160,10 @@ export default function HomePage() {
             </Reveal>
           </div>
 
-          {/* lead feature */}
-          <Reveal>
-            <Link href={`/properties/${lead.slug}`} className="group mb-14 grid gap-6 lg:grid-cols-12 lg:items-end">
-              <div className="relative aspect-[16/9] overflow-hidden bg-sand-100 lg:col-span-8 lg:aspect-[16/8]">
-                <Image
-                  src={lead.cover || lead.images[0]}
-                  alt={lead.name}
-                  fill
-                  sizes="(max-width:1024px) 100vw, 66vw"
-                  quality={85}
-                  className="object-cover transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.03]"
-                />
-                <span className="absolute left-0 top-0 bg-cream px-3 py-2 text-[10px] font-semibold uppercase tracking-[0.18em] text-ink">
-                  01 &middot; {lead.type}
-                </span>
-              </div>
-              <div className="lg:col-span-4 lg:pb-2">
-                <p className="eyebrow text-muted">{lead.area} &middot; {lead.bedrooms} bd &middot; {lead.bathrooms} ba</p>
-                <h3 className="mt-3 font-display text-2xl leading-snug transition-opacity group-hover:opacity-60 lg:text-3xl">
-                  {lead.name}
-                </h3>
-                <p className="mt-4 line-clamp-3 text-sm leading-relaxed text-muted">{lead.description}</p>
-                <p className="mt-5 border-t border-ink/10 pt-4 text-sm">
-                  <span className="text-muted"><T k="common.from" /> </span>
-                  <Price idr={lead.price} period={lead.period} className="font-medium text-ink" suffixClassName="text-xs" />
-                </p>
-              </div>
-            </Link>
-          </Reveal>
-
-          <div className="grid grid-cols-1 gap-x-6 gap-y-12 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5">
-            {rest.map((p, i) => (
-              <Reveal key={p.slug} delay={(i % 5) * 0.06}>
-                <PropertyCard p={p} priority={i < 2} index={i + 1} />
+          <div className="grid grid-cols-1 gap-x-6 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
+            {featured.map((p, i) => (
+              <Reveal key={p.slug} delay={(i % 3) * 0.07}>
+                <PropertyCard p={p} priority={i < 3} />
               </Reveal>
             ))}
           </div>

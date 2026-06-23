@@ -10,6 +10,8 @@ export const SITE = {
   phoneOfficeHref: "tel:+623613352158",
   whatsapp: "+62 821-4647-5705",
   whatsappHref: "https://wa.me/6282146475705",
+  whatsappCta: "+62 821-2297-3363",
+  whatsappCtaHref: "https://wa.me/6282122973363",
   address: "Jln Bukit Sari Utara No.88X, Padangsambian Kaja, Denpasar Barat, Bali 80117",
   mapsQuery: "Great Bali Villas Denpasar Barat Bali",
   social: {
@@ -28,14 +30,15 @@ export const SITE = {
   },
 };
 
-export const NAV: {
-  key: "home" | "about" | "properties" | "blog" | "contact";
-  href: string;
-  dropdown?: boolean;
-}[] = [
+export const NAV: { href: string; key?: string; label?: string }[] = [
   { key: "home", href: "/" },
   { key: "about", href: "/about" },
-  { key: "properties", href: "/properties", dropdown: true },
+  { label: "Private Villa", href: "/properties?type=Private%20Villa" },
+  { label: "Villa", href: "/properties?type=Villa" },
+  { label: "Room", href: "/properties?type=Room" },
+  { label: "Bungalow", href: "/properties?type=Bungalow" },
+  { label: "Cottage", href: "/properties?type=Cottage" },
+  { key: "management", href: "/villa-management" },
   { key: "blog", href: "/blog" },
   { key: "contact", href: "/contact" },
 ];

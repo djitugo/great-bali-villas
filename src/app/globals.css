@@ -171,6 +171,9 @@ input[type="date"]:invalid::-webkit-datetime-edit {
 .leaflet-container {
   background: var(--color-sand-100);
   font-family: var(--font-sans);
+  position: relative;
+  z-index: 0;
+  isolation: isolate; /* contain Leaflet's internal z-index (panes/controls up to 1000) below the header */
 }
 .gbv-pin {
   display: block;

@@ -50,8 +50,8 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${fraunces.variable} h-full antialiased`}>
-      <body className="min-h-full">
+    <html lang="en" className={`${inter.variable} ${fraunces.variable} antialiased`}>
+      <body className="min-h-screen">
         <Providers>
           <Loader />
           <SmoothScroll />
