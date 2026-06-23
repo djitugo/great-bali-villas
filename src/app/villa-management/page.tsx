@@ -56,7 +56,7 @@ export default function VillaManagementPage() {
       </section>
 
       <section className="bg-cream">
-        <div className="container-x grid gap-3 py-3 sm:grid-cols-3">
+        <div className="container-x grid gap-3 pb-3 pt-12 sm:grid-cols-3 lg:pt-20">
           {showcase.map((p, i) => (
             <Reveal key={p.slug} delay={i * 0.08}>
               <div className="relative aspect-[4/3] overflow-hidden">
