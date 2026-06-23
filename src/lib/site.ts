@@ -31,8 +31,6 @@ export const SITE = {
 };
 
 export const NAV: { href: string; key?: string; label?: string }[] = [
-  { key: "home", href: "/" },
-  { key: "about", href: "/about" },
   { label: "Private Villa", href: "/properties?type=Private%20Villa" },
   { label: "Villa", href: "/properties?type=Villa" },
   { label: "Room", href: "/properties?type=Room" },
