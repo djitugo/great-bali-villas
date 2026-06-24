@@ -50,13 +50,13 @@ export function PropertyCard({
           {p.bedrooms ? (
             <span className="flex items-center gap-1.5">
               <BedIcon className="h-3.5 w-3.5" />
-              {p.bedrooms} {p.bedrooms > 1 ? "beds" : "bed"}
+              {p.bedrooms} <T k={p.bedrooms > 1 ? "card.beds" : "card.bed"} />
             </span>
           ) : null}
           {p.bathrooms ? (
             <span className="flex items-center gap-1.5">
               <BathIcon className="h-3.5 w-3.5" />
-              {p.bathrooms} {p.bathrooms > 1 ? "baths" : "bath"}
+              {p.bathrooms} <T k={p.bathrooms > 1 ? "card.baths" : "card.bath"} />
             </span>
           ) : null}
         </div>

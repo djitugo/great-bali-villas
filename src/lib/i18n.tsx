@@ -74,6 +74,10 @@ const en = {
   "featured.title": "Featured villas",
   "featured.viewAll": "View all {n}",
   "common.from": "from",
+  "card.bed": "bed",
+  "card.beds": "beds",
+  "card.bath": "bath",
+  "card.baths": "baths",
 
   // destinations
   "dest.eyebrow": "Where to stay",
@@ -321,6 +325,10 @@ const id: typeof en = {
   "featured.title": "Vila unggulan",
   "featured.viewAll": "Lihat semua {n}",
   "common.from": "mulai",
+  "card.bed": "kamar",
+  "card.beds": "kamar",
+  "card.bath": "kamar mandi",
+  "card.baths": "kamar mandi",
 
   "dest.eyebrow": "Pilih lokasi",
   "dest.t1": "Temukan sudut pulau ",
