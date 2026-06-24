@@ -102,7 +102,9 @@ export function queryProperties(q: PropertyQuery) {
       (p) =>
         p.name.toLowerCase().includes(s) ||
         p.area.toLowerCase().includes(s) ||
-        p.description.toLowerCase().includes(s) ||
+        p.type.toLowerCase().includes(s) ||
+        (p.bedrooms != null && String(p.bedrooms) === s) ||
+        (p.bathrooms != null && String(p.bathrooms) === s) ||
         p.features.some((f) => f.toLowerCase().includes(s))
     );
   }
