@@ -1,18 +1,39 @@
 "use client";
 
-import { useEffect } from "react";
+import { useContext, useEffect, useRef } from "react";
 import { usePathname } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
+import { LayoutRouterContext } from "next/dist/shared/lib/app-router-context.shared-runtime";
 
 /**
  * Per-navigation transition, distinct from the first-load loader.
- * Two-phase ink curtain (mode="wait"): on the way OUT the three columns
- * drop down to close over the leaving page, then on the way IN they lift
- * up to reveal the new page — so there is no sudden full-screen blackout.
+ *
+ * Two-phase ink curtain (mode="wait"):
+ *   1. CLOSE  - the leaving page stays fully rendered (frozen) while three ink
+ *               columns drop down to cover it. No fade, nothing swaps yet.
+ *   2. SWAP   - once fully covered, the old page unmounts and the new one mounts
+ *               underneath the closed curtain (a short hold keeps it hidden).
+ *   3. REVEAL - the columns lift to uncover the already-finished new page.
+ *
+ * The FrozenRouter is essential: the App Router replaces `children` the instant
+ * you navigate, so without freezing the router context the new page would show
+ * up *before* the curtain closes. Freezing keeps the outgoing page on screen
+ * until AnimatePresence unmounts it.
+ *
  * Also resets scroll to the top on every route change (all viewports).
  */
 const EASE = [0.76, 0, 0.24, 1] as const;
 const COLS = [0, 1, 2];
+
+function FrozenRouter({ children }: { children: React.ReactNode }) {
+  const context = useContext(LayoutRouterContext);
+  const frozen = useRef(context).current;
+  return (
+    <LayoutRouterContext.Provider value={frozen}>
+      {children}
+    </LayoutRouterContext.Provider>
+  );
+}
 
 export function PageTransition({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
@@ -30,23 +51,16 @@ export function PageTransition({ children }: { children: React.ReactNode }) {
             <motion.div
               key={i}
               className="h-full flex-1 origin-top bg-ink"
-              // enter: start closed (1), hold a beat fully covered, then reveal up to 0.
-              // exit: drop down to close (1) over the still-solid leaving page.
               initial={{ scaleY: 1 }}
-              animate={{ scaleY: 0 }}
-              exit={{ scaleY: 1 }}
-              transition={{
-                duration: 0.5,
-                ease: EASE,
-                delay: 0.15 + i * 0.07,
-              }}
+              // enter: hold a beat fully covered, then lift up to reveal (0)
+              animate={{ scaleY: 0, transition: { duration: 0.5, ease: EASE, delay: 0.12 + i * 0.07 } }}
+              // exit: drop straight down to close (1) over the still-solid old page
+              exit={{ scaleY: 1, transition: { duration: 0.5, ease: EASE, delay: i * 0.07 } }}
             />
           ))}
         </div>
 
-        {/* No fade on the content: the leaving page stays solid until the curtain
-            covers it, then the swap happens while fully hidden — only the curtain moves. */}
-        <div>{children}</div>
+        <FrozenRouter>{children}</FrozenRouter>
       </div>
     </AnimatePresence>
   );
