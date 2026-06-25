@@ -69,6 +69,18 @@ export function PageTransition({ children }: { children: React.ReactNode }) {
               exit={{ scaleY: 1, transition: { duration: 0.5, ease: EASE, delay: i * 0.07 } }}
             />
           ))}
+
+          {/* White wordmark centred on the black screen: fades in as the curtain
+              closes, holds across the swap, fades out as the curtain reveals. */}
+          <motion.img
+            src="/brand/logo-light.png"
+            alt=""
+            aria-hidden
+            className="absolute left-1/2 top-1/2 h-12 w-auto -translate-x-1/2 -translate-y-1/2 lg:h-16"
+            initial={{ opacity: 1, y: 0 }}
+            animate={{ opacity: 0, y: -10, transition: { duration: 0.45, ease: EASE, delay: 0.12 } }}
+            exit={{ opacity: 1, y: 0, transition: { duration: 0.4, ease: EASE, delay: 0.22 } }}
+          />
         </div>
 
         <ScrollReset />
