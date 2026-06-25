@@ -3,7 +3,7 @@ import Image from "next/image";
 import { getFeatured, getAllProperties, getTypes, getAreas } from "@/lib/properties";
 import { PropertyCard } from "@/components/PropertyCard";
 import { Reveal } from "@/components/Reveal";
-import { SITE, HERO_AREAS, HERO_IMAGES } from "@/lib/site";
+import { SITE, HERO_AREAS, HERO_IMAGES, DEST_IMAGES } from "@/lib/site";
 import { HeroSlideshow } from "@/components/HeroSlideshow";
 import { T } from "@/lib/i18n";
 import {
@@ -45,7 +45,7 @@ export default function HomePage() {
   const destinations = HERO_AREAS.map((area) => ({
     area,
     count: areas.find((a) => a.value === area)?.count ?? 0,
-    cover: coverFor((p) => p.area === area),
+    cover: DEST_IMAGES[area] ?? coverFor((p) => p.area === area),
   }));
 
   return (

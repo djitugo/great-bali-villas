@@ -53,3 +53,13 @@ export const HERO_IMAGES = [
   `${CDN}/hero/tegallalang.webp`,
   `${CDN}/hero/handara.webp`,
 ];
+
+// Iconic landmark per destination for the "explore by area" cards (HD stock on our CDN).
+export const DEST_IMAGES: Record<string, string> = {
+  Seminyak: `${CDN}/destinations/seminyak.webp`,
+  Ubud: `${CDN}/hero/tegallalang.webp`,
+  Canggu: `${CDN}/destinations/canggu.webp`,
+  Jimbaran: `${CDN}/destinations/jimbaran.webp`,
+  Uluwatu: `${CDN}/hero/uluwatu.webp`,
+  "Nusa Dua": `${CDN}/destinations/nusa-dua.webp`,
+};
