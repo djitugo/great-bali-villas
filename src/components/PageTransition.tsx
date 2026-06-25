@@ -30,28 +30,23 @@ export function PageTransition({ children }: { children: React.ReactNode }) {
             <motion.div
               key={i}
               className="h-full flex-1 origin-top bg-ink"
-              // closed (1) -> reveal up (0) on enter; drop down to close (1) on exit
+              // enter: start closed (1), hold a beat fully covered, then reveal up to 0.
+              // exit: drop down to close (1) over the still-solid leaving page.
               initial={{ scaleY: 1 }}
               animate={{ scaleY: 0 }}
               exit={{ scaleY: 1 }}
               transition={{
                 duration: 0.5,
                 ease: EASE,
-                // reveal staggers L->R, close staggers R->L for a sweeping feel
-                delay: i * 0.07,
+                delay: 0.15 + i * 0.07,
               }}
             />
           ))}
         </div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 22 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, transition: { duration: 0.25 } }}
-          transition={{ duration: 0.55, ease: [0.16, 1, 0.3, 1], delay: 0.32 }}
-        >
-          {children}
-        </motion.div>
+        {/* No fade on the content: the leaving page stays solid until the curtain
+            covers it, then the swap happens while fully hidden — only the curtain moves. */}
+        <div>{children}</div>
       </div>
     </AnimatePresence>
   );
