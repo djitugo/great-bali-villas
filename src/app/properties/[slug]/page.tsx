@@ -142,7 +142,11 @@ export default async function PropertyPage({ params }: { params: Promise<{ slug:
                   <div><span className="mr-2 text-sm text-muted"><T k="common.from" /></span><Price idr={p.price} period={p.period} className="font-display text-2xl text-ink" suffixClassName="text-xs" /></div>
                   <span className="rounded-none bg-sand px-3 py-1 text-xs font-medium">{p.type}</span>
                 </div>
-                <InquiryForm propertyName={p.name} propertySlug={p.slug} />
+                <InquiryForm
+                  propertyName={p.name}
+                  propertySlug={p.slug}
+                  airbnbUrl={p.url?.includes("airbnb.com/rooms") ? p.url : undefined}
+                />
                 <p className="mt-4 text-center text-xs text-muted">
                   <T k="detail.call" vars={{phone: SITE.phoneOffice}} />
                 </p>

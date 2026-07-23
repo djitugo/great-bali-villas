@@ -191,6 +191,8 @@ const en = {
   "map.note": "Explore villas across Bali. Tap a pin to view.",
 
   // inquiry form
+  "inq.book": "Book on Airbnb",
+  "inq.bookNote": "Opens the Airbnb listing with your dates and guests applied.",
   "inq.wa": "Enquire on WhatsApp",
   "inq.or": "or send a request",
   "inq.name": "Full name",
@@ -432,6 +434,8 @@ const id: typeof en = {
   "map.title": "Sebaran vila kami",
   "map.note": "Jelajahi vila di seluruh Bali. Ketuk pin untuk lihat.",
 
+  "inq.book": "Pesan di Airbnb",
+  "inq.bookNote": "Membuka listing Airbnb dengan tanggal dan jumlah tamu yang Anda pilih.",
   "inq.wa": "Tanya via WhatsApp",
   "inq.or": "atau kirim permintaan",
   "inq.name": "Nama lengkap",

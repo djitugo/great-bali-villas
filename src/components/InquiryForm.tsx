@@ -14,7 +14,15 @@ function Field({ label, children }: { label: string; children: React.ReactNode }
   );
 }
 
-export function InquiryForm({ propertyName, propertySlug }: { propertyName: string; propertySlug: string }) {
+export function InquiryForm({
+  propertyName,
+  propertySlug,
+  airbnbUrl,
+}: {
+  propertyName: string;
+  propertySlug: string;
+  airbnbUrl?: string;
+}) {
   const [status, setStatus] = useState<"idle" | "sending" | "done" | "error">("idle");
   const { t } = useI18n();
   const [form, setForm] = useState({
@@ -38,6 +46,26 @@ export function InquiryForm({ propertyName, propertySlug }: { propertyName: stri
       (form.message ? `\n${form.message}` : "")
   );
   const waHref = `${SITE.whatsappHref}?text=${waText}`;
+
+  // Deep-link straight into the villa's own Airbnb listing, carrying whatever
+  // dates / guest count the visitor already picked so the Airbnb page opens
+  // pre-filled instead of blank.
+  const bookHref = (() => {
+    if (!airbnbUrl) return null;
+    try {
+      const u = new URL(airbnbUrl);
+      if (form.checkin) u.searchParams.set("check_in", form.checkin);
+      if (form.checkout) u.searchParams.set("check_out", form.checkout);
+      const g = parseInt(form.guests, 10);
+      if (Number.isFinite(g) && g > 0) {
+        u.searchParams.set("adults", String(g));
+        u.searchParams.set("guests", String(g));
+      }
+      return u.toString();
+    } catch {
+      return airbnbUrl;
+    }
+  })();
 
   const submit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -71,15 +99,7 @@ export function InquiryForm({ propertyName, propertySlug }: { propertyName: stri
 
   return (
     <form onSubmit={submit} className="space-y-3.5">
-      <a href={waHref} target="_blank" rel="noopener" className="btn btn-dark w-full">
-        <WhatsappIcon className="h-4 w-4" /> {t("inq.wa")}
-      </a>
-      <div className="flex items-center gap-3 py-1">
-        <span className="h-px flex-1 bg-ink/10" />
-        <span className="text-xs uppercase tracking-widest text-muted">{t("inq.or")}</span>
-        <span className="h-px flex-1 bg-ink/10" />
-      </div>
-
+      {/* dates + guests first, so the booking link below carries them */}
       <div className="grid grid-cols-2 gap-3">
         <Field label={label("inq.checkin")}>
           <input required value={form.checkin} onChange={set("checkin")} onClick={(e) => e.currentTarget.showPicker?.()} type="date" className={inputCls} />
@@ -88,6 +108,33 @@ export function InquiryForm({ propertyName, propertySlug }: { propertyName: stri
           <input required value={form.checkout} onChange={set("checkout")} onClick={(e) => e.currentTarget.showPicker?.()} type="date" className={inputCls} />
         </Field>
       </div>
+      <Field label={label("inq.guests")}>
+        <input value={form.guests} onChange={set("guests")} type="number" min={1} className={inputCls} />
+      </Field>
+
+      {bookHref && (
+        <>
+          <a href={bookHref} target="_blank" rel="noopener" className="btn btn-dark w-full">
+            {t("inq.book")}
+          </a>
+          <p className="text-center text-xs text-muted">{t("inq.bookNote")}</p>
+        </>
+      )}
+      <a
+        href={waHref}
+        target="_blank"
+        rel="noopener"
+        className={`w-full btn ${bookHref ? "btn-outline-dark" : "btn-dark"}`}
+      >
+        <WhatsappIcon className="h-4 w-4" /> {t("inq.wa")}
+      </a>
+
+      <div className="flex items-center gap-3 py-1">
+        <span className="h-px flex-1 bg-ink/10" />
+        <span className="text-xs uppercase tracking-widest text-muted">{t("inq.or")}</span>
+        <span className="h-px flex-1 bg-ink/10" />
+      </div>
+
       <Field label={label("inq.name")}>
         <input required value={form.name} onChange={set("name")} placeholder={t("inq.name")} className={inputCls} />
       </Field>
@@ -99,9 +146,6 @@ export function InquiryForm({ propertyName, propertySlug }: { propertyName: stri
           <input value={form.phone} onChange={set("phone")} placeholder="+62 ..." className={inputCls} />
         </Field>
       </div>
-      <Field label={label("inq.guests")}>
-        <input value={form.guests} onChange={set("guests")} type="number" min={1} className={inputCls} />
-      </Field>
       <Field label={label("inq.notes")}>
         <textarea value={form.message} onChange={set("message")} rows={3} placeholder={t("inq.notes")} className={`${inputCls} resize-none`} />
       </Field>
