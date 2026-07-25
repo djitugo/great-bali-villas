@@ -20,10 +20,10 @@
     "description": "",
     "features": [],
     "images": [
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/vienna-villas-prime-location-between-seminyak-canggu/0.webp?v=2"
+      "/placeholder-villa.webp"
     ],
     "areaRaw": "",
-    "cover": "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/vienna-villas-prime-location-between-seminyak-canggu/0.webp?v=2"
+    "cover": "/placeholder-villa.webp"
   },
   {
     "slug": "canggu-lifestyle-stylish-2br-villa-near-cafes-beaches",
@@ -46,10 +46,10 @@
     "description": "",
     "features": [],
     "images": [
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/canggu-lifestyle-stylish-2br-villa-near-cafes-beaches/0.webp?v=2"
+      "/placeholder-villa.webp"
     ],
     "areaRaw": "",
-    "cover": "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/canggu-lifestyle-stylish-2br-villa-near-cafes-beaches/0.webp?v=2"
+    "cover": "/placeholder-villa.webp"
   },
   {
     "slug": "villa-putih-susu-3-br-relaxing-family-getaway-ungasan",
@@ -81,10 +81,10 @@
       "Weekly Housekeeping"
     ],
     "images": [
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/villa-putih-susu-3-br-relaxing-family-getaway-ungasan/0.webp?v=2"
+      "/placeholder-villa.webp"
     ],
     "areaRaw": "Ungasan",
-    "cover": "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/villa-putih-susu-3-br-relaxing-family-getaway-ungasan/0.webp?v=2",
+    "cover": "/placeholder-villa.webp",
     "needsPhotos": false
   },
   {
@@ -116,24 +116,24 @@
       "Weekly Housekeeping"
     ],
     "images": [
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/villa-eysteinn-your-exquisite-bali-haven-in-canggu/d0.webp?v=2",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/villa-eysteinn-your-exquisite-bali-haven-in-canggu/d1.webp?v=2",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/villa-eysteinn-your-exquisite-bali-haven-in-canggu/d2.webp?v=2",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/villa-eysteinn-your-exquisite-bali-haven-in-canggu/d3.webp?v=2",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/villa-eysteinn-your-exquisite-bali-haven-in-canggu/d4.webp?v=2",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/villa-eysteinn-your-exquisite-bali-haven-in-canggu/d5.webp?v=2",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/villa-eysteinn-your-exquisite-bali-haven-in-canggu/d6.webp?v=2",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/villa-eysteinn-your-exquisite-bali-haven-in-canggu/d7.webp?v=2",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/villa-eysteinn-your-exquisite-bali-haven-in-canggu/d13.webp?v=2",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/villa-eysteinn-your-exquisite-bali-haven-in-canggu/d10.webp?v=2",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/villa-eysteinn-your-exquisite-bali-haven-in-canggu/d12.webp?v=2",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/villa-eysteinn-your-exquisite-bali-haven-in-canggu/d11.webp?v=2",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/villa-eysteinn-your-exquisite-bali-haven-in-canggu/d14.webp?v=2",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/villa-eysteinn-your-exquisite-bali-haven-in-canggu/d8.webp?v=2",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/villa-eysteinn-your-exquisite-bali-haven-in-canggu/d9.webp?v=2"
+      "/villas/villa-eysteinn-your-exquisite-bali-haven-in-canggu/0.webp",
+      "/villas/villa-eysteinn-your-exquisite-bali-haven-in-canggu/1.webp",
+      "/villas/villa-eysteinn-your-exquisite-bali-haven-in-canggu/2.webp",
+      "/villas/villa-eysteinn-your-exquisite-bali-haven-in-canggu/3.webp",
+      "/villas/villa-eysteinn-your-exquisite-bali-haven-in-canggu/4.webp",
+      "/villas/villa-eysteinn-your-exquisite-bali-haven-in-canggu/5.webp",
+      "/villas/villa-eysteinn-your-exquisite-bali-haven-in-canggu/6.webp",
+      "/villas/villa-eysteinn-your-exquisite-bali-haven-in-canggu/7.webp",
+      "/villas/villa-eysteinn-your-exquisite-bali-haven-in-canggu/8.webp",
+      "/villas/villa-eysteinn-your-exquisite-bali-haven-in-canggu/9.webp",
+      "/villas/villa-eysteinn-your-exquisite-bali-haven-in-canggu/10.webp",
+      "/villas/villa-eysteinn-your-exquisite-bali-haven-in-canggu/11.webp",
+      "/villas/villa-eysteinn-your-exquisite-bali-haven-in-canggu/12.webp",
+      "/villas/villa-eysteinn-your-exquisite-bali-haven-in-canggu/13.webp",
+      "/villas/villa-eysteinn-your-exquisite-bali-haven-in-canggu/14.webp"
     ],
     "areaRaw": "Canggu",
-    "cover": "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/villa-eysteinn-your-exquisite-bali-haven-in-canggu/d0.webp?v=2",
+    "cover": "/villas/villa-eysteinn-your-exquisite-bali-haven-in-canggu/0.webp",
     "needsPhotos": false
   },
   {
@@ -167,10 +167,10 @@
       "Weekly Housekeeping"
     ],
     "images": [
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/where-productivity-meets-island-relaxation/0.webp?v=2"
+      "/placeholder-villa.webp"
     ],
     "areaRaw": "Sanur",
-    "cover": "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/where-productivity-meets-island-relaxation/0.webp?v=2",
+    "cover": "/placeholder-villa.webp",
     "needsPhotos": false
   },
   {
@@ -204,10 +204,10 @@
       "Weekly Housekeeping"
     ],
     "images": [
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/baile-bali-villa-your-minimalist-home-in-jimbaran/0.webp?v=2"
+      "/placeholder-villa.webp"
     ],
     "areaRaw": "Jimbaran",
-    "cover": "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/baile-bali-villa-your-minimalist-home-in-jimbaran/0.webp?v=2",
+    "cover": "/placeholder-villa.webp",
     "needsPhotos": false
   },
   {
@@ -243,23 +243,23 @@
       "Weekly Housekeeping"
     ],
     "images": [
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/villa-rumma-lanna/d6.webp?v=2",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/villa-rumma-lanna/d1.webp?v=2",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/villa-rumma-lanna/d8.webp?v=2",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/villa-rumma-lanna/d10.webp?v=2",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/villa-rumma-lanna/d12.webp?v=2",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/villa-rumma-lanna/d7.webp?v=2",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/villa-rumma-lanna/d9.webp?v=2",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/villa-rumma-lanna/d11.webp?v=2",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/villa-rumma-lanna/d13.webp?v=2",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/villa-rumma-lanna/d14.webp?v=2",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/villa-rumma-lanna/d0.webp?v=2",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/villa-rumma-lanna/d2.webp?v=2",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/villa-rumma-lanna/d3.webp?v=2",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/villa-rumma-lanna/d4.webp?v=2",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/villa-rumma-lanna/d5.webp?v=2"
+      "/villas/villa-rumma-lanna/0.webp",
+      "/villas/villa-rumma-lanna/1.webp",
+      "/villas/villa-rumma-lanna/2.webp",
+      "/villas/villa-rumma-lanna/3.webp",
+      "/villas/villa-rumma-lanna/4.webp",
+      "/villas/villa-rumma-lanna/5.webp",
+      "/villas/villa-rumma-lanna/6.webp",
+      "/villas/villa-rumma-lanna/7.webp",
+      "/villas/villa-rumma-lanna/8.webp",
+      "/villas/villa-rumma-lanna/9.webp",
+      "/villas/villa-rumma-lanna/10.webp",
+      "/villas/villa-rumma-lanna/11.webp",
+      "/villas/villa-rumma-lanna/12.webp",
+      "/villas/villa-rumma-lanna/13.webp",
+      "/villas/villa-rumma-lanna/14.webp"
     ],
-    "cover": "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/villa-rumma-lanna/d6.webp?v=2",
+    "cover": "/villas/villa-rumma-lanna/0.webp",
     "needsPhotos": false
   },
   {
@@ -293,23 +293,23 @@
       "Weekly Housekeeping"
     ],
     "images": [
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/secluded-jungle-sanctuary-ubud/d14.webp?v=2",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/secluded-jungle-sanctuary-ubud/d0.webp?v=2",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/secluded-jungle-sanctuary-ubud/d1.webp?v=2",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/secluded-jungle-sanctuary-ubud/d2.webp?v=2",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/secluded-jungle-sanctuary-ubud/d3.webp?v=2",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/secluded-jungle-sanctuary-ubud/d6.webp?v=2",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/secluded-jungle-sanctuary-ubud/d7.webp?v=2",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/secluded-jungle-sanctuary-ubud/d8.webp?v=2",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/secluded-jungle-sanctuary-ubud/d9.webp?v=2",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/secluded-jungle-sanctuary-ubud/d10.webp?v=2",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/secluded-jungle-sanctuary-ubud/d11.webp?v=2",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/secluded-jungle-sanctuary-ubud/d12.webp?v=2",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/secluded-jungle-sanctuary-ubud/d13.webp?v=2",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/secluded-jungle-sanctuary-ubud/d4.webp?v=2",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/secluded-jungle-sanctuary-ubud/d5.webp?v=2"
+      "/villas/secluded-jungle-sanctuary-ubud/0.webp",
+      "/villas/secluded-jungle-sanctuary-ubud/1.webp",
+      "/villas/secluded-jungle-sanctuary-ubud/2.webp",
+      "/villas/secluded-jungle-sanctuary-ubud/3.webp",
+      "/villas/secluded-jungle-sanctuary-ubud/4.webp",
+      "/villas/secluded-jungle-sanctuary-ubud/5.webp",
+      "/villas/secluded-jungle-sanctuary-ubud/6.webp",
+      "/villas/secluded-jungle-sanctuary-ubud/7.webp",
+      "/villas/secluded-jungle-sanctuary-ubud/8.webp",
+      "/villas/secluded-jungle-sanctuary-ubud/9.webp",
+      "/villas/secluded-jungle-sanctuary-ubud/10.webp",
+      "/villas/secluded-jungle-sanctuary-ubud/11.webp",
+      "/villas/secluded-jungle-sanctuary-ubud/12.webp",
+      "/villas/secluded-jungle-sanctuary-ubud/13.webp",
+      "/villas/secluded-jungle-sanctuary-ubud/14.webp"
     ],
-    "cover": "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/secluded-jungle-sanctuary-ubud/d14.webp?v=2",
+    "cover": "/villas/secluded-jungle-sanctuary-ubud/0.webp",
     "needsPhotos": false
   },
   {
@@ -344,23 +344,23 @@
       "Weekly Housekeeping"
     ],
     "images": [
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/askana-suites-payangan/d1.webp?v=2",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/askana-suites-payangan/d2.webp?v=2",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/askana-suites-payangan/d3.webp?v=2",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/askana-suites-payangan/d9.webp?v=2",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/askana-suites-payangan/d10.webp?v=2",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/askana-suites-payangan/d4.webp?v=2",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/askana-suites-payangan/d5.webp?v=2",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/askana-suites-payangan/d6.webp?v=2",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/askana-suites-payangan/d7.webp?v=2",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/askana-suites-payangan/d8.webp?v=2",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/askana-suites-payangan/d11.webp?v=2",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/askana-suites-payangan/d12.webp?v=2",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/askana-suites-payangan/d14.webp?v=2",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/askana-suites-payangan/d0.webp?v=2",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/askana-suites-payangan/d13.webp?v=2"
+      "/villas/askana-suites-payangan/0.webp",
+      "/villas/askana-suites-payangan/1.webp",
+      "/villas/askana-suites-payangan/2.webp",
+      "/villas/askana-suites-payangan/3.webp",
+      "/villas/askana-suites-payangan/4.webp",
+      "/villas/askana-suites-payangan/5.webp",
+      "/villas/askana-suites-payangan/6.webp",
+      "/villas/askana-suites-payangan/7.webp",
+      "/villas/askana-suites-payangan/8.webp",
+      "/villas/askana-suites-payangan/9.webp",
+      "/villas/askana-suites-payangan/10.webp",
+      "/villas/askana-suites-payangan/11.webp",
+      "/villas/askana-suites-payangan/12.webp",
+      "/villas/askana-suites-payangan/13.webp",
+      "/villas/askana-suites-payangan/14.webp"
     ],
-    "cover": "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/askana-suites-payangan/d1.webp?v=2",
+    "cover": "/villas/askana-suites-payangan/0.webp",
     "needsPhotos": false
   },
   {
@@ -506,23 +506,23 @@
       "Weekly Housekeeping"
     ],
     "images": [
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/amalfi-dream-villa/d0.webp?v=2",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/amalfi-dream-villa/d1.webp?v=2",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/amalfi-dream-villa/d2.webp?v=2",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/amalfi-dream-villa/d3.webp?v=2",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/amalfi-dream-villa/d4.webp?v=2",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/amalfi-dream-villa/d5.webp?v=2",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/amalfi-dream-villa/d6.webp?v=2",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/amalfi-dream-villa/d7.webp?v=2",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/amalfi-dream-villa/d10.webp?v=2",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/amalfi-dream-villa/d13.webp?v=2",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/amalfi-dream-villa/d8.webp?v=2",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/amalfi-dream-villa/d12.webp?v=2",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/amalfi-dream-villa/d14.webp?v=2",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/amalfi-dream-villa/d9.webp?v=2",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/amalfi-dream-villa/d11.webp?v=2"
+      "/villas/amalfi-dream-villa/0.webp",
+      "/villas/amalfi-dream-villa/1.webp",
+      "/villas/amalfi-dream-villa/2.webp",
+      "/villas/amalfi-dream-villa/3.webp",
+      "/villas/amalfi-dream-villa/4.webp",
+      "/villas/amalfi-dream-villa/5.webp",
+      "/villas/amalfi-dream-villa/6.webp",
+      "/villas/amalfi-dream-villa/7.webp",
+      "/villas/amalfi-dream-villa/8.webp",
+      "/villas/amalfi-dream-villa/9.webp",
+      "/villas/amalfi-dream-villa/10.webp",
+      "/villas/amalfi-dream-villa/11.webp",
+      "/villas/amalfi-dream-villa/12.webp",
+      "/villas/amalfi-dream-villa/13.webp",
+      "/villas/amalfi-dream-villa/14.webp"
     ],
-    "cover": "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/amalfi-dream-villa/d0.webp?v=2",
+    "cover": "/villas/amalfi-dream-villa/0.webp",
     "needsPhotos": false
   },
   {
@@ -1723,19 +1723,9 @@
     "description": "Classic Luxe 3BR Villa in Sanur",
     "features": [],
     "images": [
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/airbnb/1338888094316977353/3.webp",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/airbnb/1338888094316977353/0.webp",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/airbnb/1338888094316977353/1.webp",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/airbnb/1338888094316977353/2.webp",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/airbnb/1338888094316977353/4.webp",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/airbnb/1338888094316977353/5.webp",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/airbnb/1338888094316977353/8.webp",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/airbnb/1338888094316977353/10.webp",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/airbnb/1338888094316977353/9.webp",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/airbnb/1338888094316977353/6.webp",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/airbnb/1338888094316977353/7.webp"
+      "/placeholder-villa.webp"
     ],
-    "cover": "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/airbnb/1338888094316977353/3.webp"
+    "cover": "/placeholder-villa.webp"
   },
   {
     "slug": "home-in-kecamatan-kuta-utara-3-bedrooms-3-beds-3-private-bat-140812",
@@ -4788,23 +4778,9 @@
     "description": "Affordable Luxe 10 Bedrooms Villa in Uluwatu",
     "features": [],
     "images": [
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/airbnb/1043925368959592839/0.webp",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/airbnb/1043925368959592839/1.webp",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/airbnb/1043925368959592839/12.webp",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/airbnb/1043925368959592839/11.webp",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/airbnb/1043925368959592839/3.webp",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/airbnb/1043925368959592839/2.webp",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/airbnb/1043925368959592839/4.webp",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/airbnb/1043925368959592839/5.webp",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/airbnb/1043925368959592839/10.webp",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/airbnb/1043925368959592839/6.webp",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/airbnb/1043925368959592839/7.webp",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/airbnb/1043925368959592839/8.webp",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/airbnb/1043925368959592839/9.webp",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/airbnb/1043925368959592839/13.webp",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/airbnb/1043925368959592839/14.webp"
+      "/placeholder-villa.webp"
     ],
-    "cover": "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/airbnb/1043925368959592839/0.webp"
+    "cover": "/placeholder-villa.webp"
   },
   {
     "slug": "villa-in-south-kuta-2-bedrooms-2-beds-2-shared-baths-713827",
@@ -4986,23 +4962,9 @@
     "description": "Affordable Luxe 1BR Villa with Pool in Uluwatu",
     "features": [],
     "images": [
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/airbnb/657448034995873900/0.webp",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/airbnb/657448034995873900/1.webp",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/airbnb/657448034995873900/4.webp",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/airbnb/657448034995873900/2.webp",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/airbnb/657448034995873900/3.webp",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/airbnb/657448034995873900/5.webp",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/airbnb/657448034995873900/6.webp",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/airbnb/657448034995873900/12.webp",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/airbnb/657448034995873900/13.webp",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/airbnb/657448034995873900/7.webp",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/airbnb/657448034995873900/10.webp",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/airbnb/657448034995873900/11.webp",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/airbnb/657448034995873900/14.webp",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/airbnb/657448034995873900/8.webp",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/airbnb/657448034995873900/9.webp"
+      "/placeholder-villa.webp"
     ],
-    "cover": "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/airbnb/657448034995873900/0.webp"
+    "cover": "/placeholder-villa.webp"
   },
   {
     "slug": "guest-suite-in-south-kuta-4-78-1-bedroom-1-bed-1-shared-bath-086883",
@@ -7220,23 +7182,9 @@
     "description": "Super Promo | 1BDR Amazing Views",
     "features": [],
     "images": [
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/airbnb/980263131124020670/1.webp",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/airbnb/980263131124020670/8.webp",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/airbnb/980263131124020670/5.webp",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/airbnb/980263131124020670/12.webp",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/airbnb/980263131124020670/13.webp",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/airbnb/980263131124020670/9.webp",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/airbnb/980263131124020670/2.webp",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/airbnb/980263131124020670/10.webp",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/airbnb/980263131124020670/11.webp",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/airbnb/980263131124020670/3.webp",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/airbnb/980263131124020670/14.webp",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/airbnb/980263131124020670/0.webp",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/airbnb/980263131124020670/4.webp",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/airbnb/980263131124020670/6.webp",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/airbnb/980263131124020670/7.webp"
+      "/placeholder-villa.webp"
     ],
-    "cover": "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/airbnb/980263131124020670/1.webp"
+    "cover": "/placeholder-villa.webp"
   },
   {
     "slug": "home-in-kuta-3-bedrooms-3-beds-2-private-baths-896025",
@@ -7344,23 +7292,9 @@
     "description": "Stunning 2BDR 5 minutes to Beach",
     "features": [],
     "images": [
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/airbnb/980150925249971021/5.webp",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/airbnb/980150925249971021/0.webp",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/airbnb/980150925249971021/1.webp",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/airbnb/980150925249971021/2.webp",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/airbnb/980150925249971021/8.webp",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/airbnb/980150925249971021/9.webp",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/airbnb/980150925249971021/14.webp",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/airbnb/980150925249971021/6.webp",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/airbnb/980150925249971021/7.webp",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/airbnb/980150925249971021/11.webp",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/airbnb/980150925249971021/10.webp",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/airbnb/980150925249971021/3.webp",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/airbnb/980150925249971021/4.webp",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/airbnb/980150925249971021/12.webp",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/airbnb/980150925249971021/13.webp"
+      "/placeholder-villa.webp"
     ],
-    "cover": "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/airbnb/980150925249971021/5.webp"
+    "cover": "/placeholder-villa.webp"
   },
   {
     "slug": "home-in-kecamatan-denpasar-selatan-1-bedroom-1-bed-1-shared--545730",
@@ -7540,23 +7474,9 @@
     "description": "Modern Pecatu Villa with Gym &amp; Private Pool Oasis",
     "features": [],
     "images": [
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/airbnb/975854750912415073/0.webp",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/airbnb/975854750912415073/9.webp",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/airbnb/975854750912415073/10.webp",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/airbnb/975854750912415073/11.webp",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/airbnb/975854750912415073/7.webp",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/airbnb/975854750912415073/3.webp",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/airbnb/975854750912415073/4.webp",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/airbnb/975854750912415073/5.webp",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/airbnb/975854750912415073/12.webp",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/airbnb/975854750912415073/6.webp",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/airbnb/975854750912415073/8.webp",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/airbnb/975854750912415073/13.webp",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/airbnb/975854750912415073/1.webp",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/airbnb/975854750912415073/14.webp",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/airbnb/975854750912415073/2.webp"
+      "/placeholder-villa.webp"
     ],
-    "cover": "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/airbnb/975854750912415073/0.webp"
+    "cover": "/placeholder-villa.webp"
   },
   {
     "slug": "home-in-kecamatan-kuta-utara-1-bedroom-1-bed-1-private-bath-516250",
@@ -8161,23 +8081,9 @@
     "description": "5 Mnts to dreamland beach, 1BDR Stunning Villa",
     "features": [],
     "images": [
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/airbnb/980731939897305368/3.webp",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/airbnb/980731939897305368/14.webp",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/airbnb/980731939897305368/1.webp",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/airbnb/980731939897305368/8.webp",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/airbnb/980731939897305368/2.webp",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/airbnb/980731939897305368/5.webp",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/airbnb/980731939897305368/11.webp",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/airbnb/980731939897305368/12.webp",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/airbnb/980731939897305368/9.webp",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/airbnb/980731939897305368/6.webp",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/airbnb/980731939897305368/7.webp",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/airbnb/980731939897305368/4.webp",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/airbnb/980731939897305368/13.webp",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/airbnb/980731939897305368/10.webp",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/airbnb/980731939897305368/0.webp"
+      "/placeholder-villa.webp"
     ],
-    "cover": "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/airbnb/980731939897305368/3.webp"
+    "cover": "/placeholder-villa.webp"
   },
   {
     "slug": "home-in-kecamatan-kuta-utara-3-bedrooms-3-beds-3-private-bat-024588",
@@ -9520,18 +9426,9 @@
     "description": "BIG SALE - 1bdr complex villa uluwatu near beach",
     "features": [],
     "images": [
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/airbnb/846175912605628981/0.webp",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/airbnb/846175912605628981/1.webp",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/airbnb/846175912605628981/3.webp",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/airbnb/846175912605628981/7.webp",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/airbnb/846175912605628981/2.webp",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/airbnb/846175912605628981/6.webp",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/airbnb/846175912605628981/8.webp",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/airbnb/846175912605628981/4.webp",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/airbnb/846175912605628981/5.webp",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/airbnb/846175912605628981/9.webp"
+      "/placeholder-villa.webp"
     ],
-    "cover": "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/airbnb/846175912605628981/0.webp"
+    "cover": "/placeholder-villa.webp"
   },
   {
     "slug": "home-in-mengwi-1-bedroom-1-bed-1-shared-bath-566250",
@@ -9997,13 +9894,9 @@
     "description": "Enjoyable 1BR Private Pool Villa In Pecatu",
     "features": [],
     "images": [
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/airbnb/820557174058462017/1.webp",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/airbnb/820557174058462017/2.webp",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/airbnb/820557174058462017/3.webp",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/airbnb/820557174058462017/0.webp",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/airbnb/820557174058462017/4.webp"
+      "/placeholder-villa.webp"
     ],
-    "cover": "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/airbnb/820557174058462017/1.webp"
+    "cover": "/placeholder-villa.webp"
   },
   {
     "slug": "home-in-kecamatan-kuta-utara-1-bedroom-1-bed-1-private-bath-882585",
@@ -11144,23 +11037,9 @@
     "description": "Affordable Luxe 5 Bedroom Villa w/ Pool in Uluwatu",
     "features": [],
     "images": [
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/airbnb/648389251011928872/2.webp",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/airbnb/648389251011928872/6.webp",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/airbnb/648389251011928872/7.webp",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/airbnb/648389251011928872/10.webp",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/airbnb/648389251011928872/11.webp",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/airbnb/648389251011928872/1.webp",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/airbnb/648389251011928872/0.webp",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/airbnb/648389251011928872/8.webp",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/airbnb/648389251011928872/9.webp",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/airbnb/648389251011928872/5.webp",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/airbnb/648389251011928872/13.webp",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/airbnb/648389251011928872/12.webp",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/airbnb/648389251011928872/14.webp",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/airbnb/648389251011928872/3.webp",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/airbnb/648389251011928872/4.webp"
+      "/placeholder-villa.webp"
     ],
-    "cover": "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/airbnb/648389251011928872/2.webp"
+    "cover": "/placeholder-villa.webp"
   },
   {
     "slug": "villa-in-south-kuta-3-95-1-bedroom-1-bed-1-private-bath-612790",
@@ -11186,23 +11065,9 @@
     "description": "Affordable Luxe 1BR Villa Private Pool in Uluwatu",
     "features": [],
     "images": [
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/airbnb/655948721327612790/3.webp",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/airbnb/655948721327612790/12.webp",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/airbnb/655948721327612790/4.webp",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/airbnb/655948721327612790/0.webp",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/airbnb/655948721327612790/1.webp",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/airbnb/655948721327612790/2.webp",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/airbnb/655948721327612790/6.webp",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/airbnb/655948721327612790/8.webp",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/airbnb/655948721327612790/9.webp",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/airbnb/655948721327612790/13.webp",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/airbnb/655948721327612790/5.webp",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/airbnb/655948721327612790/14.webp",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/airbnb/655948721327612790/7.webp",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/airbnb/655948721327612790/10.webp",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/airbnb/655948721327612790/11.webp"
+      "/placeholder-villa.webp"
     ],
-    "cover": "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/airbnb/655948721327612790/3.webp"
+    "cover": "/placeholder-villa.webp"
   },
   {
     "slug": "villa-in-south-kuta-4-48-1-bedroom-1-bed-1-shared-bath-531267",
@@ -11228,23 +11093,9 @@
     "description": "Affordable Elegant 1BR Private Villa in Uluwatu",
     "features": [],
     "images": [
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/airbnb/704657438435531267/6.webp",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/airbnb/704657438435531267/7.webp",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/airbnb/704657438435531267/10.webp",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/airbnb/704657438435531267/14.webp",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/airbnb/704657438435531267/0.webp",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/airbnb/704657438435531267/2.webp",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/airbnb/704657438435531267/8.webp",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/airbnb/704657438435531267/9.webp",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/airbnb/704657438435531267/1.webp",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/airbnb/704657438435531267/12.webp",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/airbnb/704657438435531267/11.webp",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/airbnb/704657438435531267/3.webp",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/airbnb/704657438435531267/4.webp",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/airbnb/704657438435531267/5.webp",
-      "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/airbnb/704657438435531267/13.webp"
+      "/placeholder-villa.webp"
     ],
-    "cover": "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images/airbnb/704657438435531267/6.webp"
+    "cover": "/placeholder-villa.webp"
   },
   {
     "slug": "villa-in-mengwi-3-bedrooms-2-beds-3-private-baths-816616",
