@@ -8,6 +8,8 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       { protocol: "https", hostname: "bhwpyermrhoprtwgybtz.supabase.co" },
       { protocol: "https", hostname: "greatbalivillas.com" },
+      // Airbnb's own image CDN — villa photos are served straight from here.
+      { protocol: "https", hostname: "a0.muscache.com" },
     ],
   },
 };
