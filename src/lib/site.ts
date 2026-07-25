@@ -43,23 +43,23 @@ export const NAV: { href: string; key?: string; label?: string }[] = [
 
 export const HERO_AREAS = ["Seminyak", "Ubud", "Canggu", "Jimbaran", "Uluwatu", "Nusa Dua"];
 
-// Iconic Bali destinations for the home hero slideshow (HD stock, re-hosted on our CDN).
-const CDN = "https://bhwpyermrhoprtwgybtz.supabase.co/storage/v1/object/public/property-images";
+// Iconic Bali landmarks for the home hero slideshow (HD stock, served from our
+// own /public so it never depends on the Supabase bucket).
 export const HERO_IMAGES = [
-  `${CDN}/hero/tanah-lot.webp`,
-  `${CDN}/hero/kelingking.webp`,
-  `${CDN}/hero/lempuyang.webp`,
-  `${CDN}/hero/uluwatu.webp`,
-  `${CDN}/hero/tegallalang.webp`,
-  `${CDN}/hero/handara.webp`,
+  "/hero/tanah-lot.webp",
+  "/hero/kelingking.webp",
+  "/hero/lempuyang.webp",
+  "/hero/uluwatu.webp",
+  "/hero/tegallalang.webp",
+  "/hero/handara.webp",
 ];
 
-// Iconic landmark per destination for the "explore by area" cards (HD stock on our CDN).
+// Iconic landmark per destination for the "explore by area" cards.
 export const DEST_IMAGES: Record<string, string> = {
-  Seminyak: `${CDN}/destinations/seminyak.webp`,
-  Ubud: `${CDN}/hero/tegallalang.webp`,
-  Canggu: `${CDN}/destinations/canggu.webp`,
-  Jimbaran: `${CDN}/destinations/jimbaran.webp`,
-  Uluwatu: `${CDN}/hero/uluwatu.webp`,
-  "Nusa Dua": `${CDN}/destinations/nusa-dua.webp`,
+  Seminyak: "/destinations/seminyak.webp",
+  Ubud: "/hero/tegallalang.webp",
+  Canggu: "/destinations/canggu.webp",
+  Jimbaran: "/destinations/jimbaran.webp",
+  Uluwatu: "/hero/uluwatu.webp",
+  "Nusa Dua": "/destinations/nusa-dua.webp",
 };
