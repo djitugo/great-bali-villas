@@ -36,24 +36,25 @@ export function Gallery({ images, name }: { images: string[]; name: string }) {
   };
 
   const main = images[0];
-  const rest = images.slice(1, 5);
+  const rest = images.slice(1, 3); // two thumbnails so everything stays on one row
 
   return (
     <>
-      <div className="grid grid-cols-4 grid-rows-2 gap-2 overflow-hidden lg:gap-3" style={{ aspectRatio: "16/9" }}>
-        <button onClick={() => openAt(0)} className="group relative col-span-4 row-span-2 lg:col-span-2">
+      {/* Single-row gallery strip: one large image + a few thumbnails, short height */}
+      <div className="grid h-[34vh] min-h-[220px] grid-cols-4 gap-2 overflow-hidden lg:h-[42vh] lg:gap-3">
+        <button onClick={() => openAt(0)} className="group relative col-span-4 sm:col-span-2">
           <Image
             src={main}
             alt={name}
             fill
             priority
             quality={90}
-            sizes="(max-width:1024px) 100vw, 50vw"
+            sizes="(max-width:640px) 100vw, 50vw"
             className="object-cover transition-transform duration-700 group-hover:scale-105"
           />
         </button>
         {rest.map((img, i) => (
-          <button key={img} onClick={() => openAt(i + 1)} className="group relative hidden lg:block">
+          <button key={img} onClick={() => openAt(i + 1)} className="group relative hidden sm:block">
             <Image
               src={img}
               alt={`${name} ${i + 2}`}
@@ -62,16 +63,16 @@ export function Gallery({ images, name }: { images: string[]; name: string }) {
               sizes="25vw"
               className="object-cover transition-transform duration-700 group-hover:scale-105"
             />
-            {i === rest.length - 1 && images.length > 5 && (
+            {i === rest.length - 1 && images.length > rest.length + 1 && (
               <span className="absolute inset-0 flex items-center justify-center bg-ink/55 text-sm font-medium text-cream">
-                {t("gallery.more", { n: images.length - 5 })}
+                {t("gallery.more", { n: images.length - (rest.length + 1) })}
               </span>
             )}
           </button>
         ))}
       </div>
 
-      <button onClick={() => openAt(0)} className="mt-3 text-sm font-medium underline underline-offset-4 lg:hidden">
+      <button onClick={() => openAt(0)} className="mt-3 text-sm font-medium underline underline-offset-4 sm:hidden">
         {t("gallery.viewAll", { n: images.length })}
       </button>
 

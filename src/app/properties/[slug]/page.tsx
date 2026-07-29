@@ -7,7 +7,20 @@ import { InquiryForm } from "@/components/InquiryForm";
 import { Price } from "@/components/Price";
 import { PropertyCard } from "@/components/PropertyCard";
 import { Reveal } from "@/components/Reveal";
-import { BedIcon, BathIcon, PinIcon, CheckIcon, ArrowIcon } from "@/components/icons";
+import {
+  BedIcon,
+  BathIcon,
+  PinIcon,
+  CheckIcon,
+  ArrowIcon,
+  KeyIcon,
+  SparkleIcon,
+  BellIcon,
+  StarIcon,
+  TagIcon,
+  CalendarIcon,
+  ShieldIcon,
+} from "@/components/icons";
 import { SITE } from "@/lib/site";
 import { T } from "@/lib/i18n";
 import { Map } from "@/components/Map";
@@ -47,6 +60,21 @@ export default async function PropertyPage({ params }: { params: Promise<{ slug:
 
   const descParas = p.description ? p.description.split("\n\n").filter(Boolean) : [];
   const [lat, lng] = coordFor(p);
+
+  const services = [
+    { icon: KeyIcon, k: "detail.svc1" as const },
+    { icon: SparkleIcon, k: "detail.svc2" as const },
+    { icon: CheckIcon, k: "detail.svc3" as const },
+    { icon: StarIcon, k: "detail.svc4" as const },
+    { icon: BellIcon, k: "detail.svc5" as const },
+    { icon: CalendarIcon, k: "detail.svc6" as const },
+  ];
+  const goodToKnow = [
+    { icon: TagIcon, t: "detail.g1t" as const, d: "detail.g1d" as const },
+    { icon: PinIcon, t: "detail.g2t" as const, d: "detail.g2d" as const },
+    { icon: CalendarIcon, t: "detail.g3t" as const, d: "detail.g3d" as const },
+    { icon: ShieldIcon, t: "detail.g4t" as const, d: "detail.g4d" as const },
+  ];
 
   return (
     <>
@@ -90,17 +118,17 @@ export default async function PropertyPage({ params }: { params: Promise<{ slug:
               ))}
             </div>
 
-            {/* description */}
-            {descParas.length > 0 && (
-              <div className="border-b border-ink/10 py-10">
-                <h2 className="mb-5 font-display text-3xl"><T k="detail.about" /></h2>
-                <div className="space-y-4 leading-relaxed text-ink-soft">
-                  {descParas.map((para, i) => (
-                    <p key={i}>{para}</p>
-                  ))}
-                </div>
+            {/* description — always shown, with a graceful fallback when we have no copy */}
+            <div className="border-b border-ink/10 py-10">
+              <h2 className="mb-5 font-display text-3xl"><T k="detail.about" /></h2>
+              <div className="space-y-4 leading-relaxed text-ink-soft">
+                {descParas.length > 0 ? (
+                  descParas.map((para, i) => <p key={i}>{para}</p>)
+                ) : (
+                  <p><T k="detail.aboutFallback" vars={{ area: p.area }} /></p>
+                )}
               </div>
-            )}
+            </div>
 
             {/* features */}
             {p.features.length > 0 && (
@@ -116,6 +144,34 @@ export default async function PropertyPage({ params }: { params: Promise<{ slug:
                 </ul>
               </div>
             )}
+
+            {/* concierge & extras */}
+            <div className="border-b border-ink/10 py-10">
+              <h2 className="font-display text-3xl"><T k="detail.svc" /></h2>
+              <p className="mb-6 mt-2 text-sm text-muted"><T k="detail.svcNote" /></p>
+              <ul className="grid grid-cols-1 gap-x-6 gap-y-3.5 sm:grid-cols-2">
+                {services.map((s) => (
+                  <li key={s.k} className="flex items-center gap-3 text-sm">
+                    <s.icon className="h-5 w-5 shrink-0 text-ink" />
+                    <T k={s.k} />
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* good to know */}
+            <div className="border-b border-ink/10 py-10">
+              <h2 className="mb-6 font-display text-3xl"><T k="detail.good" /></h2>
+              <div className="grid gap-px border border-ink/10 bg-ink/10 sm:grid-cols-2">
+                {goodToKnow.map((g) => (
+                  <div key={g.t} className="bg-cream p-5">
+                    <g.icon className="h-6 w-6 text-ink" />
+                    <h3 className="mt-3 font-display text-lg"><T k={g.t} /></h3>
+                    <p className="mt-1 text-sm leading-relaxed text-muted"><T k={g.d} /></p>
+                  </div>
+                ))}
+              </div>
+            </div>
 
             {/* location */}
             <div className="py-10">
