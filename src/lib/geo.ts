@@ -41,6 +41,7 @@ const SLUG_COORDS: Record<string, [number, number]> = {
   "villa-eysteinn-your-exquisite-bali-haven-in-canggu": [-8.645, 115.13], // Kayu Tulang
   "where-productivity-meets-island-relaxation": [-8.7, 115.254], // Sanur Kauh
   "askana-suites-payangan": [-8.436, 115.24],
+  "duality-villas": [-8.526, 115.245], // Singakerta, Ubud
 };
 
 function hash(s: string): number {
