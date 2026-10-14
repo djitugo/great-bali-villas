@@ -36,11 +36,10 @@ export function Filters({ facets, total }: { facets: Facets; total: number }) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [search]);
 
-  const type = sp.get("type") ?? "";
   const area = sp.get("area") ?? "";
   const bedrooms = sp.get("bedrooms") ?? "";
   const sort = sp.get("sort") ?? "featured";
-  const hasFilters = !!(type || area || bedrooms || sp.get("search"));
+  const hasFilters = !!(area || bedrooms || sp.get("search"));
 
   return (
     <div className="sticky top-[4.5rem] z-40 border-y border-ink/10 bg-sand/90 backdrop-blur-xl lg:top-[5.5rem]">
@@ -58,17 +57,6 @@ export function Filters({ facets, total }: { facets: Facets; total: number }) {
                 className="border border-ink/10 bg-cream px-4 py-2.5 text-sm outline-none transition-colors hover:border-ink/30 focus:border-ink"
               />
             </label>
-
-            <Select
-              label={t("filters.type")}
-              value={type}
-              onChange={(v) => setParam({ type: v || undefined })}
-              className="lg:w-44"
-              options={[
-                { value: "", label: t("filters.allTypes") },
-                ...facets.types.map((x) => ({ value: x.value, label: `${x.value} (${x.count})` })),
-              ]}
-            />
 
             <Select
               label={t("filters.dest")}

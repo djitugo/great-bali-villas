@@ -11,7 +11,7 @@ import type { PropertyQuery } from "@/lib/types";
 
 export const metadata: Metadata = {
   title: "All Villas",
-  description: "Browse handpicked private villas across Bali. Filter by destination, type, bedrooms and price.",
+  description: "Browse handpicked private villas across Bali. Filter by destination, bedrooms and price.",
 };
 
 type SP = Promise<{ [key: string]: string | string[] | undefined }>;
@@ -23,7 +23,6 @@ export default async function PropertiesPage({ searchParams }: { searchParams: S
   const facets = getFacets();
 
   const q: PropertyQuery = {
-    type: one(sp.type),
     area: one(sp.area),
     bedrooms: one(sp.bedrooms) ? Number(one(sp.bedrooms)) : undefined,
     search: one(sp.search),
@@ -57,13 +56,7 @@ export default async function PropertiesPage({ searchParams }: { searchParams: S
               <T k="list.eyebrow" vars={{ n: total }} />
             </p>
             <h1 className="max-w-3xl font-display text-5xl tracking-tight lg:text-6xl">
-              {q.area ? (
-                <T k="list.titleArea" vars={{ x: q.area }} />
-              ) : q.type ? (
-                q.type
-              ) : (
-                <T k="list.title" />
-              )}
+              {q.area ? <T k="list.titleArea" vars={{ x: q.area }} /> : <T k="list.title" />}
             </h1>
           </Reveal>
         </div>

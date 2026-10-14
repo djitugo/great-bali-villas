@@ -1,12 +1,11 @@
 import Link from "next/link";
 import Image from "next/image";
-import { SITE } from "@/lib/site";
-import { getTypes, getAreas } from "@/lib/properties";
-import { T } from "@/lib/i18n";
+import { SITE, NAV } from "@/lib/site";
+import { getAreas } from "@/lib/properties";
+import { T, type DictKey } from "@/lib/i18n";
 import { InstagramIcon, FacebookIcon, TiktokIcon, WhatsappIcon } from "@/components/icons";
 
 export function Footer() {
-  const types = getTypes();
   const areas = getAreas().slice(0, 8);
   const year = new Date().getFullYear();
 
@@ -73,12 +72,12 @@ export function Footer() {
         </div>
 
         <div className="lg:col-span-2">
-          <h3 className="eyebrow mb-5 text-cream/40"><T k="footer.types" /></h3>
+          <h3 className="eyebrow mb-5 text-cream/40"><T k="footer.explore" /></h3>
           <ul className="space-y-2.5 text-sm">
-            {types.map((t) => (
-              <li key={t.value}>
-                <Link href={`/properties?type=${encodeURIComponent(t.value)}`} className="transition-colors hover:text-cream">
-                  {t.value}
+            {NAV.map((item) => (
+              <li key={item.href}>
+                <Link href={item.href} className="transition-colors hover:text-cream">
+                  <T k={`nav.${item.key}` as DictKey} />
                 </Link>
               </li>
             ))}

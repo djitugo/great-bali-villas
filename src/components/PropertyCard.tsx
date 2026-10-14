@@ -24,8 +24,9 @@ export function PropertyCard({
           priority={priority}
           className="object-cover transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.04]"
         />
-        <span className="absolute left-0 top-0 bg-cream px-3 py-2 text-[10px] font-semibold uppercase tracking-[0.18em] text-ink">
-          {p.type}
+        <span className="absolute left-0 top-0 flex items-center gap-1.5 bg-cream px-3 py-2 text-[10px] font-semibold uppercase tracking-[0.18em] text-ink">
+          <PinIcon className="h-3 w-3" />
+          {p.area}
         </span>
       </div>
 
@@ -41,12 +42,8 @@ export function PropertyCard({
           <Price idr={p.price} period={p.period} className="font-medium text-ink" suffixClassName="text-[10px]" />
         </p>
 
-        {/* location + beds + baths */}
+        {/* beds + baths (location sits on the photo tag) */}
         <div className="mt-2 flex flex-wrap items-center gap-x-4 gap-y-1 text-xs text-muted">
-          <span className="flex items-center gap-1.5">
-            <PinIcon className="h-3.5 w-3.5" />
-            {p.area}
-          </span>
           {p.bedrooms ? (
             <span className="flex items-center gap-1.5">
               <BedIcon className="h-3.5 w-3.5" />

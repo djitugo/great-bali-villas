@@ -12,6 +12,7 @@ export const LANGS: { code: Lang; label: string }[] = [
 const en = {
   // nav
   "nav.home": "Home",
+  "nav.collection": "Our Collection",
   "nav.about": "About",
   "nav.properties": "Properties",
   "nav.blog": "Blog",
@@ -128,6 +129,7 @@ const en = {
   "footer.wa": "Chat on WhatsApp",
   "footer.enquiry": "Send an enquiry",
   "footer.types": "Villa types",
+  "footer.explore": "Explore",
   "footer.dest": "Destinations",
   "footer.company": "Company",
   "footer.touch": "Get in touch",
@@ -288,6 +290,7 @@ const en = {
 
 const id: typeof en = {
   "nav.home": "Beranda",
+  "nav.collection": "Koleksi Kami",
   "nav.about": "Tentang",
   "nav.properties": "Properti",
   "nav.blog": "Blog",
@@ -395,6 +398,7 @@ const id: typeof en = {
   "footer.wa": "Chat via WhatsApp",
   "footer.enquiry": "Kirim pertanyaan",
   "footer.types": "Tipe vila",
+  "footer.explore": "Jelajahi",
   "footer.dest": "Destinasi",
   "footer.company": "Perusahaan",
   "footer.touch": "Kontak kami",

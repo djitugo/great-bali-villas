@@ -44,12 +44,17 @@ export function Map({
       });
       mapRef.current = map;
 
-      L.tileLayer("https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png", {
+      // Esri Light Gray Canvas: monochrome, free, no API key. (CARTO basemaps now
+      // require a key and serve "API KEY REQUIRED" tiles without one.)
+      const ESRI = "https://server.arcgisonline.com/ArcGIS/rest/services/Canvas";
+      const tileOpts = { maxZoom: 18, maxNativeZoom: 16 };
+      L.tileLayer(`${ESRI}/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}`, {
+        ...tileOpts,
         attribution:
-          '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>',
-        subdomains: "abcd",
-        maxZoom: 19,
+          'Tiles &copy; <a href="https://www.esri.com">Esri</a> &mdash; Esri, HERE, Garmin, &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
       }).addTo(map);
+      // place-name labels on top of the base
+      L.tileLayer(`${ESRI}/World_Light_Gray_Reference/MapServer/tile/{z}/{y}/{x}`, tileOpts).addTo(map);
 
       const pin = L.divIcon({
         className: "gbv-pin-wrap",

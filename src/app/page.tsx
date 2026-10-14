@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { getFeatured, getAllProperties, getTypes, getAreas } from "@/lib/properties";
+import { getFeatured, getAllProperties, getAreas } from "@/lib/properties";
 import { PropertyCard } from "@/components/PropertyCard";
 import { Reveal } from "@/components/Reveal";
 import { SITE, HERO_AREAS, HERO_IMAGES, DEST_IMAGES } from "@/lib/site";
@@ -39,7 +39,6 @@ const HOW = [
 export default function HomePage() {
   const featured = getFeatured(6);
   const total = getAllProperties().length;
-  const types = getTypes();
   const areas = getAreas();
 
   const destinations = HERO_AREAS.map((area) => ({
@@ -208,37 +207,6 @@ export default function HomePage() {
                   <ArrowUpRight className="h-5 w-5 opacity-0 transition-all duration-300 group-hover:opacity-100" />
                 </div>
               </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ============ BY TYPE ============ */}
-      <section className="border-t border-ink/10 bg-sand">
-        <div className="container-x py-20 lg:py-28">
-          <Reveal>
-            <p className="eyebrow mb-4 text-muted"><T k="types.eyebrow" /></p>
-            <h2 className="mb-12 font-display text-4xl tracking-tight lg:text-6xl"><T k="types.title" /></h2>
-          </Reveal>
-          <div className="border-t border-ink/10">
-            {types.map((t, i) => (
-              <Reveal key={t.value} delay={i * 0.04}>
-                <Link
-                  href={`/properties?type=${encodeURIComponent(t.value)}`}
-                  className="group flex items-baseline justify-between border-b border-ink/10 py-6 transition-all hover:px-3 lg:py-8"
-                >
-                  <span className="flex items-baseline gap-6">
-                    <span className="eyebrow text-muted">0{i + 1}</span>
-                    <span className="font-display text-3xl text-ink transition-opacity group-hover:opacity-60 lg:text-5xl">
-                      {t.value}
-                    </span>
-                  </span>
-                  <span className="flex items-center gap-5">
-                    <span className="eyebrow hidden text-muted sm:inline"><T k="types.count" vars={{ n: t.count }} /></span>
-                    <ArrowUpRight className="h-5 w-5 text-muted transition-all group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:text-ink lg:h-7 lg:w-7" />
-                  </span>
-                </Link>
-              </Reveal>
             ))}
           </div>
         </div>

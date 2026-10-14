@@ -31,11 +31,8 @@ export const SITE = {
 };
 
 export const NAV: { href: string; key?: string; label?: string }[] = [
-  { label: "Private Villa", href: "/properties?type=Private%20Villa" },
-  { label: "Villa", href: "/properties?type=Villa" },
-  { label: "Room", href: "/properties?type=Room" },
-  { label: "Bungalow", href: "/properties?type=Bungalow" },
-  { label: "Cottage", href: "/properties?type=Cottage" },
+  { key: "home", href: "/" },
+  { key: "collection", href: "/properties" },
   { key: "management", href: "/villa-management" },
   { key: "blog", href: "/blog" },
   { key: "contact", href: "/contact" },

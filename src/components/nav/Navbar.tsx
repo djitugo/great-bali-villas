@@ -51,7 +51,7 @@ export function Navbar() {
                 href={item.href}
                 className={cn(
                   "whitespace-nowrap px-2.5 py-2 text-[11px] font-semibold uppercase tracking-[0.16em] transition-opacity hover:opacity-60",
-                  pathname === item.href && "opacity-60"
+                  (item.href === "/" ? pathname === "/" : pathname.startsWith(item.href)) && "opacity-60"
                 )}
               >
                 {label(item)}
