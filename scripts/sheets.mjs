@@ -19,9 +19,15 @@ const PER_ROW = 8, MAX_IMG = 15, PER_SHEET = 4;
 const limit = pLimit(16);
 async function thumb(url) {
   try {
-    const r = await fetch(url, { signal: AbortSignal.timeout(30000) });
-    if (!r.ok) throw new Error("HTTP " + r.status);
-    const buf = Buffer.from(await r.arrayBuffer());
+    let buf;
+    if (url.startsWith("/")) {
+      // site-hosted photo (public/villas/...)
+      buf = fs.readFileSync(path.join(__dirname, "..", "public", url.split("?")[0]));
+    } else {
+      const r = await fetch(url, { signal: AbortSignal.timeout(30000) });
+      if (!r.ok) throw new Error("HTTP " + r.status);
+      buf = Buffer.from(await r.arrayBuffer());
+    }
     return await sharp(buf).resize(THUMB_W, THUMB_H, { fit: "cover" }).jpeg({ quality: 70 }).toBuffer();
   } catch {
     return await sharp({ create: { width: THUMB_W, height: THUMB_H, channels: 3, background: "#cccccc" } })
@@ -37,7 +43,10 @@ function labelSvg(text, width, height, size = 13) {
 }
 
 async function main() {
-  const props = JSON.parse(fs.readFileSync(PROPS, "utf8"));
+  // only villas with real galleries to rank (skip placeholder / single-photo ones)
+  const props = JSON.parse(fs.readFileSync(PROPS, "utf8")).filter(
+    (p) => p.images && p.images.length > 1 && !p.images[0].includes("placeholder")
+  );
   const sheets = [];
   const sheetW = MARGIN * 2 + PER_ROW * THUMB_W + (PER_ROW - 1) * GAP;
   const villaBlockH = LABEL_H + 2 * (THUMB_H + GAP);
