@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import type { Metadata } from "next";
-import { getFeatured } from "@/lib/properties";
+import { getPropertyBySlug } from "@/lib/properties";
 import { Reveal } from "@/components/Reveal";
 import { SITE } from "@/lib/site";
 import { T } from "@/lib/i18n";
@@ -57,8 +57,16 @@ const WHY = ["vm.w1", "vm.w2", "vm.w3", "vm.w4"] as const;
 
 const pad = (n: number) => String(n).padStart(2, "0");
 
+// Hand-picked strongest shots in the catalogue (ocean cliff, jungle infinity pool,
+// dusk architecture), shown as the photo strip under the hero.
+const SHOWCASE = [
+  "home-in-south-kuta-7-bedrooms-9-beds-10-private-baths-206445",
+  "home-in-kecamatan-ubud-3-bedrooms-3-beds-3-shared-baths-777157",
+  "home-in-blahbatuh-5-bedrooms-5-beds-5-shared-baths-355082",
+];
+
 export default function VillaManagementPage() {
-  const showcase = getFeatured(3);
+  const showcase = SHOWCASE.map((slug) => getPropertyBySlug(slug)).filter((p) => p !== undefined);
 
   return (
     <>
@@ -95,9 +103,16 @@ export default function VillaManagementPage() {
         <div className="container-x grid gap-3 pb-3 pt-12 sm:grid-cols-3 lg:pt-20">
           {showcase.map((p, i) => (
             <Reveal key={p.slug} delay={i * 0.08}>
-              <div className="relative aspect-[4/3] overflow-hidden">
-                <Image src={p.images[0]} alt={p.name} fill sizes="33vw" quality={85} className="object-cover" />
-              </div>
+              <Link href={`/properties/${p.slug}`} className="group relative block aspect-[4/3] overflow-hidden">
+                <Image
+                  src={p.cover || p.images[0]}
+                  alt={p.name}
+                  fill
+                  sizes="(max-width: 640px) 100vw, 33vw"
+                  quality={85}
+                  className="object-cover transition-transform duration-700 group-hover:scale-[1.04]"
+                />
+              </Link>
             </Reveal>
           ))}
         </div>
