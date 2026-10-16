@@ -13,7 +13,7 @@ import {
 
 export const metadata: Metadata = {
   title: "Links",
-  description: "Connect with Great Bali Villas — WhatsApp, Instagram, Facebook, TikTok, LinkedIn and our website.",
+  description: "Connect with Great Bali Villas on WhatsApp, Instagram, Facebook, TikTok, LinkedIn and our website.",
 };
 
 const LINKS = [
