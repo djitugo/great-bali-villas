@@ -5,46 +5,16 @@ import { getPropertyBySlug } from "@/lib/properties";
 import { Reveal } from "@/components/Reveal";
 import { SITE } from "@/lib/site";
 import { T } from "@/lib/i18n";
-import {
-  SparkleIcon,
-  CalendarIcon,
-  GlobeWebIcon,
-  ChatIcon,
-  KeyIcon,
-  TagIcon,
-  ListIcon,
-  ShieldIcon,
-  CheckIcon,
-} from "@/components/icons";
+import { CheckIcon } from "@/components/icons";
+import { VmAbout, VmExpertise, VmWhy, VmTeam, VmSolutions, VmCta } from "@/components/VmSections";
 import { VmPackages } from "@/components/VmPackages";
 import { VmOwnerForm } from "@/components/VmOwnerForm";
 
 export const metadata: Metadata = {
   title: "Villa Management",
   description:
-    "End-to-end villa management in Bali since 2014: marketing, OTA distribution, bookings, guest care and maintenance with full financial transparency.",
+    "Full-service villa management and marketing in Bali since 2014: operations, OTA marketing, guest care, property care and transparent owner reporting.",
 };
-
-const SERVICES = [
-  { icon: SparkleIcon, t: "vm.s1t", d: "vm.s1d" },
-  { icon: CalendarIcon, t: "vm.s2t", d: "vm.s2d" },
-  { icon: GlobeWebIcon, t: "vm.s3t", d: "vm.s3d" },
-  { icon: ChatIcon, t: "vm.s4t", d: "vm.s4d" },
-  { icon: KeyIcon, t: "vm.s5t", d: "vm.s5d" },
-  { icon: TagIcon, t: "vm.s6t", d: "vm.s6d" },
-  { icon: ListIcon, t: "vm.s7t", d: "vm.s7d" },
-  { icon: ShieldIcon, t: "vm.s8t", d: "vm.s8d" },
-] as const;
-
-const BENEFITS = [
-  { t: "vm.b1t", d: "vm.b1d" },
-  { t: "vm.b2t", d: "vm.b2d" },
-  { t: "vm.b3t", d: "vm.b3d" },
-  { t: "vm.b4t", d: "vm.b4d" },
-  { t: "vm.b5t", d: "vm.b5d" },
-  { t: "vm.b6t", d: "vm.b6d" },
-  { t: "vm.b7t", d: "vm.b7d" },
-] as const;
 
 const STEPS = [
   { t: "vm.st1t", d: "vm.st1d" },
@@ -58,7 +28,7 @@ const WHY = ["vm.w1", "vm.w2", "vm.w3", "vm.w4"] as const;
 const pad = (n: number) => String(n).padStart(2, "0");
 
 // Hand-picked strongest shots in the catalogue (ocean cliff, jungle infinity pool,
-// dusk architecture), shown as the photo strip under the hero.
+// dusk architecture). To be replaced by GBV's own photo set once shared.
 const SHOWCASE = [
   "home-in-south-kuta-7-bedrooms-9-beds-10-private-baths-206445",
   "home-in-kecamatan-ubud-3-bedrooms-3-beds-3-shared-baths-777157",
@@ -83,24 +53,28 @@ export default function VillaManagementPage() {
           <Reveal delay={0.12}>
             <p className="mt-8 max-w-2xl text-lg text-muted"><T k="vm.sub" /></p>
             <div className="mt-8 flex flex-wrap gap-3">
+              <Link href="#join" className="btn btn-dark">
+                <T k="vm.cta" />
+              </Link>
               <a
-                href={`${SITE.whatsappCtaHref}?text=${encodeURIComponent("Hi Great Bali Villas! I own a villa and would like a free management consultation.")}`}
+                href={`${SITE.whatsappHref}?text=${encodeURIComponent("Hi Great Bali Villas! I own a villa and would like a free management consultation.")}`}
                 target="_blank"
                 rel="noopener"
-                className="btn btn-dark"
+                className="btn btn-outline-dark"
               >
-                <T k="vm.cta" />
-              </a>
-              <Link href="#join" className="btn btn-outline-dark">
                 <T k="vm.cta2" />
-              </Link>
+              </a>
             </div>
           </Reveal>
         </div>
       </section>
 
+      {/* ============ ABOUT + PORTFOLIO ============ */}
+      <VmAbout />
+
+      {/* ============ PHOTOS ============ */}
       <section className="bg-cream">
-        <div className="container-x grid gap-3 pb-3 pt-12 sm:grid-cols-3 lg:pt-20">
+        <div className="container-x grid gap-3 pb-20 sm:grid-cols-3 lg:pb-28">
           {showcase.map((p, i) => (
             <Reveal key={p.slug} delay={i * 0.08}>
               <Link href={`/properties/${p.slug}`} className="group relative block aspect-[4/3] overflow-hidden">
@@ -118,52 +92,12 @@ export default function VillaManagementPage() {
         </div>
       </section>
 
-      {/* ============ WHY CHOOSE US ============ */}
-      <section className="bg-cream">
-        <div className="container-x grid gap-12 py-20 lg:grid-cols-12 lg:py-28">
-          <Reveal className="lg:col-span-5">
-            <div className="lg:sticky lg:top-32">
-              <p className="eyebrow mb-4 text-muted"><T k="vm.whyEyebrow" /></p>
-              <h2 className="font-display text-4xl tracking-tight lg:text-5xl"><T k="vm.whyTitle" /></h2>
-              <p className="mt-6 leading-relaxed text-muted"><T k="vm.whyIntro" /></p>
-            </div>
-          </Reveal>
-          <ol className="border-t border-ink/10 lg:col-span-7">
-            {BENEFITS.map((b, i) => (
-              <Reveal key={b.t} delay={i * 0.04}>
-                <li className="grid grid-cols-[3rem_1fr] gap-4 border-b border-ink/10 py-6 lg:py-7">
-                  <span className="eyebrow pt-1.5 text-muted">{pad(i + 1)}</span>
-                  <div>
-                    <h3 className="font-display text-2xl"><T k={b.t} /></h3>
-                    <p className="mt-2 text-sm leading-relaxed text-muted"><T k={b.d} /></p>
-                  </div>
-                </li>
-              </Reveal>
-            ))}
-          </ol>
-        </div>
-      </section>
-
-      {/* ============ WHAT WE DO ============ */}
-      <section className="border-t border-ink/10 bg-sand">
-        <div className="container-x py-20 lg:py-28">
-          <Reveal>
-            <p className="eyebrow mb-4 text-muted"><T k="vm.svcEyebrow" /></p>
-            <h2 className="mb-12 max-w-2xl font-display text-4xl tracking-tight lg:text-5xl"><T k="vm.svcTitle" /></h2>
-          </Reveal>
-          <div className="grid gap-px border border-ink/10 bg-ink/10 sm:grid-cols-2 lg:grid-cols-4">
-            {SERVICES.map((s, i) => (
-              <Reveal key={s.t} delay={(i % 4) * 0.06}>
-                <div className="h-full bg-cream p-8">
-                  <s.icon className="h-8 w-8 text-ink" />
-                  <h3 className="mt-6 font-display text-xl"><T k={s.t} /></h3>
-                  <p className="mt-3 text-sm leading-relaxed text-muted"><T k={s.d} /></p>
-                </div>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
+      <VmExpertise />
+      <VmWhy />
+      <VmTeam />
+      <VmSolutions />
+      <VmCta />
+      <VmPackages />
 
       {/* ============ HOW IT WORKS ============ */}
       <section className="bg-cream">
@@ -185,9 +119,6 @@ export default function VillaManagementPage() {
           </ol>
         </div>
       </section>
-
-      {/* ============ PACKAGES ============ */}
-      <VmPackages />
 
       {/* ============ JOIN / OWNER FORM ============ */}
       <section id="join" className="scroll-mt-24 bg-ink text-cream">

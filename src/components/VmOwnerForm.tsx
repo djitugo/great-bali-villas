@@ -28,7 +28,7 @@ export function VmOwnerForm() {
       "Hi Great Bali Villas! I'd like a free villa management consultation.\n\n" +
       `Name: ${f.name}\nEmail: ${f.email}\nPhone / WhatsApp: ${f.phone}\nProperty address: ${f.address}` +
       (f.note ? `\n\nProperty details: ${f.note}` : "");
-    window.open(`${SITE.whatsappCtaHref}?text=${encodeURIComponent(text)}`, "_blank", "noopener");
+    window.open(`${SITE.whatsappHref}?text=${encodeURIComponent(text)}`, "_blank", "noopener");
   };
 
   return (
