@@ -7,7 +7,8 @@ import { Reveal } from "@/components/Reveal";
 import { Map } from "@/components/Map";
 import { coordFor } from "@/lib/geo";
 import { T } from "@/lib/i18n";
-import type { PropertyQuery } from "@/lib/types";
+import type { PropertyQuery, RateKind } from "@/lib/types";
+import { RATE_KINDS } from "@/lib/rates";
 
 export const metadata: Metadata = {
   title: "All Villas",
@@ -24,6 +25,7 @@ export default async function PropertiesPage({ searchParams }: { searchParams: S
 
   const q: PropertyQuery = {
     area: one(sp.area),
+    rate: (RATE_KINDS as string[]).includes(one(sp.rate) || "") ? (one(sp.rate) as RateKind) : undefined,
     bedrooms: one(sp.bedrooms) ? Number(one(sp.bedrooms)) : undefined,
     search: one(sp.search),
     sort: (one(sp.sort) as PropertyQuery["sort"]) || "featured",
@@ -77,7 +79,7 @@ export default async function PropertiesPage({ searchParams }: { searchParams: S
             <div className="grid grid-cols-1 gap-x-6 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
               {items.map((p, i) => (
                 <Reveal key={p.slug} delay={(i % 3) * 0.06}>
-                  <PropertyCard p={p} priority={i < 3} />
+                  <PropertyCard p={p} priority={i < 3} rate={q.rate} />
                 </Reveal>
               ))}
             </div>

@@ -1,12 +1,13 @@
 import raw from "@/data/properties.json";
 import type { Property, Facets, PropertyQuery } from "./types";
+import { RATE_KINDS, rateOf } from "./rates";
 
 const ALL = (raw as Property[]).filter((p) => p.images && p.images.length > 0);
 
 // Deterministic "featured" ordering: villas with most images + a price, stable by slug.
 const score = (p: Property) =>
   (p.images.length >= 8 ? 100 : p.images.length * 10) +
-  (p.price ? 20 : 0) +
+  (rateOf(p) ? 20 : 0) +
   (p.description?.length > 300 ? 15 : 0) +
   (p.bedrooms ? 5 : 0);
 
@@ -70,14 +71,16 @@ export function getFacets(): Facets {
   let priceMax = 0;
   for (const p of ALL) {
     if (p.bedrooms) bedCounts.set(p.bedrooms, (bedCounts.get(p.bedrooms) || 0) + 1);
-    if (p.price) {
-      priceMin = Math.min(priceMin, p.price);
-      priceMax = Math.max(priceMax, p.price);
+    const daily = p.rates?.daily;
+    if (daily) {
+      priceMin = Math.min(priceMin, daily);
+      priceMax = Math.max(priceMax, daily);
     }
   }
   return {
     types,
     areas,
+    rates: RATE_KINDS.map((value) => ({ value, count: ALL.filter((p) => p.rates?.[value]).length })),
     bedrooms: [...bedCounts.entries()]
       .map(([value, count]) => ({ value, count }))
       .sort((a, b) => a.value - b.value),
@@ -94,8 +97,10 @@ export function queryProperties(q: PropertyQuery) {
   if (q.type) list = list.filter((p) => p.type === q.type);
   if (q.area) list = list.filter((p) => p.area === q.area);
   if (q.bedrooms) list = list.filter((p) => (p.bedrooms || 0) >= q.bedrooms!);
-  if (q.minPrice) list = list.filter((p) => (p.price || 0) >= q.minPrice!);
-  if (q.maxPrice) list = list.filter((p) => (p.price || 0) <= q.maxPrice!);
+  if (q.rate) list = list.filter((p) => rateOf(p, q.rate));
+  const amount = (p: Property) => rateOf(p, q.rate)?.amount;
+  if (q.minPrice) list = list.filter((p) => (amount(p) || 0) >= q.minPrice!);
+  if (q.maxPrice) list = list.filter((p) => (amount(p) || 0) <= q.maxPrice!);
   if (q.search) {
     const s = q.search.toLowerCase();
     list = list.filter(
@@ -111,10 +116,10 @@ export function queryProperties(q: PropertyQuery) {
 
   switch (q.sort) {
     case "price-asc":
-      list.sort((a, b) => (a.price || Infinity) - (b.price || Infinity));
+      list.sort((a, b) => (amount(a) || Infinity) - (amount(b) || Infinity));
       break;
     case "price-desc":
-      list.sort((a, b) => (b.price || 0) - (a.price || 0));
+      list.sort((a, b) => (amount(b) || 0) - (amount(a) || 0));
       break;
     case "name":
       list.sort((a, b) => a.name.localeCompare(b.name));

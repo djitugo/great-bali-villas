@@ -18,7 +18,13 @@ export function Price({
   const { format } = useCurrency();
   const { t } = useI18n();
   if (!idr) return <span className={className}>{t("price.onRequest")}</span>;
-  const per = period === "month" ? t("price.month") : t("price.night");
+  // accepts both stay-length names (daily/monthly/yearly) and legacy ones (night/month)
+  const per =
+    period === "month" || period === "monthly"
+      ? t("price.month")
+      : period === "year" || period === "yearly"
+        ? t("price.year")
+        : t("price.night");
   return (
     <span className={className}>
       {format(idr)}

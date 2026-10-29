@@ -7,6 +7,8 @@ import { useI18n } from "@/lib/i18n";
 import { Select } from "@/components/ui/Select";
 import { cn } from "@/lib/cn";
 
+const RATE_LABEL = { daily: "filters.rateDaily", monthly: "filters.rateMonthly", yearly: "filters.rateYearly" } as const;
+
 export function Filters({ facets, total }: { facets: Facets; total: number }) {
   const router = useRouter();
   const pathname = usePathname();
@@ -37,9 +39,10 @@ export function Filters({ facets, total }: { facets: Facets; total: number }) {
   }, [search]);
 
   const area = sp.get("area") ?? "";
+  const rate = sp.get("rate") ?? "";
   const bedrooms = sp.get("bedrooms") ?? "";
   const sort = sp.get("sort") ?? "featured";
-  const hasFilters = !!(area || bedrooms || sp.get("search"));
+  const hasFilters = !!(area || rate || bedrooms || sp.get("search"));
 
   return (
     <div className="sticky top-[4.5rem] z-40 border-y border-ink/10 bg-sand/90 backdrop-blur-xl lg:top-[5.5rem]">
@@ -66,6 +69,20 @@ export function Filters({ facets, total }: { facets: Facets; total: number }) {
               options={[
                 { value: "", label: t("filters.allAreas") },
                 ...facets.areas.map((a) => ({ value: a.value, label: `${a.value} (${a.count})` })),
+              ]}
+            />
+
+            <Select
+              label={t("filters.rate")}
+              value={rate}
+              onChange={(v) => setParam({ rate: v || undefined })}
+              className="lg:w-40"
+              options={[
+                { value: "", label: t("filters.rateAny") },
+                ...facets.rates.map((r) => ({
+                  value: r.value,
+                  label: `${t(RATE_LABEL[r.value])} (${r.count})`,
+                })),
               ]}
             />
 

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
-import type { Property } from "@/lib/types";
+import type { Property, RateKind } from "@/lib/types";
+import { rateOf } from "@/lib/rates";
 import { Price } from "./Price";
 import { T } from "@/lib/i18n";
 import { PinIcon, BedIcon, BathIcon } from "./icons";
@@ -8,10 +9,14 @@ import { PinIcon, BedIcon, BathIcon } from "./icons";
 export function PropertyCard({
   p,
   priority = false,
+  rate,
 }: {
   p: Property;
   priority?: boolean;
+  /** stay length picked in the collection filter; defaults to the shortest the villa offers */
+  rate?: RateKind;
 }) {
+  const r = rateOf(p, rate);
   return (
     <Link href={`/properties/${p.slug}`} className="group block">
       <div className="relative aspect-video overflow-hidden bg-sand-100">
@@ -38,8 +43,8 @@ export function PropertyCard({
 
         {/* price */}
         <p className="mt-1.5 text-sm">
-          <span className="text-[10px] uppercase tracking-[0.14em] text-muted"><T k="common.from" /> </span>
-          <Price idr={p.price} period={p.period} className="font-medium text-ink" suffixClassName="text-[10px]" />
+          {r && <span className="text-[10px] uppercase tracking-[0.14em] text-muted"><T k="common.from" /> </span>}
+          <Price idr={r?.amount ?? null} period={r?.kind} className="font-medium text-ink" suffixClassName="text-[10px]" />
         </p>
 
         {/* beds + baths (location sits on the photo tag) */}

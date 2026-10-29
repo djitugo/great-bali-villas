@@ -25,6 +25,9 @@ import { SITE } from "@/lib/site";
 import { T } from "@/lib/i18n";
 import { Map } from "@/components/Map";
 import { coordFor } from "@/lib/geo";
+import { RATE_KINDS, rateOf } from "@/lib/rates";
+
+const RATE_LABEL = { daily: "filters.rateDaily", monthly: "filters.rateMonthly", yearly: "filters.rateYearly" } as const;
 
 export function generateStaticParams() {
   return getAllSlugs().map((slug) => ({ slug }));
@@ -57,6 +60,9 @@ export default async function PropertyPage({ params }: { params: Promise<{ slug:
     label: "detail.bedrooms" | "detail.bathrooms" | "detail.area" | "detail.type";
     value: string | number;
   }[];
+
+  const primary = rateOf(p);
+  const allRates = RATE_KINDS.map((k) => rateOf(p, k)).filter((r) => r !== null);
 
   const descParas = p.description ? p.description.split("\n\n").filter(Boolean) : [];
   const [lat, lng] = coordFor(p);
@@ -95,7 +101,10 @@ export default async function PropertyPage({ params }: { params: Promise<{ slug:
                 <PinIcon className="h-4 w-4" /> {p.address || `${p.area}, Bali`}
               </p>
             </div>
-            <div className="shrink-0 lg:text-right"><span className="mr-2 text-sm text-muted"><T k="common.from" /></span><Price idr={p.price} period={p.period} className="font-display text-3xl text-ink" suffixClassName="text-sm" /></div>
+            <div className="shrink-0 lg:text-right">
+              {primary && <span className="mr-2 text-sm text-muted"><T k="common.from" /></span>}
+              <Price idr={primary?.amount ?? null} period={primary?.kind} className="font-display text-3xl text-ink" suffixClassName="text-sm" />
+            </div>
           </div>
         </Reveal>
 
@@ -195,9 +204,24 @@ export default async function PropertyPage({ params }: { params: Promise<{ slug:
             <div className="lg:sticky lg:top-28">
               <div className="rounded-none border border-sand-200 bg-cream p-6 shadow-xl shadow-ink/5">
                 <div className="mb-5 flex items-baseline justify-between">
-                  <div><span className="mr-2 text-sm text-muted"><T k="common.from" /></span><Price idr={p.price} period={p.period} className="font-display text-2xl text-ink" suffixClassName="text-xs" /></div>
+                  <div>
+                    {primary && <span className="mr-2 text-sm text-muted"><T k="common.from" /></span>}
+                    <Price idr={primary?.amount ?? null} period={primary?.kind} className="font-display text-2xl text-ink" suffixClassName="text-xs" />
+                  </div>
                   <span className="rounded-none bg-sand px-3 py-1 text-xs font-medium">{p.type}</span>
                 </div>
+                {allRates.length > 1 && (
+                  <dl className="mb-5 grid grid-cols-3 gap-px border border-ink/10 bg-ink/10 text-center">
+                    {allRates.map((r) => (
+                      <div key={r.kind} className="bg-cream px-2 py-3">
+                        <dt className="text-[10px] uppercase tracking-[0.14em] text-muted"><T k={RATE_LABEL[r.kind]} /></dt>
+                        <dd className="mt-1 text-sm font-medium text-ink">
+                          <Price idr={r.amount} period={r.kind} suffixClassName="hidden" />
+                        </dd>
+                      </div>
+                    ))}
+                  </dl>
+                )}
                 <InquiryForm
                   propertyName={p.name}
                   propertySlug={p.slug}
